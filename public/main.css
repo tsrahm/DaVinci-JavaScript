@@ -1,38 +1,51 @@
-* {
-  box-sizing: border-box;
+.todo-container {
+  width: 456px;
+  height: auto;
+  margin: 10px auto 0;
+  position: relative;
+  background: black;
+  border-radius: 5px;
+  font-family: georgia;
 }
-
-body {
-  font-family: "Gotham A", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  margin: 0;
-  overflow-x: hidden;
-  background-color: #dfdfe4;
+header {
+  width: 456px;
+  height: 26px;
+  background: #999999;
+  color: black;
+  font-size: 18px;
+  line-height: 27px;
+  padding-left: 8px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
 }
-
-main {
-  overflow: hidden;
+.add-todo-container {
+  position: relative;
+  width: auto;
+  height: 40px;
+  padding: 5px 5px 0 5px;
 }
-
-h4 {
-  position: absolute;
-  left: 7%;
-  top: 0;
-  font-weight: normal;
-  font-size: 34px;
+.add-todo-container .enter-todo {
+  position: relative;
+  width: 370px;
+  float: left;
 }
-
-img {
-  width: 100%;
+.add-todo-container button {
+  position: relative;
+  width: 70px;
+  background: #999999;
+  padding: 4px 12px;
+  font-size: 17px;
+  color: black;
+  float: right;
 }
-
-.blur {
-  -webkit-filter: blur(3px);
-  filter: blur(3px);
+.todo-container .list-group {
+  margin: 4px 0;
 }
-
-.gridItem {
-  position: absolute;
+.list-group-item {
+  position: relative;
+  height: 42px;
+  margin: 0 5px;
 }
-
-/*# sourceMappingURL=main.css.map*/
+footer {
+  height: 1px;
+}
