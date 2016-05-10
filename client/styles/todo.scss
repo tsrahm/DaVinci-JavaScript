@@ -7,7 +7,6 @@
   border-radius: 5px;
   font-family: georgia;
 }
-
 header {
   width: 456px;
   height: 26px;
@@ -19,20 +18,17 @@ header {
   border-radius: 5px 5px 0 0;
   position: relative;
 }
-
 .add-todo-container {
   position: relative;
   width: auto;
   height: 40px;
   padding: 5px 5px 0 5px;
 }
-
 .add-todo-container .enter-todo {
   position: relative;
   width: 370px;
   float: left;
 }
-
 .add-todo-container button {
   position: relative;
   width: 70px;
@@ -42,19 +38,14 @@ header {
   color: black;
   float: right;
 }
-
 .todo-container .list-group {
   margin: 4px 0;
 }
-
 .list-group-item {
   position: relative;
   height: 42px;
   margin: 0 5px;
 }
-
 footer {
   height: 1px;
 }
-
-/*# sourceMappingURL=main.css.map*/
