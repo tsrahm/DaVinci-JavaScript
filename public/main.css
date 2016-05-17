@@ -49,12 +49,58 @@ header {
 
 .list-group-item {
   position: relative;
-  height: 42px;
+  height: 46px;
   margin: 0 5px;
 }
 
 footer {
   height: 1px;
+}
+
+h1 {
+  color: orange;
+}
+
+.square {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background: #63a1f2;
+  text-align: center;
+  line-height: 100px;
+  font-family: garamond;
+  font-size: 44px;
+  transform: none;
+  transition: transform .5s;
+}
+
+.square-container {
+  perspective: 50px;
+  display: inline-block;
+}
+
+.square1:hover {
+  transform: skewX(-20deg);
+  transition: transform .5s;
+}
+
+.square2:hover {
+  transform: rotate(20deg);
+  transition: transform .5s;
+}
+
+.square3:hover {
+  transform: scale(0.5, 2);
+  transition: transform .5s;
+}
+
+.square4:hover {
+  transform: rotate(300deg);
+  transition: transform .5s;
+}
+
+.square5:hover {
+  transform: translate3d(20px, 50px, 100px);
 }
 
 /*# sourceMappingURL=main.css.map*/
