@@ -58,15 +58,30 @@
 	
 	var _pagesTodo2 = _interopRequireDefault(_pagesTodo);
 	
-	var _pagesProject = __webpack_require__(53);
+	var _pagesDyba = __webpack_require__(53);
 	
-	var _pagesProject2 = _interopRequireDefault(_pagesProject);
+	var _pagesDyba2 = _interopRequireDefault(_pagesDyba);
 	
 	var _pagesFunnySquares = __webpack_require__(54);
 	
 	var _pagesFunnySquares2 = _interopRequireDefault(_pagesFunnySquares);
 	
+	var _componentsHeader = __webpack_require__(56);
+	
+	var _componentsHeader2 = _interopRequireDefault(_componentsHeader);
+	
+	var _componentsFooter = __webpack_require__(58);
+	
+	var _componentsFooter2 = _interopRequireDefault(_componentsFooter);
+	
+	var _componentsDybaHeader = __webpack_require__(60);
+	
+	var _componentsDybaHeader2 = _interopRequireDefault(_componentsDybaHeader);
+	
 	(0, _jquery2['default'])(function () {
+	
+	    _componentsHeader2['default'].init();
+	    _componentsFooter2['default'].init();
 	
 	    // What page is being loaded?
 	    var url = window.location.pathname;
@@ -76,8 +91,8 @@
 	        case '/pages/todo.html':
 	            _pagesTodo2['default'].init();
 	            break;
-	        case '/pages/project.html':
-	            // do stuff
+	        case '/pages/dyba.html':
+	            _componentsDybaHeader2['default'].init();
 	            break;
 	        case '/pages/funnySquares.html':
 	            _pagesFunnySquares2['default'].init();
@@ -9938,7 +9953,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"todo-container":"todo-container","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5"};
+	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-container":"dyba-container","dyba-header":"dyba-header","dyba-nav":"dyba-nav","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo-large":"dyba-nav-logo-large","dyba-links-container":"dyba-links-container","row":"row","dyba-nav-menu":"dyba-nav-menu","dyba-nav-menuitem":"dyba-nav-menuitem","dyba-nav-link":"dyba-nav-link","dyba-nav-triangle":"dyba-nav-triangle","dyba-nav-submenu":"dyba-nav-submenu","dyba-nav-submenu-last":"dyba-nav-submenu-last","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-main":"dyba-main","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5"};
 
 /***/ },
 /* 3 */,
@@ -9963,9 +9978,9 @@
 	
 	var _lscache2 = _interopRequireDefault(_lscache);
 	
-	var _htmlTemplatesTodoItemHtml = __webpack_require__(39);
+	var _templatesTodoItemHtml = __webpack_require__(39);
 	
-	var _htmlTemplatesTodoItemHtml2 = _interopRequireDefault(_htmlTemplatesTodoItemHtml);
+	var _templatesTodoItemHtml2 = _interopRequireDefault(_templatesTodoItemHtml);
 	
 	// Array of To Dos
 	
@@ -9993,7 +10008,7 @@
 	  compileTemplates: function compileTemplates() {
 	    // Pass HTML content of rawTemplate to Handlebars compiler.
 	    // Handlebars takes this and compiles to a JS function.
-	    template = _handlebars2['default'].compile(_htmlTemplatesTodoItemHtml2['default']);
+	    template = _handlebars2['default'].compile(_templatesTodoItemHtml2['default']);
 	  },
 	  render: function render() {
 	    _lscache2['default'].set('todos', todos);
@@ -16793,7 +16808,7 @@
 /* 39 */
 /***/ function(module, exports) {
 
-	module.exports = "module.exports = \"<li class=\\\"list-group-item {{#if completed}}disabled{{/if}}\\\">\\n  <div class=\\\"col-md-1\\\">\\n    <input type=\\\"checkbox\\\" {{#if completed}}checked{{/if}}>\\n  </div>\\n  <div class=\\\"col-md-10 title\\\">\\n    <p class=\\\"item-title\\\">{{title}}</p>\\n  </div>\\n  <div class=\\\"col-md-10 title-edit hidden\\\">\\n    <p class=\\\"item-title\\\">\\n      <input type=\\\"text\\\" class=\\\"form-control\\\" value=\\\"{{title}}\\\" data-id=\\\"{{id}}\\\">\\n    </p>\\n  </div>\\n  <div class=\\\"col-md-1\\\">\\n    <button type=\\\"button\\\" class=\\\"close\\\" aria-label=\\\"Close\\\">\\n      <span aria-hidden=\\\"true\\\">&times;</span>\\n    </button>\\n  </div>\\n</li>\";";
+	module.exports = "<li class=\"list-group-item {{#if completed}}disabled{{/if}}\">\n  <div class=\"col-md-1\">\n    <input type=\"checkbox\" {{#if completed}}checked{{/if}}>\n  </div>\n  <div class=\"col-md-10 title\">\n    <p class=\"item-title\">{{title}}</p>\n  </div>\n  <div class=\"col-md-10 title-edit hidden\">\n    <p class=\"item-title\">\n      <input type=\"text\" class=\"form-control\" value=\"{{title}}\" data-id=\"{{id}}\">\n    </p>\n  </div>\n  <div class=\"col-md-1\">\n    <button type=\"button\" class=\"close\" aria-label=\"Close\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n</li>";
 
 /***/ },
 /* 40 */
@@ -19236,9 +19251,9 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _htmlTemplatesFunnySquareHtml = __webpack_require__(55);
+	var _templatesFunnySquareHtml = __webpack_require__(55);
 	
-	var _htmlTemplatesFunnySquareHtml2 = _interopRequireDefault(_htmlTemplatesFunnySquareHtml);
+	var _templatesFunnySquareHtml2 = _interopRequireDefault(_templatesFunnySquareHtml);
 	
 	var _handlebars = __webpack_require__(8);
 	
@@ -19255,7 +19270,7 @@
 	var template;
 	var app = {
 	  init: function init() {
-	    template = _handlebars2['default'].compile(_htmlTemplatesFunnySquareHtml2['default']);
+	    template = _handlebars2['default'].compile(_templatesFunnySquareHtml2['default']);
 	    app.render();
 	  },
 	  render: function render() {
@@ -19275,7 +19290,149 @@
 /* 55 */
 /***/ function(module, exports) {
 
-	module.exports = "module.exports = \"<div class=\\\"square-container\\\">\\n  <div class=\\\"square square{{id}}\\\">\\n    <div class=\\\"inner\\\">{{id}}</div>\\n  </div>\\n</div>\";";
+	module.exports = "<div class=\"square-container\">\n  <div class=\"square square{{id}}\">\n    <div class=\"inner\">{{id}}</div>\n  </div>\n</div>";
+
+/***/ },
+/* 56 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _jquery = __webpack_require__(1);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _templatesNavbarHtml = __webpack_require__(57);
+	
+	var _templatesNavbarHtml2 = _interopRequireDefault(_templatesNavbarHtml);
+	
+	var app = {
+	  init: function init() {
+	    app.render();
+	  },
+	  render: function render() {
+	    (0, _jquery2['default'])('.main-header').append(_templatesNavbarHtml2['default']);
+	  }
+	};
+	
+	module.exports = app;
+
+/***/ },
+/* 57 */
+/***/ function(module, exports) {
+
+	module.exports = "<nav>\n  <button><a role=\"menuitem\" href=\"/pages/todo.html\">ToDo Application</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/dyba.html\">DYBA</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/funnySquares.html\">Funny Squares</a></button>\n</nav>";
+
+/***/ },
+/* 58 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _jquery = __webpack_require__(1);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _templatesFooterHtml = __webpack_require__(59);
+	
+	var _templatesFooterHtml2 = _interopRequireDefault(_templatesFooterHtml);
+	
+	var app = {
+	  init: function init() {
+	    app.render();
+	  },
+	  render: function render() {
+	    (0, _jquery2['default'])('footer').append(_templatesFooterHtml2['default']);
+	  }
+	};
+	
+	module.exports = app;
+
+/***/ },
+/* 59 */
+/***/ function(module, exports) {
+
+	module.exports = "<div>Footer</div>";
+
+/***/ },
+/* 60 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _templatesDybaNavbarHtml = __webpack_require__(61);
+	
+	var _templatesDybaNavbarHtml2 = _interopRequireDefault(_templatesDybaNavbarHtml);
+	
+	var $ = __webpack_require__(1);
+	
+	// Legacy loading for Bootstrap
+	window.jQuery = window.$ = $;
+	__webpack_require__(40);
+	
+	var app = {
+	  init: function init() {
+	    app.render();
+	  },
+	  render: function render() {
+	    app.unbindEvents();
+	    $('.dyba-header').append(_templatesDybaNavbarHtml2['default']);
+	    app.bindEvents();
+	  },
+	  unbindEvents: function unbindEvents() {
+	    $('.dyba-nav-menuitem').off();
+	    $('.dyba-nav-logo-large').off();
+	  },
+	  bindEvents: function bindEvents() {
+	    app.bindHoverEvents();
+	  },
+	  bindHoverEvents: function bindHoverEvents() {
+	    var $menuItem = $('.dyba-nav-menuitem');
+	    var $homeLink = $('.dyba-nav-logo-large');
+	    var timer;
+	    $homeLink.on('mouseover', function () {
+	      $homeLink.animate({ opacity: 0.2 }, 500);
+	      $('.home-hidden').animate({ opacity: 1 }, 500);
+	    });
+	    $homeLink.on('mouseleave', function () {
+	      $homeLink.animate({ opacity: 1 }, 500);
+	      $('.home-hidden').animate({ opacity: 0 }, 500);
+	    });
+	    $menuItem.on('mouseover', function () {
+	      //$(this).css({background: '#9d9d9d'});
+	      $(this).find('.dyba-nav-link').css({ color: 'black', textDecoration: 'none' });
+	      $(this).find('.dyba-nav-submenu').slideDown();
+	      //$(this).find('.dyba-nav-submenu').css({visibility: 'visible'});
+	    });
+	    $menuItem.on('mouseleave', function () {
+	      $(this).delay(400).queue(function (next) {
+	        $(this).css({ background: '#cbcbcb' });
+	        next();
+	      });
+	      var $thisLink = $(this).find('.dyba-nav-link');
+	      $thisLink.delay(400).queue(function (next) {
+	        $thisLink.css({ color: 'green' });
+	        next();
+	      });
+	      $(this).find('.dyba-nav-submenu').slideUp();
+	      //$(this).find('.dyba-nav-submenu').css({visibility: 'hidden'});
+	    });
+	  }
+	};
+	
+	module.exports = app;
+
+/***/ },
+/* 61 */
+/***/ function(module, exports) {
+
+	module.exports = "<nav class=\"dyba-nav row\">\n  <a href=\"#\" class=\"dyba-logo-container col-md-3 col-sm-12 col-xs-12\">\n    <p class=\"home-hidden\">Home</p>\n    <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-large\">\n  </a>\n  <ul class=\"dyba-links-container col-md-9 col-sm-12\">\n    <li class=\"row hidden-xs hidden-sm\"></li>\n    <li class=\"row\">\n      <ul class=\"dyba-nav-menu\">\n        <li class=\"dyba-nav-menuitem\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">Teams</a>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">2nd Grade</a></li>\n            <li><a href=\"#\">3rd Grade</a></li>\n            <li><a href=\"#\">4th Grade</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-menuitem\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">Register</a>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-menuitem\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">Coaches</a>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-menuitem\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">About DYBA</a>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-menuitem\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/funnySquares.html\">Links</a>\n          <ul class=\"dyba-nav-submenu dyba-nav-submenu-last\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li class=\"row hidden-xs hidden-sm\"></li>\n  </ul>\n</nav>\n\n\n\n\n\n\n\n\n\n";
 
 /***/ }
 /******/ ]);

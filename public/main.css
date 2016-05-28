@@ -8,7 +8,7 @@
   font-family: georgia;
 }
 
-header {
+.todo-header {
   width: 456px;
   height: 26px;
   background: #999999;
@@ -53,8 +53,172 @@ header {
   margin: 0 5px;
 }
 
-footer {
+.todo-footer {
   height: 1px;
+}
+
+.dyba-body {
+  margin: 0;
+  display: block;
+  position: relative;
+}
+
+.dyba-body::after {
+  content: "";
+  background-image: url("/images/Jags Logo Green.png");
+  background-size: 200px;
+  opacity: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.dyba-container {
+  position: relative;
+  width: 80%;
+  height: 800px;
+  margin: 0 auto;
+  background: #cbcbcb;
+  border-right: 3px solid green;
+  border-left: 3px solid green;
+}
+
+.dyba-header {
+  position: relative;
+  display: block;
+}
+
+.dyba-nav {
+  position: relative;
+  display: block;
+  height: auto;
+}
+
+.dyba-logo-container {
+  position: relative;
+  display: inline-block;
+  height: 135px;
+  text-align: center;
+}
+
+.home-hidden {
+  position: absolute;
+  display: inline-block;
+  height: 135px;
+  width: 166px;
+  margin: 0;
+  line-height: 135px;
+  font-size: 28px;
+  color: green;
+  text-align: center;
+  opacity: 0;
+}
+
+.dyba-nav-logo-large {
+  position: relative;
+  display: inline-block;
+  height: 150px;
+}
+
+.dyba-links-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+}
+
+.dyba-links-container .row {
+  height: 45px;
+  line-height: 45px;
+}
+
+.dyba-nav-menu {
+  padding: 0;
+}
+
+.dyba-nav-menuitem {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  width: auto;
+}
+
+.dyba-nav-link {
+  position: relative;
+  text-decoration: none;
+  height: 40px;
+  color: green;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: garamond;
+}
+
+.dyba-nav-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid black;
+  left: 10px;
+  top: 33px;
+}
+
+.dyba-nav-submenu {
+  position: absolute;
+  width: 130px;
+  height: auto;
+  padding: 10px;
+  background: #9d9d9d;
+  border-top: 2px solid black;
+  border-radius: 10px;
+  z-index: 1;
+  display: none;
+  margin-left: -10px;
+}
+
+.dyba-nav-submenu-last {
+  position: fixed;
+  margin-left: 0;
+  right: 14%;
+}
+
+.dyba-nav-item {
+  position: relative;
+  display: inline-block;
+  width: auto;
+}
+
+.dyba-nav-logo-small {
+  position: relative;
+  height: 20px;
+  margin: 0;
+}
+
+.dyba-main {
+  position: relative;
+  display: block;
+  border-top: 1px dotted green;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.dyba-nav-submenu li {
+  line-height: 30px;
+  text-align: left;
+}
+
+.dyba-nav-submenu li a {
+  color: black;
+  font-size: 16px;
+  font-family: garamond;
+  font-weight: bold;
 }
 
 h1 {
