@@ -98,6 +98,15 @@
 	            _pagesFunnySquares2['default'].init();
 	            break;
 	    }
+	
+	    // Fancy console message for developers
+	    console.log("=================================");
+	    console.log("=================================");
+	    console.log("=====I am looking for a job.=====");
+	    console.log("=================================");
+	    console.log("============Call me.=============");
+	    console.log("=================================");
+	    console.log("=================================");
 	});
 
 /***/ },
@@ -9990,6 +9999,14 @@
 	window.jQuery = window.$ = $;
 	__webpack_require__(40);
 	
+	var todoSchema = function todoSchema(todo) {
+	  return _underscore2['default'].defaults(todo, {
+	    id: 0,
+	    title: "",
+	    completed: false
+	  });
+	};
+	
 	var savedData = _lscache2['default'].get('todos');
 	var todos;
 	if (savedData === null) {
@@ -10062,11 +10079,11 @@
 	    $('.add-todo-container button').on('click', function () {
 	      var newTodoTitle = $('.add-todo-container input').val();
 	      if (_underscore2['default'].isString(newTodoTitle) && newTodoTitle.length > 2) {
-	        var newTodoObject = {
+	        var newTodoObject = todoSchema({
 	          id: todos.length,
 	          title: newTodoTitle,
 	          completed: false
-	        };
+	        });
 	        todos.push(newTodoObject);
 	        app.render();
 	      }
