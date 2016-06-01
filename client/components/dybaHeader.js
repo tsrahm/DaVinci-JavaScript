@@ -26,7 +26,6 @@ var app = {
   bindHoverEvents: function() {
     var $menuItem = $('.dyba-nav-menuitem');
     var $homeLink = $('.dyba-nav-logo-large');
-    var timer;
     $homeLink.on('mouseover', function() {
       $homeLink.animate({opacity: 0.2}, 500);
       $('.home-hidden').animate({opacity: 1}, 500);
@@ -36,10 +35,10 @@ var app = {
       $('.home-hidden').animate({opacity: 0}, 500);
     });
     $menuItem.on('mouseover', function() {
-      //$(this).css({background: '#9d9d9d'});
+      // $(this).css({background: '#9d9d9d'});
       $(this).find('.dyba-nav-link').css({color: 'black', textDecoration: 'none'});
       $(this).find('.dyba-nav-submenu').slideDown();
-      //$(this).find('.dyba-nav-submenu').css({visibility: 'visible'});
+      // $(this).find('.dyba-nav-submenu').css({visibility: 'visible'});
     });
     $menuItem.on('mouseleave', function() {
       $(this)
@@ -56,7 +55,7 @@ var app = {
           next();
         });
       $(this).find('.dyba-nav-submenu').slideUp();
-      //$(this).find('.dyba-nav-submenu').css({visibility: 'hidden'});
+      // $(this).find('.dyba-nav-submenu').css({visibility: 'hidden'});
     });
   }
 };

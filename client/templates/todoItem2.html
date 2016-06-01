@@ -3,12 +3,7 @@
     <input type="checkbox" {{#if completed}}checked{{/if}}>
   </div>
   <div class="col-md-10 title">
-    <p class="item-title">{{title}}</p>
-  </div>
-  <div class="col-md-10 title-edit hidden">
-    <p class="item-title">
-      <input type="text" class="form-control" value="{{title}}" data-id="{{id}}">
-    </p>
+    <p class="item-title" data-id="{{id}}">{{title}}</p>
   </div>
   <div class="col-md-1">
     <button type="button" class="close" aria-label="Close">
