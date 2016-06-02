@@ -1,7 +1,7 @@
 
 import $ from 'jquery';
 import 'styles/main.scss';
-import todos from 'pages/todo';
+import todos from 'pages/todo-backbone';
 import dyba from 'pages/dyba';
 import funnySquares from 'pages/funnySquares';
 import header from 'components/header';
@@ -20,7 +20,7 @@ $(function() {
   // This is called a router
   switch (url) {
     case '/pages/todo.html':
-        todos.init();
+        todos.render();
     break;
     case '/pages/dyba.html':
         dybaHeader.init();
