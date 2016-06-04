@@ -81,9 +81,9 @@
   width: 80%;
   height: 800px;
   margin: 0 auto;
-  background: #cbcbcb;
-  border-right: 3px solid green;
-  border-left: 3px solid green;
+  background: #d0d1d0;
+  border-right: 3px solid #005214;
+  border-left: 3px solid #005214;
 }
 
 .dyba-header {
@@ -112,7 +112,7 @@
   margin: 0;
   line-height: 135px;
   font-size: 28px;
-  color: green;
+  color: #005214;
   text-align: center;
   opacity: 0;
 }
@@ -131,12 +131,15 @@
 }
 
 .dyba-links-container .row {
-  height: 45px;
-  line-height: 45px;
+  height: 67px;
+  line-height: 67px;
 }
 
 .dyba-nav-menu {
   padding: 0;
+  background: #999;
+  width: 95%;
+  text-align: center;
 }
 
 .dyba-nav-menuitem {
@@ -149,23 +152,12 @@
 .dyba-nav-link {
   position: relative;
   text-decoration: none;
-  height: 40px;
-  color: green;
+  display: block;
+  color: #005214;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
   font-family: garamond;
-}
-
-.dyba-nav-triangle {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 15px solid black;
-  left: 10px;
-  top: 33px;
 }
 
 .dyba-nav-submenu {
@@ -173,9 +165,8 @@
   width: 130px;
   height: auto;
   padding: 10px;
-  background: #9d9d9d;
-  border-top: 2px solid black;
-  border-radius: 10px;
+  background: #999;
+  border-bottom: 2px solid black;
   z-index: 1;
   display: none;
   margin-left: -10px;
@@ -185,6 +176,18 @@
   position: fixed;
   margin-left: 0;
   right: 14%;
+}
+
+.dyba-nav-submenu li {
+  line-height: 30px;
+  text-align: left;
+}
+
+.dyba-nav-submenu li a {
+  color: #005214;
+  font-size: 20px;
+  font-family: garamond;
+  font-weight: bold;
 }
 
 .dyba-nav-item {
@@ -202,23 +205,62 @@
 .dyba-main {
   position: relative;
   display: block;
-  border-top: 1px dotted green;
+  border-top: 1px dotted #005214;
 }
 
 ul {
   list-style-type: none;
 }
 
-.dyba-nav-submenu li {
-  line-height: 30px;
-  text-align: left;
+.dyba-links-sidebar {
+  padding-top: 10px;
 }
 
-.dyba-nav-submenu li a {
+.dyba-sidelink {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  width: 90%;
+  background: #888;
+  overflow-y: hidden;
+  margin: 5px auto;
+  text-align: left;
+  line-height: 100%;
   color: black;
-  font-size: 16px;
+  font-size: 24px;
   font-family: garamond;
   font-weight: bold;
+}
+
+.dyba-sidelink:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.dyba-sidelink:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.dyba-sidebar-logo {
+  width: 100%;
+  margin-top: -35px;
+  opacity: 0;
+}
+
+.dyba-sidebar-logo:hover {
+  width: 100%;
+  margin-top: -35px;
+  opacity: 0.2;
+}
+
+.dyba-sidelink img {
+  position: absolute;
+}
+
+.dyba-sidelink p {
+  position: relative;
 }
 
 h1 {

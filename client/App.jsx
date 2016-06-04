@@ -7,6 +7,7 @@ import funnySquares from 'pages/funnySquares';
 import header from 'components/header';
 import footer from 'components/footer';
 import dybaHeader from 'components/dybaHeader';
+import dybaMain from 'pages/dyba';
 
 
 $(function() {
@@ -24,6 +25,7 @@ $(function() {
     break;
     case '/pages/dyba.html':
         dybaHeader.init();
+        dybaMain.init();
     break;
     case '/pages/funnySquares.html':
         funnySquares.init();

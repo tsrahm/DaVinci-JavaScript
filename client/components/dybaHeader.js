@@ -36,7 +36,7 @@ var app = {
     });
     $menuItem.on('mouseover', function() {
       // $(this).css({background: '#9d9d9d'});
-      $(this).find('.dyba-nav-link').css({color: 'black', textDecoration: 'none'});
+      $(this).find('.dyba-nav-link').css({color: 'white', textDecoration: 'none'});
       $(this).find('.dyba-nav-submenu').slideDown();
       // $(this).find('.dyba-nav-submenu').css({visibility: 'visible'});
     });
@@ -44,14 +44,7 @@ var app = {
       $(this)
         .delay(400)
         .queue(function(next) {
-          $(this).css({background: '#cbcbcb'});
-          next();
-        });
-      var $thisLink = $(this).find('.dyba-nav-link');
-      $thisLink
-        .delay(400)
-        .queue(function(next) {
-          $thisLink.css({color: 'green'});
+          $(this).find('.dyba-nav-link').css({color: 'red'});
           next();
         });
       $(this).find('.dyba-nav-submenu').slideUp();
