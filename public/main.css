@@ -127,29 +127,50 @@
   position: relative;
   display: inline-block;
   text-align: center;
-  margin: 0;
 }
 
 .dyba-links-container .row {
-  height: 67px;
-  line-height: 67px;
+  height: 52px;
+  line-height: 52px;
+}
+
+.dyba-links-container .buffer-row {
+  height: 15px;
 }
 
 .dyba-nav-menu {
   padding: 0;
   background: #999;
   width: 95%;
+  max-width: 650px;
+  margin: auto;
   text-align: center;
 }
 
-.dyba-nav-menuitem {
+.dyba-nav-link-container {
   position: relative;
   display: inline-block;
-  padding: 0 10px;
+  width: auto;
+}
+
+.dyba-nav-header-container {
+  position: relative;
+  display: inline-block;
   width: auto;
 }
 
 .dyba-nav-link {
+  position: relative;
+  text-decoration: none;
+  display: block;
+  color: #005214;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: garamond;
+}
+
+.dyba-nav-header {
   position: relative;
   text-decoration: none;
   display: block;
@@ -165,17 +186,16 @@
   width: 130px;
   height: auto;
   padding: 10px;
-  background: #999;
+  background: #005214;
   border-bottom: 2px solid black;
   z-index: 1;
   display: none;
-  margin-left: -10px;
 }
 
-.dyba-nav-submenu-last {
-  position: fixed;
-  margin-left: 0;
-  right: 14%;
+@media (min-width: 1050px) and (max-width: 1180px) {
+  .dyba-nav-submenu-last {
+    margin-left: -59px;
+  }
 }
 
 .dyba-nav-submenu li {
@@ -184,7 +204,7 @@
 }
 
 .dyba-nav-submenu li a {
-  color: #005214;
+  color: #999;
   font-size: 20px;
   font-family: garamond;
   font-weight: bold;
@@ -193,6 +213,7 @@
 .dyba-nav-item {
   position: relative;
   display: inline-block;
+  padding: 0 10px;
   width: auto;
 }
 
@@ -220,16 +241,11 @@ ul {
   position: relative;
   display: block;
   border-radius: 50%;
-  width: 90%;
+  border: 3px solid #005214;
+  width: 50%;
   background: #888;
-  overflow-y: hidden;
-  margin: 5px auto;
-  text-align: left;
-  line-height: 100%;
-  color: black;
-  font-size: 24px;
-  font-family: garamond;
-  font-weight: bold;
+  overflow: hidden;
+  margin: 10px auto;
 }
 
 .dyba-sidelink:before {
@@ -238,29 +254,47 @@ ul {
   padding-top: 100%;
 }
 
-.dyba-sidelink:hover {
-  text-decoration: none;
-  color: white;
-}
-
-.dyba-sidebar-logo {
-  width: 100%;
-  margin-top: -35px;
-  opacity: 0;
-}
-
-.dyba-sidebar-logo:hover {
-  width: 100%;
-  margin-top: -35px;
-  opacity: 0.2;
-}
-
-.dyba-sidelink img {
+.dyba-sidebar-logo-1 {
   position: absolute;
+  z-index: 2;
+  background: #888;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #005214;
+  text-align: center;
+  font-size: 80px;
+  font-family: garamond;
+  font-weight: bold;
 }
 
-.dyba-sidelink p {
-  position: relative;
+.dyba-sidebar-logo-2 {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.dyba-sidebar-logo-3 {
+  position: absolute;
+  z-index: 0;
+  background: #888;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #005214;
+  text-align: center;
+  font-size: 28px;
+  font-family: garamond;
+  font-weight: bold;
+  padding-top: 35%;
 }
 
 h1 {
@@ -307,6 +341,13 @@ h1 {
 
 .square5:hover {
   transform: translate3d(20px, 50px, 100px);
+}
+
+.page-container {
+  width: 700px;
+  margin: auto;
+  background-color: #ccc;
+  min-height: 100px;
 }
 
 /*# sourceMappingURL=main.css.map*/

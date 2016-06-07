@@ -2,13 +2,13 @@
 import $ from 'jquery';
 import 'styles/main.scss';
 import todos from 'pages/todo-backbone';
-import dyba from 'pages/dyba';
 import funnySquares from 'pages/funnySquares';
+import formsBackbone from 'pages/forms-backbone';
 import header from 'components/header';
 import footer from 'components/footer';
 import dybaHeader from 'components/dybaHeader';
 import dybaMain from 'pages/dyba';
-
+import 'components/jquery.hoverflow.min.js'
 
 $(function() {
 
@@ -29,6 +29,9 @@ $(function() {
     break;
     case '/pages/funnySquares.html':
         funnySquares.init();
+    break;
+    case '/pages/forms-backbone.html':
+        formsBackbone.render();
     break;
   }
 

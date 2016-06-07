@@ -24,31 +24,63 @@ var app = {
     app.bindHoverEvents();
   },
   bindHoverEvents: function() {
-    var $menuItem = $('.dyba-nav-menuitem');
     var $homeLink = $('.dyba-nav-logo-large');
-    $homeLink.on('mouseover', function() {
-      $homeLink.animate({opacity: 0.2}, 500);
-      $('.home-hidden').animate({opacity: 1}, 500);
+    $homeLink.hover(function(e) {
+      var $el = $(this);
+      var $hidden = $('.home-hidden');
+      $el.hoverFlow(e.type, {opacity: 0.2}, 500);
+      $hidden.hoverFlow(e.type, {opacity: 1}, 500);
+    }, function(e) {
+      var $el = $(this);
+      var $hidden = $('.home-hidden');
+      $el.hoverFlow(e.type, {opacity: 1}, 500);
+      $hidden.hoverFlow(e.type, {opacity: 0}, 500);
     });
-    $homeLink.on('mouseleave', function() {
-      $homeLink.animate({opacity: 1}, 500);
-      $('.home-hidden').animate({opacity: 0}, 500);
+
+    var $linkContainer = $('.dyba-nav-link-container');
+    $linkContainer.hover(function() {
+      var $el = $(this);
+      var $link = $el.find('.dyba-nav-link');
+      $el.css({background: '#005214'});
+      $link.css({color: '#999', textDecoration: 'none'});
+    }, function() {
+      var $el = $(this);
+      var $link = $el.find('.dyba-nav-link');
+      $el.css({background: '#999'});
+      $link.css({color: '#005214'});
     });
-    $menuItem.on('mouseover', function() {
-      // $(this).css({background: '#9d9d9d'});
-      $(this).find('.dyba-nav-link').css({color: 'white', textDecoration: 'none'});
-      $(this).find('.dyba-nav-submenu').slideDown();
-      // $(this).find('.dyba-nav-submenu').css({visibility: 'visible'});
-    });
-    $menuItem.on('mouseleave', function() {
-      $(this)
-        .delay(400)
+
+    var $headerContainer = $('.dyba-nav-header-container');
+    $headerContainer.hover(function(e) {
+      var $el = $(this);
+      var $header = $el.find('.dyba-nav-header');
+      var $submenu = $el.find('.dyba-nav-submenu');
+      $el.css({background: '#005214'});
+      $header.css({color: '#999'});
+      $submenu.hoverFlow(e.type, {
+        height: 'show',
+        marginTop: 'show',
+        marginBottom: 'show',
+        paddingTop: 'show',
+        paddingBottom: 'show'
+      });
+    }, function(e) {
+      var $el = $(this);
+      var $header = $el.find('.dyba-nav-header');
+      var $submenu = $el.find('.dyba-nav-submenu');
+      $el.delay(400)
         .queue(function(next) {
-          $(this).find('.dyba-nav-link').css({color: 'red'});
+          $el.css({background: '#999'});
+          $header.css({color: '#005214'});
           next();
         });
-      $(this).find('.dyba-nav-submenu').slideUp();
-      // $(this).find('.dyba-nav-submenu').css({visibility: 'hidden'});
+      $submenu.hoverFlow(e.type, {
+        height: 'hide',
+        marginTop: 'hide',
+        marginBottom: 'hide',
+        paddingTop: 'hide',
+        paddingBottom: 'hide'
+      });
     });
   }
 };
