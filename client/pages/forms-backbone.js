@@ -37,8 +37,9 @@ var accountModel = new AccountModel();
 var AccountControllerView = Backbone.View.extend( {
   el: '.page-container',
   model: accountModel,
-  event: {
-    'click .btn-create': 'createNewAccount'
+  events: {
+    'click .btn-create': 'createNewAccount',
+    'click .btn-done': 'submitForm'
   },
   initialize: function() {
     this.model.fetch();
@@ -50,6 +51,9 @@ var AccountControllerView = Backbone.View.extend( {
   createNewAccount: function() {
     var createView = new CreateView();
     this.$el.find('.view-container').empty().append(createView.$el.html());
+  },
+  submitForm: function() {
+    accountControllerView.render();
   }
 });
 
@@ -58,7 +62,7 @@ var AccountControllerView = Backbone.View.extend( {
 
 var ListView = Backbone.View.extend( {
   tagName: 'div',
-  event: {},
+  events: {},
   template: Handlebars.compile(listTemplate),
   initialize: function() {
     this.render();
@@ -71,9 +75,7 @@ var ListView = Backbone.View.extend( {
 
 var CreateView = Backbone.View.extend( {
   tagName: 'div',
-  event: {
-    'click .btn-done': 'submitForm'
-  },
+  events: {},
   template: Handlebars.compile(createTemplate),
   initialize: function() {
     this.render();
@@ -81,9 +83,6 @@ var CreateView = Backbone.View.extend( {
   render: function() {
     var renderedTemplate = this.template({});
     this.$el.empty().append(renderedTemplate);
-  },
-  submitForm: function() {
-    accountControllerView.render();
   }
 });
 

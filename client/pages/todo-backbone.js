@@ -12,17 +12,10 @@ import todoItemTemplate from 'templates/todoItem.html';
 
 // Backbone Todo App
 
-var TodoModel;
-var TodoControllerView;
-var TodoView;
-var TodoItemView;
-
-var todoModel;
-var todoControllerView;
 
 // Model
 
-TodoModel = Backbone.Model.extend({
+var TodoModel = Backbone.Model.extend({
   defaults: {
     todos: []
   },
@@ -49,7 +42,6 @@ TodoModel = Backbone.Model.extend({
       todo.id = index;
       return _.defaults(todo, schema);
     });
-
     return data;
   },
   addItem: function(newTitle) {
@@ -70,26 +62,26 @@ TodoModel = Backbone.Model.extend({
 // if not overwritten.  They expect to retrieve and save data from/to a database.  We
 // will typically use local storage via lscache instead.
 
-todoModel = new TodoModel();
+var todoModel = new TodoModel();
 
 // View
 
-TodoControllerView = Backbone.View.extend({
+var TodoControllerView = Backbone.View.extend({
   el: '.todo-container',
   model: todoModel,
   events: {
-    "click .btn-add": "addTodoItem"
+    'click .btn-add': 'addTodoItem'
   },
   initialize: function() {
     this.model.fetch();
   },
   render: function() {
     var todos = this.model.get('todos');
-    var $ul = this.$el.find('ul');
-    $ul.empty();
+    var $listGroup = this.$el.find('.list-group');
+    $listGroup.empty();
     todos.map(function(todo) {
       var view = new TodoItemView(todo);
-      $ul.append(view.$el);
+      $listGroup.append(view.$el);
     });
   },
   addTodoItem: function() {
@@ -106,7 +98,7 @@ TodoControllerView = Backbone.View.extend({
   }
 });
 
-TodoItemView = Backbone.View.extend({
+var TodoItemView = Backbone.View.extend({
   tagName: 'li',                                 // el = <li class="list-group-item"></li>
   className: 'list-group-item',
   events: {
@@ -118,7 +110,7 @@ TodoItemView = Backbone.View.extend({
     this.render(todo);
   },
   render: function(todo) {
-    this.$el.html(this.template(todo));
+    this.$el.empty().append(this.template(todo));
   },
   removeItem: function() {
     debugger;
@@ -126,7 +118,7 @@ TodoItemView = Backbone.View.extend({
   }
 });
 
-todoControllerView = new TodoControllerView();  // this calls TodoControllerView.initialize
+var todoControllerView = new TodoControllerView();  // this calls TodoControllerView.initialize
 
 module.exports = todoControllerView;
 

@@ -1,0 +1,91 @@
+@font-face {
+    font-family: good-dog;
+    src: url(/css/GoodDog-webfont.ttf);
+}
+.row {
+  height: 700px;
+}
+.sidebar-container {
+  height: 100%;
+  padding-bottom: 20px;
+  background-image:
+    linear-gradient(
+      to right,
+      #b24700,
+      #b24700 90%,
+      #ff6500
+    );
+}
+.profile-container {
+  height: auto;
+  text-align: center;
+  font-family: good-dog;
+  color: #fe934c;
+  width: 90%;
+}
+.profile-container p {
+  font-family: georgia;
+  font-size: 15px;
+  line-height: 17px;
+  text-align: left;
+}
+.social-container {
+  display: inline-block;
+  height: auto;
+  width: 90%;
+  text-align: center;
+}
+.social-icon {
+  height: 20px;
+  margin: 0 10px;
+}
+.my-work-container {
+  height: auto;
+  text-align: center;
+  font-family: good-dog;
+  font-size: 30px;
+  line-height: 30px;
+  color: #fe934c;
+  width: 90%;
+}
+.button-container {
+  width: 80%;
+  margin: auto;
+  padding-top: 7px;
+}
+.button-container span {
+  font-family: georgia;
+  font-size: 20px;
+}
+.main-container {
+  height: 100%;
+  background: #ff6500;
+  padding-top: 100px;
+  text-align: center;
+  font-family: good-dog;
+  font-size: 70px;
+  line-height: 90px;
+  color: white;
+}
+@media (max-width: 767px) {
+  .sidebar-container {
+    height: auto;
+    padding-bottom: 20px;
+    background: #b24700;
+    margin-top: -20px;
+  }
+  .profile-container {
+    width: 100%;
+  }
+  .social-container {
+    width: 100%;
+  }
+  .my-work-container {
+    width: 100%;
+  }
+  .main-container {
+    height: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}

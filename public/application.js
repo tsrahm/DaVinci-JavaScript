@@ -62,27 +62,27 @@
 	
 	var _pagesFunnySquares2 = _interopRequireDefault(_pagesFunnySquares);
 	
-	var _pagesFormsBackbone = __webpack_require__(65);
+	var _pagesFormsBackbone = __webpack_require__(56);
 	
 	var _pagesFormsBackbone2 = _interopRequireDefault(_pagesFormsBackbone);
 	
-	var _componentsHeader = __webpack_require__(56);
+	var _componentsHeader = __webpack_require__(59);
 	
 	var _componentsHeader2 = _interopRequireDefault(_componentsHeader);
 	
-	var _componentsFooter = __webpack_require__(58);
+	var _componentsFooter = __webpack_require__(61);
 	
 	var _componentsFooter2 = _interopRequireDefault(_componentsFooter);
 	
-	var _componentsDybaHeader = __webpack_require__(60);
+	var _componentsDybaHeader = __webpack_require__(63);
 	
 	var _componentsDybaHeader2 = _interopRequireDefault(_componentsDybaHeader);
 	
-	var _pagesDyba = __webpack_require__(62);
+	var _pagesDyba = __webpack_require__(65);
 	
 	var _pagesDyba2 = _interopRequireDefault(_pagesDyba);
 	
-	__webpack_require__(64);
+	__webpack_require__(67);
 	
 	(0, _jquery2['default'])(function () {
 	
@@ -9972,7 +9972,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-container":"dyba-container","dyba-header":"dyba-header","dyba-nav":"dyba-nav","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo-large":"dyba-nav-logo-large","dyba-links-container":"dyba-links-container","row":"row","buffer-row":"buffer-row","dyba-nav-menu":"dyba-nav-menu","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-header-container":"dyba-nav-header-container","dyba-nav-link":"dyba-nav-link","dyba-nav-header":"dyba-nav-header","dyba-nav-submenu":"dyba-nav-submenu","dyba-nav-submenu-last":"dyba-nav-submenu-last","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-main":"dyba-main","dyba-links-sidebar":"dyba-links-sidebar","dyba-sidelink":"dyba-sidelink","dyba-sidebar-logo-1":"dyba-sidebar-logo-1","dyba-sidebar-logo-2":"dyba-sidebar-logo-2","dyba-sidebar-logo-3":"dyba-sidebar-logo-3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container"};
+	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-container":"dyba-container","dyba-header":"dyba-header","dyba-nav":"dyba-nav","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo-large":"dyba-nav-logo-large","dyba-links-container":"dyba-links-container","row":"row","buffer-row":"buffer-row","dyba-nav-menu":"dyba-nav-menu","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-header-container":"dyba-nav-header-container","dyba-nav-link":"dyba-nav-link","dyba-nav-header":"dyba-nav-header","dyba-nav-submenu":"dyba-nav-submenu","dyba-nav-submenu-last":"dyba-nav-submenu-last","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-main":"dyba-main","dyba-links-sidebar":"dyba-links-sidebar","dyba-sidelink":"dyba-sidelink","dyba-sidebar-logo-1":"dyba-sidebar-logo-1","dyba-sidebar-logo-2":"dyba-sidebar-logo-2","dyba-sidebar-logo-3":"dyba-sidebar-logo-3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","sidebar-container":"sidebar-container","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","main-container":"main-container"};
 
 /***/ },
 /* 3 */,
@@ -10007,23 +10007,15 @@
 	
 	// Backbone Todo App
 	
+	// Model
+	
 	var $ = __webpack_require__(1);
 	
 	// Legacy loading for Bootstrap
 	window.jQuery = window.$ = $;
 	__webpack_require__(41);
 	
-	var TodoModel;
-	var TodoControllerView;
-	var TodoView;
-	var TodoItemView;
-	
-	var todoModel;
-	var todoControllerView;
-	
-	// Model
-	
-	TodoModel = _backbone2['default'].Model.extend({
+	var TodoModel = _backbone2['default'].Model.extend({
 	  defaults: {
 	    todos: []
 	  },
@@ -10050,7 +10042,6 @@
 	      todo.id = index;
 	      return _underscore2['default'].defaults(todo, schema);
 	    });
-	
 	    return data;
 	  },
 	  addItem: function addItem(newTitle) {
@@ -10071,26 +10062,26 @@
 	// if not overwritten.  They expect to retrieve and save data from/to a database.  We
 	// will typically use local storage via lscache instead.
 	
-	todoModel = new TodoModel();
+	var todoModel = new TodoModel();
 	
 	// View
 	
-	TodoControllerView = _backbone2['default'].View.extend({
+	var TodoControllerView = _backbone2['default'].View.extend({
 	  el: '.todo-container',
 	  model: todoModel,
 	  events: {
-	    "click .btn-add": "addTodoItem"
+	    'click .btn-add': 'addTodoItem'
 	  },
 	  initialize: function initialize() {
 	    this.model.fetch();
 	  },
 	  render: function render() {
 	    var todos = this.model.get('todos');
-	    var $ul = this.$el.find('ul');
-	    $ul.empty();
+	    var $listGroup = this.$el.find('.list-group');
+	    $listGroup.empty();
 	    todos.map(function (todo) {
 	      var view = new TodoItemView(todo);
-	      $ul.append(view.$el);
+	      $listGroup.append(view.$el);
 	    });
 	  },
 	  addTodoItem: function addTodoItem() {
@@ -10109,7 +10100,7 @@
 	  }
 	});
 	
-	TodoItemView = _backbone2['default'].View.extend({
+	var TodoItemView = _backbone2['default'].View.extend({
 	  tagName: 'li', // el = <li class="list-group-item"></li>
 	  className: 'list-group-item',
 	  events: {
@@ -10121,7 +10112,7 @@
 	    this.render(todo);
 	  },
 	  render: function render(todo) {
-	    this.$el.html(this.template(todo));
+	    this.$el.empty().append(this.template(todo));
 	  },
 	  removeItem: function removeItem() {
 	    debugger;
@@ -10129,7 +10120,7 @@
 	  }
 	});
 	
-	todoControllerView = new TodoControllerView(); // this calls TodoControllerView.initialize
+	var todoControllerView = new TodoControllerView(); // this calls TodoControllerView.initialize
 	
 	module.exports = todoControllerView;
 
@@ -21243,11 +21234,137 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
+	var _underscore = __webpack_require__(7);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
+	var _backbone = __webpack_require__(8);
+	
+	var _backbone2 = _interopRequireDefault(_backbone);
+	
+	var _handlebars = __webpack_require__(9);
+	
+	var _handlebars2 = _interopRequireDefault(_handlebars);
+	
+	var _lscache = __webpack_require__(39);
+	
+	var _lscache2 = _interopRequireDefault(_lscache);
+	
+	var _templatesAccountListHtml = __webpack_require__(57);
+	
+	var _templatesAccountListHtml2 = _interopRequireDefault(_templatesAccountListHtml);
+	
+	var _templatesCreateAccountHtml = __webpack_require__(58);
+	
+	var _templatesCreateAccountHtml2 = _interopRequireDefault(_templatesCreateAccountHtml);
+	
+	// Model
+	
+	var $ = __webpack_require__(1);
+	
+	// Legacy loading for Bootstrap
+	window.jQuery = window.$ = $;
+	__webpack_require__(41);
+	
+	var AccountModel = _backbone2['default'].Model.extend({ // .Model.extend creates a class which is why
+	  defaults: { // AccountModel is capitalized
+	    accounts: []
+	  },
+	  save: function save() {
+	    var data = this.get('accounts');
+	    _lscache2['default'].set('accounts', data);
+	  },
+	  fetch: function fetch() {
+	    var data = _lscache2['default'].get('accounts');
+	    data = data || [];
+	    this.set('accounts', data);
+	  }
+	});
+	
+	var accountModel = new AccountModel();
+	
+	// Controller
+	
+	var AccountControllerView = _backbone2['default'].View.extend({
+	  el: '.page-container',
+	  model: accountModel,
+	  events: {
+	    'click .btn-create': 'createNewAccount',
+	    'click .btn-done': 'submitForm'
+	  },
+	  initialize: function initialize() {
+	    this.model.fetch();
+	  },
+	  render: function render() {
+	    var listView = new ListView();
+	    this.$el.find('.view-container').empty().append(listView.$el.html());
+	  },
+	  createNewAccount: function createNewAccount() {
+	    var createView = new CreateView();
+	    this.$el.find('.view-container').empty().append(createView.$el.html());
+	  },
+	  submitForm: function submitForm() {
+	    accountControllerView.render();
+	  }
+	});
+	
+	// Views
+	
+	var ListView = _backbone2['default'].View.extend({
+	  tagName: 'div',
+	  events: {},
+	  template: _handlebars2['default'].compile(_templatesAccountListHtml2['default']),
+	  initialize: function initialize() {
+	    this.render();
+	  },
+	  render: function render() {
+	    var renderedTemplate = this.template({});
+	    this.$el.empty().append(renderedTemplate);
+	  }
+	});
+	
+	var CreateView = _backbone2['default'].View.extend({
+	  tagName: 'div',
+	  events: {},
+	  template: _handlebars2['default'].compile(_templatesCreateAccountHtml2['default']),
+	  initialize: function initialize() {
+	    this.render();
+	  },
+	  render: function render() {
+	    var renderedTemplate = this.template({});
+	    this.$el.empty().append(renderedTemplate);
+	  }
+	});
+	
+	var accountControllerView = new AccountControllerView();
+	
+	module.exports = accountControllerView;
+
+/***/ },
+/* 57 */
+/***/ function(module, exports) {
+
+	module.exports = "<table class=\"table table-striped table-bordered\">\n  <tr>\n    <th>Number</th>\n    <th>Name</th>\n    <th>Phone</th>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>Tory</td>\n    <td>303-555-1111</td>\n  </tr>\n  <tr>\n    <td>2</td>\n    <td>Tim</td>\n    <td>303-555-2222</td>\n  </tr>\n</table>";
+
+/***/ },
+/* 58 */
+/***/ function(module, exports) {
+
+	module.exports = "<form>\n  <label for=\"name-field\">Name</label>\n  <input class=\"form-control\" type=\"text\" id=\"name-field\">\n</form>\n<button class=\"btn btn-primary btn-done\">Done</button>";
+
+/***/ },
+/* 59 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
 	var _jquery = __webpack_require__(1);
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _templatesNavbarHtml = __webpack_require__(57);
+	var _templatesNavbarHtml = __webpack_require__(60);
 	
 	var _templatesNavbarHtml2 = _interopRequireDefault(_templatesNavbarHtml);
 	
@@ -21263,13 +21380,13 @@
 	module.exports = app;
 
 /***/ },
-/* 57 */
+/* 60 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav>\n  <button><a role=\"menuitem\" href=\"/pages/todo.html\">ToDo Application</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/dyba.html\">DYBA</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/funnySquares.html\">Funny Squares</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/forms-backbone.html\">Backbone Forms</a></button>\n</nav>";
 
 /***/ },
-/* 58 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21280,7 +21397,7 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _templatesFooterHtml = __webpack_require__(59);
+	var _templatesFooterHtml = __webpack_require__(62);
 	
 	var _templatesFooterHtml2 = _interopRequireDefault(_templatesFooterHtml);
 	
@@ -21296,20 +21413,20 @@
 	module.exports = app;
 
 /***/ },
-/* 59 */
+/* 62 */
 /***/ function(module, exports) {
 
 	module.exports = "<div>Footer</div>";
 
 /***/ },
-/* 60 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesDybaNavbarHtml = __webpack_require__(61);
+	var _templatesDybaNavbarHtml = __webpack_require__(64);
 	
 	var _templatesDybaNavbarHtml2 = _interopRequireDefault(_templatesDybaNavbarHtml);
 	
@@ -21399,20 +21516,20 @@
 	module.exports = app;
 
 /***/ },
-/* 61 */
+/* 64 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav class=\"dyba-nav row\">\n  <a href=\"#\" class=\"dyba-logo-container col-md-3 col-sm-12 col-xs-12\">\n    <p class=\"home-hidden\">Home</p>\n    <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-large\">\n  </a>\n  <ul class=\"dyba-links-container col-md-9 col-sm-12\">\n    <li class=\"row buffer-row hidden-xs hidden-sm\"></li>\n    <li class=\"row hidden-xs hidden-sm\"></li>\n    <li class=\"row\">\n      <ul class=\"dyba-nav-menu\">\n        <li class=\"dyba-nav-link-container\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">Registration</a>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Teams</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Programs</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">About</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Coaches</div>\n          <ul class=\"dyba-nav-submenu dyba-nav-submenu-last\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li class=\"row buffer-row hidden-xs\"></li>\n  </ul>\n</nav>\n\n\n\n\n\n\n\n\n\n";
 
 /***/ },
-/* 62 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesDybaMainHtml = __webpack_require__(63);
+	var _templatesDybaMainHtml = __webpack_require__(66);
 	
 	var _templatesDybaMainHtml2 = _interopRequireDefault(_templatesDybaMainHtml);
 	
@@ -21454,13 +21571,13 @@
 	module.exports = app;
 
 /***/ },
-/* 63 */
+/* 66 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"dyba-main-container row\">\n  <div class=\"dyba-links-sidebar col-md-3 col-sm-3\">\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"http://www.cnn.com\">\n      <div class=\"dyba-sidebar-logo-3\">Register</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">J</div>\n    </a>\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"#\">\n      <div class=\"dyba-sidebar-logo-3\">Growth</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">A</div>\n    </a>\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"#\">\n      <div class=\"dyba-sidebar-logo-3\">Teams</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">G</div>\n    </a>\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"#\">\n      <div class=\"dyba-sidebar-logo-3\">Programs</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">S</div>\n    </a>\n  </div>\n  <div class=\"dyba-main-content col-md-9 col-sm-9\"></div>\n</div>\n\n\n\n\n\n\n\n";
 
 /***/ },
-/* 64 */
+/* 67 */
 /***/ function(module, exports) {
 
 	/*
@@ -21497,133 +21614,6 @@
 	    });
 	  };
 	})(jQuery);
-
-/***/ },
-/* 65 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _underscore = __webpack_require__(7);
-	
-	var _underscore2 = _interopRequireDefault(_underscore);
-	
-	var _backbone = __webpack_require__(8);
-	
-	var _backbone2 = _interopRequireDefault(_backbone);
-	
-	var _handlebars = __webpack_require__(9);
-	
-	var _handlebars2 = _interopRequireDefault(_handlebars);
-	
-	var _lscache = __webpack_require__(39);
-	
-	var _lscache2 = _interopRequireDefault(_lscache);
-	
-	var _templatesAccountListHtml = __webpack_require__(66);
-	
-	var _templatesAccountListHtml2 = _interopRequireDefault(_templatesAccountListHtml);
-	
-	var _templatesCreateAccountHtml = __webpack_require__(67);
-	
-	var _templatesCreateAccountHtml2 = _interopRequireDefault(_templatesCreateAccountHtml);
-	
-	// Model
-	
-	var $ = __webpack_require__(1);
-	
-	// Legacy loading for Bootstrap
-	window.jQuery = window.$ = $;
-	__webpack_require__(41);
-	
-	var AccountModel = _backbone2['default'].Model.extend({ // .Model.extend creates a class which is why
-	  defaults: { // AccountModel is capitalized
-	    accounts: []
-	  },
-	  save: function save() {
-	    var data = this.get('accounts');
-	    _lscache2['default'].set('accounts', data);
-	  },
-	  fetch: function fetch() {
-	    var data = _lscache2['default'].get('accounts');
-	    data = data || [];
-	    this.set('accounts', data);
-	  }
-	});
-	
-	var accountModel = new AccountModel();
-	
-	// Controller
-	
-	var AccountControllerView = _backbone2['default'].View.extend({
-	  el: '.page-container',
-	  model: accountModel,
-	  event: {
-	    'click .btn-create': 'createNewAccount'
-	  },
-	  initialize: function initialize() {
-	    this.model.fetch();
-	  },
-	  render: function render() {
-	    var listView = new ListView();
-	    this.$el.find('.view-container').empty().append(listView.$el.html());
-	  },
-	  createNewAccount: function createNewAccount() {
-	    var createView = new CreateView();
-	    this.$el.find('.view-container').empty().append(createView.$el.html());
-	  }
-	});
-	
-	// Views
-	
-	var ListView = _backbone2['default'].View.extend({
-	  tagName: 'div',
-	  event: {},
-	  template: _handlebars2['default'].compile(_templatesAccountListHtml2['default']),
-	  initialize: function initialize() {
-	    this.render();
-	  },
-	  render: function render() {
-	    var renderedTemplate = this.template({});
-	    this.$el.empty().append(renderedTemplate);
-	  }
-	});
-	
-	var CreateView = _backbone2['default'].View.extend({
-	  tagName: 'div',
-	  event: {
-	    'click .btn-done': 'submitForm'
-	  },
-	  template: _handlebars2['default'].compile(_templatesCreateAccountHtml2['default']),
-	  initialize: function initialize() {
-	    this.render();
-	  },
-	  render: function render() {
-	    var renderedTemplate = this.template({});
-	    this.$el.empty().append(renderedTemplate);
-	  },
-	  submitForm: function submitForm() {
-	    accountControllerView.render();
-	  }
-	});
-	
-	var accountControllerView = new AccountControllerView();
-	
-	module.exports = accountControllerView;
-
-/***/ },
-/* 66 */
-/***/ function(module, exports) {
-
-	module.exports = "<table class=\"table table-striped table-bordered\">\n  <tr>\n    <th>Number</th>\n    <th>Name</th>\n    <th>Phone</th>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>Tory</td>\n    <td>303-555-1111</td>\n  </tr>\n  <tr>\n    <td>2</td>\n    <td>Tim</td>\n    <td>303-555-2222</td>\n  </tr>\n</table>";
-
-/***/ },
-/* 67 */
-/***/ function(module, exports) {
-
-	module.exports = "<form>\n  <label for=\"name-field\">Name</label>\n  <input class=\"form-control\" type=\"text\" id=\"name-field\">\n</form>\n<button class=\"btn btn-primary btn-done\">Done</button>";
 
 /***/ }
 /******/ ]);
