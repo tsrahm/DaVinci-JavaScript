@@ -55,9 +55,12 @@
   margin: auto;
   padding-top: 7px;
 }
-.button-container span {
+.my-work-button-text {
   font-family: georgia;
   font-size: 20px;
+}
+.music-animation {
+  font-size: 16px;
 }
 .main-container {
   height: auto;
@@ -100,8 +103,11 @@
   }
 }
 @media (min-width: 767px) and (max-width: 865px) {
-  .button-container span {
+  .my-work-button-text {
     font-size: 18px;
+  }
+  .music-animation {
+    font-size: 14px;
   }
 }
 @media (min-height: 651px) {
