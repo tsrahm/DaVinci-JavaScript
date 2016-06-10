@@ -114,7 +114,8 @@
 	    console.log("=================================");
 	    console.log("=====I am looking for a job.=====");
 	    console.log("=================================");
-	    console.log("============Call me.=============");
+	    console.log("===========Contact me.===========");
+	    console.log("========toryrahm at gmail========");
 	    console.log("=================================");
 	    console.log("=================================");
 	});
@@ -9972,7 +9973,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-container":"dyba-container","dyba-header":"dyba-header","dyba-nav":"dyba-nav","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo-large":"dyba-nav-logo-large","dyba-links-container":"dyba-links-container","row":"row","buffer-row":"buffer-row","dyba-nav-menu":"dyba-nav-menu","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-header-container":"dyba-nav-header-container","dyba-nav-link":"dyba-nav-link","dyba-nav-header":"dyba-nav-header","dyba-nav-submenu":"dyba-nav-submenu","dyba-nav-submenu-last":"dyba-nav-submenu-last","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-main":"dyba-main","dyba-links-sidebar":"dyba-links-sidebar","dyba-sidelink":"dyba-sidelink","dyba-sidebar-logo-1":"dyba-sidebar-logo-1","dyba-sidebar-logo-2":"dyba-sidebar-logo-2","dyba-sidebar-logo-3":"dyba-sidebar-logo-3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","sidebar-container":"sidebar-container","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","main-container":"main-container"};
+	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-container":"dyba-container","dyba-header":"dyba-header","dyba-nav":"dyba-nav","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo-large":"dyba-nav-logo-large","dyba-links-container":"dyba-links-container","row":"row","buffer-row":"buffer-row","dyba-nav-menu":"dyba-nav-menu","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-header-container":"dyba-nav-header-container","dyba-nav-link":"dyba-nav-link","dyba-nav-header":"dyba-nav-header","dyba-nav-submenu":"dyba-nav-submenu","dyba-nav-submenu-last":"dyba-nav-submenu-last","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-main":"dyba-main","dyba-links-sidebar":"dyba-links-sidebar","dyba-sidelink":"dyba-sidelink","dyba-sidebar-logo-1":"dyba-sidebar-logo-1","dyba-sidebar-logo-2":"dyba-sidebar-logo-2","dyba-sidebar-logo-3":"dyba-sidebar-logo-3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","main-container":"main-container","profile-heading":"profile-heading"};
 
 /***/ },
 /* 3 */,
@@ -10055,6 +10056,13 @@
 	    var todos = this.get('todos');
 	    todos.splice(id, 1);
 	    this.save();
+	  },
+	  itemCompleted: function itemCompleted(id, isCompleted) {
+	    var todos = this.get('todos');
+	    var item = _underscore2['default'].findWhere(todos, { id: id });
+	    item.completed = isCompleted;
+	    this.set('todos', todos);
+	    this.save();
 	  }
 	});
 	
@@ -10097,6 +10105,10 @@
 	  removeItem: function removeItem(id) {
 	    this.model.removeItem(id);
 	    this.render();
+	  },
+	  itemCompleted: function itemCompleted(id, isCompleted) {
+	    this.model.itemCompleted(id, isCompleted);
+	    this.render();
 	  }
 	});
 	
@@ -10104,7 +10116,8 @@
 	  tagName: 'li', // el = <li class="list-group-item"></li>
 	  className: 'list-group-item',
 	  events: {
-	    'click .close': 'removeItem'
+	    'click .close': 'removeItem',
+	    'change .completed-checkbox': 'completedClicked'
 	  },
 	  template: _handlebars2['default'].compile(_templatesTodoItemHtml2['default']),
 	  initialize: function initialize(todo) {
@@ -10113,10 +10126,14 @@
 	  },
 	  render: function render(todo) {
 	    this.$el.empty().append(this.template(todo));
+	    this.$el.toggleClass('disabled', this.data.completed);
 	  },
 	  removeItem: function removeItem() {
-	    debugger;
 	    todoControllerView.removeItem(this.data.id);
+	  },
+	  completedClicked: function completedClicked(event) {
+	    var isChecked = $(event.currentTarget).is(':checked');
+	    todoControllerView.itemCompleted(this.data.id, isChecked);
 	  }
 	});
 	
@@ -18751,7 +18768,7 @@
 /* 40 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"col-md-1\">\n  <input type=\"checkbox\">\n</div>\n<div class=\"col-md-10 title\">\n  <p class=\"item-title\">{{title}}</p>\n</div>\n<div class=\"col-md-10 title-edit hidden\">\n  <p class=\"item-title\">\n    <input type=\"text\" class=\"form-control\" value=\"{{title}}\" data-id=\"{{id}}\">\n  </p>\n</div>\n<div class=\"col-md-1\">\n  <button type=\"button\" class=\"close\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>";
+	module.exports = "<div class=\"col-md-1\">\n  <input class=\"completed-checkbox\" type=\"checkbox\" {{#if completed}}checked{{/if}}>\n</div>\n<div class=\"col-md-10 title\">\n  <p class=\"item-title\">{{title}}</p>\n</div>\n<div class=\"col-md-10 title-edit hidden\">\n  <p class=\"item-title\">\n    <input type=\"text\" class=\"form-control\" value=\"{{title}}\" data-id=\"{{id}}\">\n  </p>\n</div>\n<div class=\"col-md-1\">\n  <button type=\"button\" class=\"close\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>";
 
 /***/ },
 /* 41 */
@@ -21510,6 +21527,15 @@
 	        paddingBottom: 'hide'
 	      });
 	    });
+	
+	    var $roar = $('.roar');
+	    $roar.click(function () {
+	      $("<audio>").attr({
+	        'src': '/images/jaguar.mp3',
+	        'volume': 1.0,
+	        'autoplay': 'autoplay'
+	      }).appendTo("body");
+	    });
 	  }
 	};
 	
@@ -21519,7 +21545,7 @@
 /* 64 */
 /***/ function(module, exports) {
 
-	module.exports = "<nav class=\"dyba-nav row\">\n  <a href=\"#\" class=\"dyba-logo-container col-md-3 col-sm-12 col-xs-12\">\n    <p class=\"home-hidden\">Home</p>\n    <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-large\">\n  </a>\n  <ul class=\"dyba-links-container col-md-9 col-sm-12\">\n    <li class=\"row buffer-row hidden-xs hidden-sm\"></li>\n    <li class=\"row hidden-xs hidden-sm\"></li>\n    <li class=\"row\">\n      <ul class=\"dyba-nav-menu\">\n        <li class=\"dyba-nav-link-container\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">Registration</a>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Teams</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Programs</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">About</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Coaches</div>\n          <ul class=\"dyba-nav-submenu dyba-nav-submenu-last\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li class=\"row buffer-row hidden-xs\"></li>\n  </ul>\n</nav>\n\n\n\n\n\n\n\n\n\n";
+	module.exports = "<nav class=\"dyba-nav row\">\n  <a href=\"#\" class=\"dyba-logo-container col-md-3 col-sm-12 col-xs-12\">\n    <p class=\"home-hidden\">Home</p>\n    <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-large\">\n  </a>\n  <ul class=\"dyba-links-container col-md-9 col-sm-12\">\n    <li class=\"row buffer-row hidden-xs hidden-sm\"></li>\n    <li class=\"row hidden-xs hidden-sm\"></li>\n    <li class=\"row\">\n      <ul class=\"dyba-nav-menu\">\n        <li class=\"dyba-nav-link-container\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">Registration</a>\n        </li>\n        <li class=\"dyba-nav-item roar\">\n          <a href=\"#\">\n            <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n          </a>\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Teams</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Programs</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">About</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Coaches</div>\n          <ul class=\"dyba-nav-submenu dyba-nav-submenu-last\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li class=\"row buffer-row hidden-xs\"></li>\n  </ul>\n</nav>\n\n\n\n\n\n\n\n\n\n";
 
 /***/ },
 /* 65 */

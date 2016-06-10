@@ -41,7 +41,7 @@ console.log("=================================");
 console.log("=====I am looking for a job.=====");
 console.log("=================================");
 console.log("===========Contact me.===========");
-console.log("========toryrahm@gmail.com=======");
+console.log("========toryrahm at gmail========");
 console.log("=================================");
 console.log("=================================");
 });
