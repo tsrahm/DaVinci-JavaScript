@@ -8,7 +8,7 @@ import _ from 'underscore';
 import Backbone from 'backbone';
 import Handlebars from 'handlebars';
 import lscache from 'lscache';
-import todoItemTemplate from 'templates/todoItem.html';
+import todoItemTemplate from 'html!templates/todoItem.html';
 
 // Backbone Todo App
 

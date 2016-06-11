@@ -10002,9 +10002,9 @@
 	
 	var _lscache2 = _interopRequireDefault(_lscache);
 	
-	var _templatesTodoItemHtml = __webpack_require__(40);
+	var _htmlTemplatesTodoItemHtml = __webpack_require__(68);
 	
-	var _templatesTodoItemHtml2 = _interopRequireDefault(_templatesTodoItemHtml);
+	var _htmlTemplatesTodoItemHtml2 = _interopRequireDefault(_htmlTemplatesTodoItemHtml);
 	
 	// Backbone Todo App
 	
@@ -10119,7 +10119,7 @@
 	    'click .close': 'removeItem',
 	    'change .completed-checkbox': 'completedClicked'
 	  },
-	  template: _handlebars2['default'].compile(_templatesTodoItemHtml2['default']),
+	  template: _handlebars2['default'].compile(_htmlTemplatesTodoItemHtml2['default']),
 	  initialize: function initialize(todo) {
 	    this.data = todo;
 	    this.render(todo);
@@ -18765,12 +18765,7 @@
 
 
 /***/ },
-/* 40 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"col-md-1\">\n  <input class=\"completed-checkbox\" type=\"checkbox\" {{#if completed}}checked{{/if}}>\n</div>\n<div class=\"col-md-10 title\">\n  <p class=\"item-title\">{{title}}</p>\n</div>\n<div class=\"col-md-10 title-edit hidden\">\n  <p class=\"item-title\">\n    <input type=\"text\" class=\"form-control\" value=\"{{title}}\" data-id=\"{{id}}\">\n  </p>\n</div>\n<div class=\"col-md-1\">\n  <button type=\"button\" class=\"close\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>";
-
-/***/ },
+/* 40 */,
 /* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -21640,6 +21635,12 @@
 	    });
 	  };
 	})(jQuery);
+
+/***/ },
+/* 68 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"<div class=\\\"col-md-1\\\">\\n  <input class=\\\"completed-checkbox\\\" type=\\\"checkbox\\\" {{#if completed}}checked{{/if}}>\\n</div>\\n<div class=\\\"col-md-10 title\\\">\\n  <p class=\\\"item-title\\\">{{title}}</p>\\n</div>\\n<div class=\\\"col-md-10 title-edit hidden\\\">\\n  <p class=\\\"item-title\\\">\\n    <input type=\\\"text\\\" class=\\\"form-control\\\" value=\\\"{{title}}\\\" data-id=\\\"{{id}}\\\">\\n  </p>\\n</div>\\n<div class=\\\"col-md-1\\\">\\n  <button type=\\\"button\\\" class=\\\"close\\\" aria-label=\\\"Close\\\">\\n    <span aria-hidden=\\\"true\\\">&times;</span>\\n  </button>\\n</div>\";";
 
 /***/ }
 /******/ ]);
