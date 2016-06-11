@@ -8,7 +8,7 @@ require('bootstrap');
 import _ from 'underscore';
 import Handlebars from 'handlebars';
 import lscache from 'lscache';
-import rawTemplate from 'templates/todoItem.html';
+import rawTemplate from 'templates/todo-item.html';
 
 // Array of To Dos
 var todoSchema = function(todo) {

@@ -8,7 +8,7 @@ import _ from 'underscore';
 import Backbone from 'backbone';
 import Handlebars from 'handlebars';
 import lscache from 'lscache';
-import todoItemTemplate from 'html!templates/todoItem.html';
+import todoItemTemplate from 'templates/todo-item.html';
 
 // Backbone Todo App
 
@@ -61,6 +61,13 @@ var TodoModel = Backbone.Model.extend({
     item.completed = isCompleted;
     this.set('todos', todos);
     this.save();
+  },
+  editTitle: function(newTitle, id) {
+    var todos = this.get('todos');
+    var item = _.findWhere(todos, {id: id});
+    item.title = newTitle;
+    this.set('todos', todos);
+    this.save();
   }
 });
 
@@ -105,6 +112,10 @@ var TodoControllerView = Backbone.View.extend({
   itemCompleted: function(id, isCompleted) {
     this.model.itemCompleted(id, isCompleted);
     this.render();
+  },
+  titleEdit: function(newTitle, id) {
+    this.model.editTitle(newTitle, id);
+    this.render();
   }
 });
 
@@ -113,15 +124,20 @@ var TodoItemView = Backbone.View.extend({
   className: 'list-group-item',
   events: {
     'click .close': 'removeItem',
-    'change .completed-checkbox': 'completedClicked'
+    'change .completed-checkbox': 'completedClicked',
+    'click .title': 'titleClicked',
+    'keypress .title-edit-input': 'titleEditConfirm'
   },
   template: Handlebars.compile(todoItemTemplate),
   initialize: function(todo) {
     this.data = todo;
-    this.render(todo);
+    this.render();
   },
-  render: function(todo) {
-    this.$el.empty().append(this.template(todo));
+  render: function() {
+    this.$el.empty().append(this.template(this.data));
+    this.$title = this.$el.find('.title');
+    this.$titleEdit = this.$el.find('.title-edit');
+    this.$titleInput = this.$titleEdit.find('.title-edit-input');
     this.$el.toggleClass('disabled', this.data.completed);
   },
   removeItem: function() {
@@ -130,6 +146,16 @@ var TodoItemView = Backbone.View.extend({
   completedClicked: function(event) {
     var isChecked = $(event.currentTarget).is(':checked');
     todoControllerView.itemCompleted(this.data.id, isChecked);
+  },
+  titleClicked: function() {
+    this.$title.addClass('hidden');
+    this.$titleEdit.removeClass('hidden');
+  },
+  titleEditConfirm: function(event) {
+    if (event.which === 13) {
+      var newTitle = this.$titleInput.val();
+      todoControllerView.titleEdit(newTitle, this.data.id);
+    }
   }
 });
 

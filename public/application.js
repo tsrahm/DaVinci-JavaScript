@@ -10002,9 +10002,9 @@
 	
 	var _lscache2 = _interopRequireDefault(_lscache);
 	
-	var _htmlTemplatesTodoItemHtml = __webpack_require__(68);
+	var _templatesTodoItemHtml = __webpack_require__(69);
 	
-	var _htmlTemplatesTodoItemHtml2 = _interopRequireDefault(_htmlTemplatesTodoItemHtml);
+	var _templatesTodoItemHtml2 = _interopRequireDefault(_templatesTodoItemHtml);
 	
 	// Backbone Todo App
 	
@@ -10063,6 +10063,13 @@
 	    item.completed = isCompleted;
 	    this.set('todos', todos);
 	    this.save();
+	  },
+	  editTitle: function editTitle(newTitle, id) {
+	    var todos = this.get('todos');
+	    var item = _underscore2['default'].findWhere(todos, { id: id });
+	    item.title = newTitle;
+	    this.set('todos', todos);
+	    this.save();
 	  }
 	});
 	
@@ -10109,6 +10116,10 @@
 	  itemCompleted: function itemCompleted(id, isCompleted) {
 	    this.model.itemCompleted(id, isCompleted);
 	    this.render();
+	  },
+	  titleEdit: function titleEdit(newTitle, id) {
+	    this.model.editTitle(newTitle, id);
+	    this.render();
 	  }
 	});
 	
@@ -10117,15 +10128,20 @@
 	  className: 'list-group-item',
 	  events: {
 	    'click .close': 'removeItem',
-	    'change .completed-checkbox': 'completedClicked'
+	    'change .completed-checkbox': 'completedClicked',
+	    'click .title': 'titleClicked',
+	    'keypress .title-edit-input': 'titleEditConfirm'
 	  },
-	  template: _handlebars2['default'].compile(_htmlTemplatesTodoItemHtml2['default']),
+	  template: _handlebars2['default'].compile(_templatesTodoItemHtml2['default']),
 	  initialize: function initialize(todo) {
 	    this.data = todo;
-	    this.render(todo);
+	    this.render();
 	  },
-	  render: function render(todo) {
-	    this.$el.empty().append(this.template(todo));
+	  render: function render() {
+	    this.$el.empty().append(this.template(this.data));
+	    this.$title = this.$el.find('.title');
+	    this.$titleEdit = this.$el.find('.title-edit');
+	    this.$titleInput = this.$titleEdit.find('.title-edit-input');
 	    this.$el.toggleClass('disabled', this.data.completed);
 	  },
 	  removeItem: function removeItem() {
@@ -10134,6 +10150,16 @@
 	  completedClicked: function completedClicked(event) {
 	    var isChecked = $(event.currentTarget).is(':checked');
 	    todoControllerView.itemCompleted(this.data.id, isChecked);
+	  },
+	  titleClicked: function titleClicked() {
+	    this.$title.addClass('hidden');
+	    this.$titleEdit.removeClass('hidden');
+	  },
+	  titleEditConfirm: function titleEditConfirm(event) {
+	    if (event.which === 13) {
+	      var newTitle = this.$titleInput.val();
+	      todoControllerView.titleEdit(newTitle, this.data.id);
+	    }
 	  }
 	});
 	
@@ -21637,10 +21663,11 @@
 	})(jQuery);
 
 /***/ },
-/* 68 */
+/* 68 */,
+/* 69 */
 /***/ function(module, exports) {
 
-	module.exports = "module.exports = \"<div class=\\\"col-md-1\\\">\\n  <input class=\\\"completed-checkbox\\\" type=\\\"checkbox\\\" {{#if completed}}checked{{/if}}>\\n</div>\\n<div class=\\\"col-md-10 title\\\">\\n  <p class=\\\"item-title\\\">{{title}}</p>\\n</div>\\n<div class=\\\"col-md-10 title-edit hidden\\\">\\n  <p class=\\\"item-title\\\">\\n    <input type=\\\"text\\\" class=\\\"form-control\\\" value=\\\"{{title}}\\\" data-id=\\\"{{id}}\\\">\\n  </p>\\n</div>\\n<div class=\\\"col-md-1\\\">\\n  <button type=\\\"button\\\" class=\\\"close\\\" aria-label=\\\"Close\\\">\\n    <span aria-hidden=\\\"true\\\">&times;</span>\\n  </button>\\n</div>\";";
+	module.exports = "<div class=\"col-md-1\">\n  <input class=\"completed-checkbox\" type=\"checkbox\" {{#if completed}}checked{{/if}}>\n</div>\n<div class=\"col-md-10 title\">\n  <p class=\"item-title\">{{title}}</p>\n</div>\n<div class=\"col-md-10 title-edit hidden\">\n  <p class=\"item-title\">\n    <input type=\"text\" class=\"form-control title-edit-input\" value=\"{{title}}\">\n  </p>\n</div>\n<div class=\"col-md-1\">\n  <button type=\"button\" class=\"close\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>";
 
 /***/ }
 /******/ ]);
