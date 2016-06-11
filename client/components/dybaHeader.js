@@ -85,11 +85,11 @@ var app = {
 
     var $roar = $('.roar');
     $roar.click(function(){
-      $("<audio>").attr({
-      'src':'/images/jaguar.mp3',
-      'volume':1.0,
-      'autoplay':'autoplay'
-      }).appendTo("body");
+      $('<audio>').attr({
+      'src': '/images/jaguar.mp3',
+      'volume': 1.0,
+      'autoplay': 'autoplay'
+      }).appendTo('body');
     });
   }
 };

@@ -72,6 +72,9 @@
   line-height: 70px;
   color: white;
 }
+.fr-ed {
+  font-size: 45px;
+}
 @media (max-width: 767px) {
   .sidebar-container {
     height: auto;
@@ -94,12 +97,17 @@
     width: 100%;
   }
   .button-container {
-  width: 60%;
+    width: 60%;
 }
   .main-container {
     height: auto;
     padding-top: 25px;
     padding-bottom: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .fr-ed {
+    font-size: 35px;
   }
 }
 @media (min-width: 767px) and (max-width: 865px) {
