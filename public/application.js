@@ -10153,7 +10153,7 @@
 	    this.$el.toggleClass('disabled', this.data.completed);
 	  },
 	  removeItem: function removeItem() {
-	    if (this.data.title === 'beer' || 'chips' || 'salsa') {
+	    if (this.data.title === 'beer' || this.data.title === 'chips' || this.data.title === 'salsa') {
 	      $('<audio>').attr({
 	        'src': 'http://wavcentral.com/sounds/televis/lost_space/dangw.mp3',
 	        'volume': 1.0,
