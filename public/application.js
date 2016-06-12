@@ -58,31 +58,35 @@
 	
 	var _pagesTodoBackbone2 = _interopRequireDefault(_pagesTodoBackbone);
 	
-	var _pagesFunnySquares = __webpack_require__(53);
+	var _pagesFunnySquares = __webpack_require__(54);
 	
 	var _pagesFunnySquares2 = _interopRequireDefault(_pagesFunnySquares);
 	
-	var _pagesFormsBackbone = __webpack_require__(55);
+	var _pagesFormsBackbone = __webpack_require__(56);
 	
 	var _pagesFormsBackbone2 = _interopRequireDefault(_pagesFormsBackbone);
 	
-	var _componentsHeader = __webpack_require__(58);
+	var _componentsHeader = __webpack_require__(59);
 	
 	var _componentsHeader2 = _interopRequireDefault(_componentsHeader);
 	
-	var _componentsFooter = __webpack_require__(60);
+	var _componentsFooter = __webpack_require__(61);
 	
 	var _componentsFooter2 = _interopRequireDefault(_componentsFooter);
 	
-	var _componentsDybaHeader = __webpack_require__(62);
+	var _componentsDybaHeader = __webpack_require__(63);
 	
 	var _componentsDybaHeader2 = _interopRequireDefault(_componentsDybaHeader);
 	
-	var _pagesDyba = __webpack_require__(64);
+	var _pagesDyba = __webpack_require__(65);
 	
 	var _pagesDyba2 = _interopRequireDefault(_pagesDyba);
 	
-	__webpack_require__(66);
+	var _pagesMusic = __webpack_require__(67);
+	
+	var _pagesMusic2 = _interopRequireDefault(_pagesMusic);
+	
+	__webpack_require__(68);
 	
 	(0, _jquery2['default'])(function () {
 	
@@ -100,6 +104,9 @@
 	        case '/pages/dyba.html':
 	            _componentsDybaHeader2['default'].init();
 	            _pagesDyba2['default'].init();
+	            break;
+	        case '/pages/music.html':
+	            _pagesMusic2['default'].init();
 	            break;
 	        case '/pages/funnySquares.html':
 	            _pagesFunnySquares2['default'].init();
@@ -9973,7 +9980,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-container":"dyba-container","dyba-header":"dyba-header","dyba-nav":"dyba-nav","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo-large":"dyba-nav-logo-large","dyba-links-container":"dyba-links-container","row":"row","buffer-row":"buffer-row","dyba-nav-menu":"dyba-nav-menu","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-header-container":"dyba-nav-header-container","dyba-nav-link":"dyba-nav-link","dyba-nav-header":"dyba-nav-header","dyba-nav-submenu":"dyba-nav-submenu","dyba-nav-submenu-last":"dyba-nav-submenu-last","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-main":"dyba-main","dyba-links-sidebar":"dyba-links-sidebar","dyba-sidelink":"dyba-sidelink","dyba-sidebar-logo-1":"dyba-sidebar-logo-1","dyba-sidebar-logo-2":"dyba-sidebar-logo-2","dyba-sidebar-logo-3":"dyba-sidebar-logo-3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","music-animation":"music-animation","main-container":"main-container","fr-ed":"fr-ed","profile-heading":"profile-heading"};
+	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-container":"dyba-container","dyba-header":"dyba-header","dyba-nav":"dyba-nav","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo-large":"dyba-nav-logo-large","dyba-links-container":"dyba-links-container","row":"row","buffer-row":"buffer-row","dyba-nav-menu":"dyba-nav-menu","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-header-container":"dyba-nav-header-container","dyba-nav-link":"dyba-nav-link","dyba-nav-header":"dyba-nav-header","dyba-nav-submenu":"dyba-nav-submenu","dyba-nav-submenu-last":"dyba-nav-submenu-last","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-main":"dyba-main","dyba-links-sidebar":"dyba-links-sidebar","dyba-sidelink":"dyba-sidelink","dyba-sidebar-logo-1":"dyba-sidebar-logo-1","dyba-sidebar-logo-2":"dyba-sidebar-logo-2","dyba-sidebar-logo-3":"dyba-sidebar-logo-3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","main-container":"main-container","fr-ed":"fr-ed","profile-heading":"profile-heading","music-animation":"music-animation","music-body":"music-body","music-container":"music-container","start-animation":"start-animation","beat-text":"beat-text","boop":"boop","flik1":"flik1","flik2":"flik2","flik3":"flik3","ting":"ting","snare":"snare","off-bass":"off-bass","bass":"bass","note":"note","lyric-a":"lyric-a","lyric-b":"lyric-b","lyric-c":"lyric-c","lyric-d":"lyric-d","lyric-e":"lyric-e","lyric-f":"lyric-f","lyric-g":"lyric-g","lyric-h":"lyric-h"};
 
 /***/ },
 /* 3 */,
@@ -10002,7 +10009,7 @@
 	
 	var _lscache2 = _interopRequireDefault(_lscache);
 	
-	var _templatesTodoItemHtml = __webpack_require__(67);
+	var _templatesTodoItemHtml = __webpack_require__(40);
 	
 	var _templatesTodoItemHtml2 = _interopRequireDefault(_templatesTodoItemHtml);
 	
@@ -10014,7 +10021,7 @@
 	
 	// Legacy loading for Bootstrap
 	window.jQuery = window.$ = $;
-	__webpack_require__(40);
+	__webpack_require__(41);
 	
 	var TodoModel = _backbone2['default'].Model.extend({
 	  defaults: {
@@ -10110,6 +10117,7 @@
 	    this.render();
 	  },
 	  removeItem: function removeItem(id) {
+	
 	    this.model.removeItem(id);
 	    this.render();
 	  },
@@ -10145,6 +10153,14 @@
 	    this.$el.toggleClass('disabled', this.data.completed);
 	  },
 	  removeItem: function removeItem() {
+	    if (this.data.title === 'beer' || 'chips' || 'salsa') {
+	      $('<audio>').attr({
+	        'src': 'http://wavcentral.com/sounds/televis/lost_space/dangw.mp3',
+	        'volume': 1.0,
+	        'autoplay': 'autoplay'
+	      }).appendTo('body');
+	      return;
+	    }
 	    todoControllerView.removeItem(this.data.id);
 	  },
 	  completedClicked: function completedClicked(event) {
@@ -18793,10 +18809,15 @@
 
 /***/ },
 /* 40 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"col-md-1\">\n  {{#if completed}}\n    <input class=\"completed-checkbox\" type=\"checkbox\" checked>\n  {{else}}\n    <input class=\"completed-checkbox\" type=\"checkbox\">\n  {{/if}}\n</div>\n<div class=\"col-md-10 title\">\n  <p class=\"item-title\">{{title}}</p>\n</div>\n<div class=\"col-md-10 title-edit hidden\">\n  <p class=\"item-title\">\n    <input type=\"text\" class=\"form-control title-edit-input\" value=\"{{title}}\">\n  </p>\n</div>\n<div class=\"col-md-1\">\n  <button type=\"button\" class=\"close\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>";
+
+/***/ },
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// This file is autogenerated via the `commonjs` Grunt task. You can require() this file in a CommonJS environment.
-	__webpack_require__(41)
 	__webpack_require__(42)
 	__webpack_require__(43)
 	__webpack_require__(44)
@@ -18808,9 +18829,10 @@
 	__webpack_require__(50)
 	__webpack_require__(51)
 	__webpack_require__(52)
+	__webpack_require__(53)
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -18875,7 +18897,7 @@
 
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -18975,7 +18997,7 @@
 
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -19101,7 +19123,7 @@
 
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -19344,7 +19366,7 @@
 
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -19561,7 +19583,7 @@
 
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -19732,7 +19754,7 @@
 
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -20075,7 +20097,7 @@
 
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -20595,7 +20617,7 @@
 
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -20709,7 +20731,7 @@
 
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -20887,7 +20909,7 @@
 
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -21048,7 +21070,7 @@
 
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -21216,14 +21238,14 @@
 
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesFunnySquareHtml = __webpack_require__(54);
+	var _templatesFunnySquareHtml = __webpack_require__(55);
 	
 	var _templatesFunnySquareHtml2 = _interopRequireDefault(_templatesFunnySquareHtml);
 	
@@ -21259,13 +21281,13 @@
 	module.exports = app;
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"square-container\">\n  <div class=\"square square{{id}}\">\n    <div class=\"inner\">{{id}}</div>\n  </div>\n</div>";
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21288,11 +21310,11 @@
 	
 	var _lscache2 = _interopRequireDefault(_lscache);
 	
-	var _templatesAccountListHtml = __webpack_require__(56);
+	var _templatesAccountListHtml = __webpack_require__(57);
 	
 	var _templatesAccountListHtml2 = _interopRequireDefault(_templatesAccountListHtml);
 	
-	var _templatesCreateAccountHtml = __webpack_require__(57);
+	var _templatesCreateAccountHtml = __webpack_require__(58);
 	
 	var _templatesCreateAccountHtml2 = _interopRequireDefault(_templatesCreateAccountHtml);
 	
@@ -21302,7 +21324,7 @@
 	
 	// Legacy loading for Bootstrap
 	window.jQuery = window.$ = $;
-	__webpack_require__(40);
+	__webpack_require__(41);
 	
 	var AccountModel = _backbone2['default'].Model.extend({ // .Model.extend creates a class which is why
 	  defaults: { // AccountModel is capitalized
@@ -21379,19 +21401,19 @@
 	module.exports = accountControllerView;
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports) {
 
 	module.exports = "<table class=\"table table-striped table-bordered\">\n  <tr>\n    <th>Number</th>\n    <th>Name</th>\n    <th>Phone</th>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>Tory</td>\n    <td>303-555-1111</td>\n  </tr>\n  <tr>\n    <td>2</td>\n    <td>Tim</td>\n    <td>303-555-2222</td>\n  </tr>\n</table>";
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports) {
 
 	module.exports = "<form>\n  <label for=\"name-field\">Name</label>\n  <input class=\"form-control\" type=\"text\" id=\"name-field\">\n</form>\n<button class=\"btn btn-primary btn-done\">Done</button>";
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21402,7 +21424,7 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _templatesNavbarHtml = __webpack_require__(59);
+	var _templatesNavbarHtml = __webpack_require__(60);
 	
 	var _templatesNavbarHtml2 = _interopRequireDefault(_templatesNavbarHtml);
 	
@@ -21418,13 +21440,13 @@
 	module.exports = app;
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav>\n  <button><a role=\"menuitem\" href=\"/pages/todo.html\">ToDo Application</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/dyba.html\">DYBA</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/funnySquares.html\">Funny Squares</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/forms-backbone.html\">Backbone Forms</a></button>\n</nav>";
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21435,7 +21457,7 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _templatesFooterHtml = __webpack_require__(61);
+	var _templatesFooterHtml = __webpack_require__(62);
 	
 	var _templatesFooterHtml2 = _interopRequireDefault(_templatesFooterHtml);
 	
@@ -21451,20 +21473,20 @@
 	module.exports = app;
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports) {
 
 	module.exports = "<div>Footer</div>";
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesDybaNavbarHtml = __webpack_require__(63);
+	var _templatesDybaNavbarHtml = __webpack_require__(64);
 	
 	var _templatesDybaNavbarHtml2 = _interopRequireDefault(_templatesDybaNavbarHtml);
 	
@@ -21472,7 +21494,7 @@
 	
 	// Legacy loading for Bootstrap
 	window.jQuery = window.$ = $;
-	__webpack_require__(40);
+	__webpack_require__(41);
 	
 	var app = {
 	  init: function init() {
@@ -21563,20 +21585,20 @@
 	module.exports = app;
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav class=\"dyba-nav row\">\n  <a href=\"#\" class=\"dyba-logo-container col-md-3 col-sm-12 col-xs-12\">\n    <p class=\"home-hidden\">Home</p>\n    <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-large\">\n  </a>\n  <ul class=\"dyba-links-container col-md-9 col-sm-12\">\n    <li class=\"row buffer-row hidden-xs hidden-sm\"></li>\n    <li class=\"row hidden-xs hidden-sm\"></li>\n    <li class=\"row\">\n      <ul class=\"dyba-nav-menu\">\n        <li class=\"dyba-nav-link-container\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">Registration</a>\n        </li>\n        <li class=\"dyba-nav-item roar\">\n          <a href=\"#\">\n            <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n          </a>\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Teams</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Programs</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">About</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Coaches</div>\n          <ul class=\"dyba-nav-submenu dyba-nav-submenu-last\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li class=\"row buffer-row hidden-xs\"></li>\n  </ul>\n</nav>\n\n\n\n\n\n\n\n\n\n";
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesDybaMainHtml = __webpack_require__(65);
+	var _templatesDybaMainHtml = __webpack_require__(66);
 	
 	var _templatesDybaMainHtml2 = _interopRequireDefault(_templatesDybaMainHtml);
 	
@@ -21584,7 +21606,7 @@
 	
 	// Legacy loading for Bootstrap
 	window.jQuery = window.$ = $;
-	__webpack_require__(40);
+	__webpack_require__(41);
 	
 	var app = {
 	  init: function init() {
@@ -21618,13 +21640,379 @@
 	module.exports = app;
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"dyba-main-container row\">\n  <div class=\"dyba-links-sidebar col-md-3 col-sm-3\">\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"http://www.cnn.com\">\n      <div class=\"dyba-sidebar-logo-3\">Register</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">J</div>\n    </a>\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"#\">\n      <div class=\"dyba-sidebar-logo-3\">Growth</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">A</div>\n    </a>\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"#\">\n      <div class=\"dyba-sidebar-logo-3\">Teams</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">G</div>\n    </a>\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"#\">\n      <div class=\"dyba-sidebar-logo-3\">Programs</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">S</div>\n    </a>\n  </div>\n  <div class=\"dyba-main-content col-md-9 col-sm-9\"></div>\n</div>\n\n\n\n\n\n\n\n";
 
 /***/ },
-/* 66 */
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _jquery = __webpack_require__(1);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var $musicBody = (0, _jquery2['default'])('.music-body');
+	var $audioContainer = (0, _jquery2['default'])('.audio-container');
+	var $startAnimation = (0, _jquery2['default'])('.start-animation');
+	var $clickToStart = (0, _jquery2['default'])('.click-to-start');
+	var $note = (0, _jquery2['default'])(".note");
+	var $bass = (0, _jquery2['default'])('.bass');
+	var $offBass = (0, _jquery2['default'])('.off-bass');
+	var $boop = (0, _jquery2['default'])('.boop');
+	var $snare = (0, _jquery2['default'])('.snare');
+	var $flik1 = (0, _jquery2['default'])('.flik1');
+	var $flik2 = (0, _jquery2['default'])('.flik2');
+	var $flik3 = (0, _jquery2['default'])('.flik3');
+	var $ting = (0, _jquery2['default'])('.ting');
+	var $lyricA = (0, _jquery2['default'])('.lyric-a');
+	var $lyricB = (0, _jquery2['default'])('.lyric-b');
+	var $lyricC = (0, _jquery2['default'])('.lyric-c');
+	var $lyricD = (0, _jquery2['default'])('.lyric-d');
+	var $lyricE = (0, _jquery2['default'])('.lyric-e');
+	var $lyricF = (0, _jquery2['default'])('.lyric-f');
+	var $lyricG = (0, _jquery2['default'])('.lyric-g');
+	var $lyricH = (0, _jquery2['default'])('.lyric-h');
+	var lyricIn = 600;
+	var lyricOut = 1000;
+	var lyricDelay = 320;
+	var chorusOut = 2000;
+	var chorusDelay = 1000;
+	var leftBridge = 40;
+	var topBridge = 30;
+	var lineShift = 0;
+	var topBridgeShift = 40;
+	var leftChorus = 400;
+	var topChorus = 200;
+	var topChorusShift = 40;
+	var chorusSpacing = 10;
+	var charWidth = 20;
+	var startLyrics = 24000;
+	var noteShift = 30;
+	var noteFade = 187.5;
+	var noteTimer = 72180;
+	var noteLeft;
+	var noteTop;
+	var boopHit;
+	var flik1Hit;
+	var flik2Hit;
+	var flik3Hit;
+	var tingHit;
+	var snareHit;
+	var bassHit;
+	var xlocation;
+	var ylocation;
+	var counter = 1;
+	
+	var app = {
+	  init: function init() {
+	    app.render();
+	  },
+	  render: function render() {
+	    xlocation = Math.random() * 1000;
+	    ylocation = Math.random() * 400;
+	    $startAnimation.fadeIn(1500).css({ left: xlocation, top: ylocation });
+	    $startAnimation.fadeOut(1500);
+	
+	    var startDisplay = setInterval(function () {
+	      xlocation = Math.random() * 1000;
+	      ylocation = Math.random() * 400;
+	      $startAnimation.fadeIn(1500).css({ left: xlocation, top: ylocation });
+	      $startAnimation.fadeOut(1500);
+	      counter += 1;
+	      if (counter === 20) {
+	        clearInterval(startDisplay);
+	        counter = 1;
+	      }
+	    }, 3000);
+	
+	    $clickToStart.click(function () {
+	      (0, _jquery2['default'])('<audio>').attr({
+	        'src': '/images/Black Mambo.m4a',
+	        'volume': 1.0,
+	        'controls': true,
+	        'autoplay': 'autoplay'
+	      }).appendTo($audioContainer);
+	      $startAnimation.css({ display: 'none' });
+	      clearInterval(startDisplay);
+	
+	      setTimeout(function () {
+	        $boop.animate({ fontSize: '150px' }, 200);
+	        $boop.animate({ fontSize: '0px' }, 200);
+	        boopHit = setInterval(function () {
+	          $boop.animate({ fontSize: '150px' }, 200);
+	          $boop.animate({ fontSize: '0px' }, 200);
+	        }, 3000);
+	      }, 160);
+	
+	      setTimeout(function () {
+	        $flik1.animate({ fontSize: '75px' }, 200);
+	        $flik1.animate({ fontSize: '0px' }, 200);
+	        flik1Hit = setInterval(function () {
+	          $flik1.animate({ fontSize: '75px' }, 200);
+	          $flik1.animate({ fontSize: '0px' }, 200);
+	        }, 3000);
+	      }, 910);
+	
+	      setTimeout(function () {
+	        $flik2.animate({ fontSize: '75px' }, 200);
+	        $flik2.animate({ fontSize: '0px' }, 200);
+	        flik2Hit = setInterval(function () {
+	          $flik2.animate({ fontSize: '75px' }, 200);
+	          $flik2.animate({ fontSize: '0px' }, 200);
+	        }, 3000);
+	      }, 1285);
+	
+	      setTimeout(function () {
+	        $flik3.animate({ fontSize: '75px' }, 200);
+	        $flik3.animate({ fontSize: '0px' }, 200);
+	        flik3Hit = setInterval(function () {
+	          $flik3.animate({ fontSize: '75px' }, 200);
+	          $flik3.animate({ fontSize: '0px' }, 200);
+	        }, 3000);
+	      }, 1660);
+	
+	      setTimeout(function () {
+	        $ting.animate({ fontSize: '30px' }, 200);
+	        $ting.animate({ fontSize: '0px' }, 200);
+	        tingHit = setInterval(function () {
+	          $ting.animate({ fontSize: '30px' }, 200);
+	          $ting.animate({ fontSize: '0px' }, 200);
+	        }, 3000);
+	      }, 2250);
+	
+	      setTimeout(function () {
+	        snareHit = setInterval(function () {
+	          $snare.animate({ fontSize: '150px' }, 200);
+	          $snare.animate({ fontSize: '0px' }, 200);
+	        }, 1500);
+	      }, 9800);
+	
+	      setTimeout(function () {
+	        bassHit = setInterval(function () {
+	          $bass.animate({ fontSize: '150px' }, 200);
+	          $bass.animate({ fontSize: '0px' }, 200);
+	          $bass.delay(3000 * (2.5 / 4) - 400);
+	          $bass.animate({ fontSize: '150px' }, 200);
+	          $bass.animate({ fontSize: '0px' }, 200);
+	        }, 3000);
+	      }, 8900);
+	
+	      setTimeout(function () {
+	        $offBass.animate({ fontSize: '150px' }, 200);
+	        $offBass.animate({ fontSize: '0px' }, 200);
+	        $offBass.delay(3000 * 2 - 400);
+	        $offBass.animate({ fontSize: '150px' }, 200);
+	        $offBass.animate({ fontSize: '0px' }, 200);
+	        $offBass.delay(3000 * 4 - 400);
+	        $offBass.animate({ fontSize: '150px' }, 200);
+	        $offBass.animate({ fontSize: '0px' }, 200);
+	        $offBass.delay(3000 * 3 - 400);
+	        $offBass.animate({ fontSize: '150px' }, 200);
+	        $offBass.animate({ fontSize: '0px' }, 200);
+	        $offBass.delay(3000 * 2.75 - 400);
+	        $offBass.animate({ fontSize: '150px' }, 200);
+	        $offBass.animate({ fontSize: '0px' }, 200);
+	        $offBass.delay(3000 * 0.25 - 400);
+	        $offBass.animate({ fontSize: '150px' }, 200);
+	        $offBass.animate({ fontSize: '0px' }, 200);
+	        $offBass.delay(3000 * 6 - 400);
+	        $offBass.animate({ fontSize: '150px' }, 200);
+	        $offBass.animate({ fontSize: '0px' }, 200);
+	      }, 11500);
+	
+	      // Bridge 1
+	      setTimeout(function () {
+	        $lyricA.html("What'll").css({
+	          "left": leftBridge,
+	          "top": topBridge
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricB.delay(lyricDelay).html("it").css({
+	          "left": leftBridge + charWidth * 9,
+	          "top": topBridge
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricC.delay(lyricDelay * 2).html("be").css({
+	          "left": leftBridge + charWidth * 12,
+	          "top": topBridge
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricD.delay(lyricDelay * 8.4).html("now").css({
+	          "left": leftBridge + charWidth * 15,
+	          "top": topBridge
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricE.delay(lyricDelay * 9.5).html("mister").css({
+	          "left": leftBridge + charWidth * 20.5,
+	          "top": topBridge
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricF.delay(lyricDelay * 10.9).html("mole").css({
+	          "left": leftBridge + charWidth * 28.2,
+	          "top": topBridge
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	      }, startLyrics);
+	
+	      setTimeout(function () {
+	        $lyricA.html("Whispers").css({
+	          "left": leftBridge + lineShift,
+	          "top": topBridge + topBridgeShift
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricB.delay(lyricDelay * 1.5).html("sloth").css({
+	          "left": leftBridge + lineShift + charWidth * 10.6,
+	          "top": topBridge + topBridgeShift
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricC.delay(lyricDelay * 7.5).html("in").css({
+	          "left": leftBridge + lineShift + charWidth * 17,
+	          "top": topBridge + topBridgeShift
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricD.delay(lyricDelay * 9.5).html("curls").css({
+	          "left": leftBridge + lineShift + charWidth * 20,
+	          "top": topBridge + topBridgeShift
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricE.delay(lyricDelay * 10.5).html("of").css({
+	          "left": leftBridge + lineShift + charWidth * 26.1,
+	          "top": topBridge + topBridgeShift
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricF.delay(lyricDelay * 11.5).html("smoke").css({
+	          "left": leftBridge + lineShift + charWidth * 29.5,
+	          "top": topBridge + topBridgeShift
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	      }, startLyrics + 6000);
+	
+	      setTimeout(function () {
+	        $lyricA.html("Take").css({
+	          "left": leftBridge + lineShift * 2,
+	          "top": topBridge + topBridgeShift * 2
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricB.delay(lyricDelay * 0.6).html("a").css({
+	          "left": leftBridge + lineShift * 2 + charWidth * 6,
+	          "top": topBridge + topBridgeShift * 2
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricC.delay(lyricDelay * 1.2).html("back").css({
+	          "left": leftBridge + lineShift * 2 + charWidth * 8.2,
+	          "top": topBridge + topBridgeShift * 2
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricD.delay(lyricDelay * 2).html("seat").css({
+	          "left": leftBridge + lineShift * 2 + charWidth * 14.4,
+	          "top": topBridge + topBridgeShift * 2
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricE.delay(lyricDelay * 8).html("or").css({
+	          "left": leftBridge + lineShift * 2 + charWidth * 20.2,
+	          "top": topBridge + topBridgeShift * 2
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricF.delay(lyricDelay * 9.4).html("play").css({
+	          "left": leftBridge + lineShift * 2 + charWidth * 23.5,
+	          "top": topBridge + topBridgeShift * 2
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricG.delay(lyricDelay * 10.5).html("pharaoh").css({
+	          "left": leftBridge + lineShift * 2 + charWidth * 29.2,
+	          "top": topBridge + topBridgeShift * 2
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	      }, startLyrics + 11500);
+	
+	      setTimeout(function () {
+	        $lyricA.html("Dance").css({
+	          "left": leftBridge + lineShift * 3,
+	          "top": topBridge + topBridgeShift * 3
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricB.delay(lyricDelay).html("with").css({
+	          "left": leftBridge + lineShift * 3 + charWidth * 8,
+	          "top": topBridge + topBridgeShift * 3
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricC.delay(lyricDelay * 2).html("me").css({
+	          "left": leftBridge + lineShift * 3 + charWidth * 13.6,
+	          "top": topBridge + topBridgeShift * 3
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricD.delay(lyricDelay * 7.5).html("and").css({
+	          "left": leftBridge + lineShift * 3 + charWidth * 17.6,
+	          "top": topBridge + topBridgeShift * 3
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricE.delay(lyricDelay * 9).html("shake").css({
+	          "left": leftBridge + lineShift * 3 + charWidth * 22.6,
+	          "top": topBridge + topBridgeShift * 3
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricF.delay(lyricDelay * 10).html("your").css({
+	          "left": leftBridge + lineShift * 3 + charWidth * 29.8,
+	          "top": topBridge + topBridgeShift * 3
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	        $lyricG.delay(lyricDelay * 11).html("bones").css({
+	          "left": leftBridge + lineShift * 3 + charWidth * 36,
+	          "top": topBridge + topBridgeShift * 3
+	        }).fadeIn(lyricIn).fadeOut(lyricOut);
+	      }, startLyrics + 18000);
+	
+	      // Chorus
+	      setTimeout(function () {
+	        $lyricA.html("Slow down").css({
+	          "left": leftChorus,
+	          "top": topChorus,
+	          "word-spacing": chorusSpacing
+	        }).fadeIn(lyricIn).fadeOut(chorusOut);
+	        $lyricB.delay(chorusDelay * 2.3).html("It's a science").css({
+	          "left": leftChorus,
+	          "top": topChorus + topChorusShift,
+	          "word-spacing": chorusSpacing
+	        }).fadeIn(lyricIn).fadeOut(chorusOut);
+	        $lyricC.delay(chorusDelay * 5).html("He's been waiting to").css({
+	          "left": leftChorus,
+	          "top": topChorus + topChorusShift * 2,
+	          "word-spacing": chorusSpacing
+	        }).fadeIn(lyricIn * 2).fadeOut(chorusOut * 1.5);
+	        $lyricD.delay(chorusDelay * 9).html("Bring you down").css({
+	          "left": leftChorus,
+	          "top": topChorus + topChorusShift * 3,
+	          "word-spacing": chorusSpacing
+	        }).fadeIn(lyricIn).fadeOut(chorusOut);
+	        $lyricE.delay(chorusDelay * 12).html("Snake eyed").css({
+	          "left": leftChorus,
+	          "top": topChorus + topChorusShift * 4,
+	          "word-spacing": chorusSpacing
+	        }).fadeIn(lyricIn).fadeOut(chorusOut);
+	        $lyricF.delay(chorusDelay * 14).html("With a sly smile").css({
+	          "left": leftChorus,
+	          "top": topChorus + topChorusShift * 5,
+	          "word-spacing": chorusSpacing
+	        }).fadeIn(lyricIn * 1.5).fadeOut(chorusOut);
+	        $lyricG.delay(chorusDelay * 17.5).html("He can hold you").css({
+	          "left": leftChorus,
+	          "top": topChorus + topChorusShift * 6,
+	          "word-spacing": chorusSpacing
+	        }).fadeIn(lyricIn).fadeOut(chorusOut);
+	        $lyricH.delay(chorusDelay * 20.5).html("And shake your child").css({
+	          "left": leftChorus,
+	          "top": topChorus + topChorusShift * 7,
+	          "word-spacing": chorusSpacing
+	        }).fadeIn(lyricIn).fadeOut(chorusOut * 1.5);
+	      }, startLyrics + 24000);
+	
+	      setTimeout(function () {
+	        clearInterval(boopHit);
+	        clearInterval(flik1Hit);
+	        clearInterval(flik2Hit);
+	        clearInterval(flik3Hit);
+	        clearInterval(tingHit);
+	        clearInterval(snareHit);
+	        clearInterval(bassHit);
+	        for (var noteCounter = 0; noteCounter < 4; noteCounter++) {
+	          noteLeft = 800;
+	          noteTop = 250;
+	          $note.animate({ left: noteLeft, top: noteTop }, 200).animate({ opacity: 1 }, 0).animate({ opacity: 0 }, 175).animate({ left: noteLeft += noteShift, top: noteTop += noteShift }, 200).animate({ opacity: 1 }, 0).animate({ opacity: 0 }, 175).animate({ left: noteLeft += noteShift, top: noteTop += noteShift }, 200).animate({ opacity: 1 }, 0).animate({ opacity: 0 }, 175).animate({ left: noteLeft += noteShift, top: noteTop += noteShift }, 200).animate({ opacity: 1 }, 0).animate({ opacity: 0 }, 175).animate({ left: noteLeft += noteShift, top: noteTop += noteShift }, 200).animate({ opacity: 1 }, 0).animate({ opacity: 0 }, 175 / 2).animate({ left: noteLeft += noteShift, top: noteTop -= noteShift }, 100).animate({ opacity: 1 }, 0).animate({ opacity: 0 }, 175 / 2).animate({ left: noteLeft += noteShift, top: noteTop += noteShift }, 100).animate({ opacity: 1 }, 0).animate({ opacity: 0 }, 175).animate({ left: noteLeft += noteShift, top: noteTop += noteShift }, 200).animate({ opacity: 1 }, 0).animate({ opacity: 0 }, 175).animate({ left: noteLeft += noteShift, top: noteTop += noteShift }, 200).animate({ opacity: 1 }, 0).animate({ opacity: 0 }, 175);
+	        };
+	      }, startLyrics + 47800);
+	
+	      setTimeout(function () {
+	        $audioContainer.empty();
+	      }, startLyrics + 60000);
+	    });
+	  }
+	};
+	
+	module.exports = app;
+
+/***/ },
+/* 68 */
 /***/ function(module, exports) {
 
 	/*
@@ -21661,12 +22049,6 @@
 	    });
 	  };
 	})(jQuery);
-
-/***/ },
-/* 67 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"col-md-1\">\n  {{#if completed}}\n    <input class=\"completed-checkbox\" type=\"checkbox\" checked>\n  {{else}}\n    <input class=\"completed-checkbox\" type=\"checkbox\">\n  {{/if}}\n</div>\n<div class=\"col-md-10 title\">\n  <p class=\"item-title\">{{title}}</p>\n</div>\n<div class=\"col-md-10 title-edit hidden\">\n  <p class=\"item-title\">\n    <input type=\"text\" class=\"form-control title-edit-input\" value=\"{{title}}\">\n  </p>\n</div>\n<div class=\"col-md-1\">\n  <button type=\"button\" class=\"close\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>";
 
 /***/ }
 /******/ ]);

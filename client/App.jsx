@@ -8,6 +8,7 @@ import header from 'components/header';
 import footer from 'components/footer';
 import dybaHeader from 'components/dybaHeader';
 import dybaMain from 'pages/dyba';
+import music from 'pages/music';
 import 'components/jquery.hoverflow.min.js'
 
 $(function() {
@@ -26,6 +27,9 @@ $(function() {
     case '/pages/dyba.html':
         dybaHeader.init();
         dybaMain.init();
+    break;
+    case '/pages/music.html':
+        music.init();
     break;
     case '/pages/funnySquares.html':
         funnySquares.init();

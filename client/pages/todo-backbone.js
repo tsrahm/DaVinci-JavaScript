@@ -106,6 +106,7 @@ var TodoControllerView = Backbone.View.extend({
     this.render();
   },
   removeItem: function(id) {
+
     this.model.removeItem(id);
     this.render();
   },
@@ -141,6 +142,14 @@ var TodoItemView = Backbone.View.extend({
     this.$el.toggleClass('disabled', this.data.completed);
   },
   removeItem: function() {
+    if (this.data.title === 'beer' || 'chips' || 'salsa') {
+      $('<audio>').attr({
+        'src': 'http://wavcentral.com/sounds/televis/lost_space/dangw.mp3',
+        'volume': 1.0,
+        'autoplay': 'autoplay'
+      }).appendTo('body');
+      return;
+    }
     todoControllerView.removeItem(this.data.id);
   },
   completedClicked: function(event) {
