@@ -62,11 +62,15 @@
   text-align: center;
 }
 .dyba-links-container .row {
-  height: 52px;
-  line-height: 52px;
+  height: 55px;
+  line-height: 55px;
 }
 .dyba-links-container .buffer-row {
-  height: 15px;
+  height: 70px;
+}
+.dyba-links-container .xs-row {
+  height: auto;
+  line-height: 100%;
 }
 .dyba-nav-menu {
   padding: 0;
@@ -75,6 +79,16 @@
   max-width: 650px;
   margin: auto;
   text-align: center;
+}
+.dyba-xs-nav-dropdown {
+  padding: 0;
+  background: #999;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+}
+.dyba-xs-nav-button {
+  width: 100%;
 }
 .dyba-nav-link-container {
   position: relative;

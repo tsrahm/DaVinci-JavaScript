@@ -1,12 +1,11 @@
 <nav class="dyba-nav row">
-  <a href="#" class="dyba-logo-container col-md-3 col-sm-12 col-xs-12">
+  <a href="#" class="dyba-logo-container col-xs-12 col-md-3">
     <p class="home-hidden">Home</p>
     <img src="/images/Jags shield logo-white.png" class="dyba-nav-logo-large">
   </a>
-  <ul class="dyba-links-container col-md-9 col-sm-12">
+  <ul class="dyba-links-container col-xs-12 col-md-9">
     <li class="row buffer-row hidden-xs hidden-sm"></li>
-    <li class="row hidden-xs hidden-sm"></li>
-    <li class="row">
+    <li class="row hidden-xs">
       <ul class="dyba-nav-menu">
         <li class="dyba-nav-link-container">
           <a class="dyba-nav-link" role="menuitem" href="/pages/project.html">Registration</a>
@@ -59,7 +58,21 @@
         </li>
       </ul>
     </li>
-    <li class="row buffer-row hidden-xs"></li>
+    <li class="row xs-row hidden-sm hidden-md hidden-lg">
+      <div class="dropdown dyba-xs-nav-dropdown">
+        <button class="btn btn-default dropdown-toggle dyba-xs-nav-button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Menu
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div>
+    </li>
   </ul>
 </nav>
 

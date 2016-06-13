@@ -69,7 +69,7 @@ var app = {
       $startAnimation.fadeIn(1500).css({left: xlocation, top: ylocation});
       $startAnimation.fadeOut(1500);
       counter += 1;
-      if (counter === 20) {
+      if (counter === 12) {
         clearInterval(startDisplay);
         counter = 1;
       }
@@ -79,7 +79,6 @@ var app = {
       $('<audio>').attr({
       'src': '/images/Black Mambo.m4a',
       'volume': 1.0,
-      'controls': true,
       'autoplay': 'autoplay'
       }).appendTo($audioContainer);
       $startAnimation.css({display: 'none'});
