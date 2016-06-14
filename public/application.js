@@ -86,7 +86,11 @@
 	
 	var _pagesMusic2 = _interopRequireDefault(_pagesMusic);
 	
-	__webpack_require__(70);
+	var _pagesPhotoSearch = __webpack_require__(70);
+	
+	var _pagesPhotoSearch2 = _interopRequireDefault(_pagesPhotoSearch);
+	
+	__webpack_require__(71);
 	
 	(0, _jquery2['default'])(function () {
 	
@@ -104,6 +108,9 @@
 	        case '/pages/dyba.html':
 	            _componentsDybaHeader2['default'].init();
 	            _pagesDyba2['default'].init();
+	            break;
+	        case '/pages/photo-search.html':
+	            _pagesPhotoSearch2['default'].init();
 	            break;
 	        case '/pages/music.html':
 	            _pagesMusic2['default'].init();
@@ -9980,7 +9987,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-container":"dyba-container","dyba-header":"dyba-header","dyba-nav":"dyba-nav","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo-large":"dyba-nav-logo-large","dyba-links-container":"dyba-links-container","row":"row","buffer-row":"buffer-row","xs-row":"xs-row","dyba-nav-menu":"dyba-nav-menu","dyba-xs-nav-dropdown":"dyba-xs-nav-dropdown","dyba-xs-nav-button":"dyba-xs-nav-button","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-header-container":"dyba-nav-header-container","dyba-nav-link":"dyba-nav-link","dyba-nav-header":"dyba-nav-header","dyba-nav-submenu":"dyba-nav-submenu","dyba-nav-submenu-last":"dyba-nav-submenu-last","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-main":"dyba-main","dyba-links-sidebar":"dyba-links-sidebar","dyba-sidelink":"dyba-sidelink","dyba-sidebar-logo-1":"dyba-sidebar-logo-1","dyba-sidebar-logo-2":"dyba-sidebar-logo-2","dyba-sidebar-logo-3":"dyba-sidebar-logo-3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","main-container":"main-container","fr-ed":"fr-ed","profile-heading":"profile-heading","music-animation":"music-animation","music-body":"music-body","music-container":"music-container","start-animation":"start-animation","beat-text":"beat-text","boop":"boop","flik1":"flik1","flik2":"flik2","flik3":"flik3","ting":"ting","snare":"snare","off-bass":"off-bass","bass":"bass","note":"note","lyric-a":"lyric-a","lyric-b":"lyric-b","lyric-c":"lyric-c","lyric-d":"lyric-d","lyric-e":"lyric-e","lyric-f":"lyric-f","lyric-g":"lyric-g","lyric-h":"lyric-h"};
+	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-container":"dyba-container","dyba-header":"dyba-header","dyba-nav":"dyba-nav","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo-large":"dyba-nav-logo-large","dyba-links-container":"dyba-links-container","row":"row","buffer-row":"buffer-row","xs-row":"xs-row","dyba-nav-menu":"dyba-nav-menu","dyba-xs-nav-dropdown":"dyba-xs-nav-dropdown","dyba-xs-nav-button":"dyba-xs-nav-button","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-header-container":"dyba-nav-header-container","dyba-nav-link":"dyba-nav-link","dyba-nav-header":"dyba-nav-header","dyba-nav-submenu":"dyba-nav-submenu","dyba-nav-submenu-last":"dyba-nav-submenu-last","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-main":"dyba-main","dyba-links-sidebar":"dyba-links-sidebar","dyba-sidelink":"dyba-sidelink","dyba-sidebar-logo-1":"dyba-sidebar-logo-1","dyba-sidebar-logo-2":"dyba-sidebar-logo-2","dyba-sidebar-logo-3":"dyba-sidebar-logo-3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","main-container":"main-container","fr-ed":"fr-ed","profile-heading":"profile-heading","music-animation":"music-animation","music-body":"music-body","music-container":"music-container","start-animation":"start-animation","beat-text":"beat-text","boop":"boop","flik1":"flik1","flik2":"flik2","flik3":"flik3","ting":"ting","snare":"snare","off-bass":"off-bass","bass":"bass","note":"note","lyric-a":"lyric-a","lyric-b":"lyric-b","lyric-c":"lyric-c","lyric-d":"lyric-d","lyric-e":"lyric-e","lyric-f":"lyric-f","lyric-g":"lyric-g","lyric-h":"lyric-h","search-container":"search-container","photo":"photo"};
 
 /***/ },
 /* 3 */,
@@ -21497,7 +21504,7 @@
 /* 62 */
 /***/ function(module, exports) {
 
-	module.exports = "<nav>\n  <button><a role=\"menuitem\" href=\"/pages/todo.html\">ToDo Application</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/dyba.html\">DYBA</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/funnySquares.html\">Funny Squares</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/forms-backbone.html\">Backbone Forms</a></button>\n</nav>";
+	module.exports = "<nav>\n  <button><a role=\"menuitem\" href=\"/pages/todo.html\">ToDo Application</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/dyba.html\">DYBA</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/funnySquares.html\">Funny Squares</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/forms-backbone.html\">Backbone Forms</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/photo-search.html\">Photo Search</a></button>\n</nav>";
 
 /***/ },
 /* 63 */
@@ -22066,6 +22073,56 @@
 
 /***/ },
 /* 70 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var app = {
+	  init: function init() {
+	    app.render();
+	  },
+	  render: function render() {
+	    app.$input = $('.search-container input');
+	    app.bindEvents();
+	  },
+	  bindEvents: function bindEvents() {
+	    app.$input.on('keypress', app.searchKeypress);
+	  },
+	  searchKeypress: function searchKeypress(event) {
+	    if (event.which === 13) {
+	      app.doSearch();
+	    }
+	  },
+	  doSearch: function doSearch() {
+	    var phrase = app.$input.val();
+	    $.ajax({
+	      url: 'https://api.flickr.com/services/rest',
+	      method: 'GET',
+	      data: {
+	        text: phrase,
+	        method: 'flickr.photos.search',
+	        api_key: '731717db25329eb6aa65703cb6b71970',
+	        format: 'json',
+	        per_page: 3
+	      },
+	      complete: function complete(response) {
+	        var text = response.responseText;
+	        text = text.slice(14, text.length - 1);
+	        var data = JSON.parse(text);
+	        app.renderResults(data);
+	      }
+	    });
+	  },
+	  renderResults: function renderResults(data) {
+	    // pass data to the template
+	    // append result to the .search-result div
+	  }
+	};
+	
+	module.exports = app;
+
+/***/ },
+/* 71 */
 /***/ function(module, exports) {
 
 	/*

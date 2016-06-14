@@ -282,7 +282,7 @@ ul {
   width: 100%;
   color: #005214;
   text-align: center;
-  font-size: 80px;
+  font-size: 6vw;
   font-family: garamond;
   font-weight: bold;
 }
@@ -308,7 +308,7 @@ ul {
   width: 100%;
   color: #005214;
   text-align: center;
-  font-size: 28px;
+  font-size: 2vw;
   font-family: garamond;
   font-weight: bold;
   padding-top: 35%;
@@ -614,6 +614,17 @@ h1 {
   font-size: 42px;
   color: white;
   text-shadow: 2px 2px 4px black;
+}
+
+.search-container .photo {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.search-container .photo img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map*/
