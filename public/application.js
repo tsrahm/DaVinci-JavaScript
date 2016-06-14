@@ -54,39 +54,39 @@
 	
 	__webpack_require__(2);
 	
-	var _pagesTodoBackbone = __webpack_require__(6);
+	var _pagesTodoTodoController = __webpack_require__(6);
 	
-	var _pagesTodoBackbone2 = _interopRequireDefault(_pagesTodoBackbone);
+	var _pagesTodoTodoController2 = _interopRequireDefault(_pagesTodoTodoController);
 	
-	var _pagesFunnySquares = __webpack_require__(54);
+	var _pagesFunnySquares = __webpack_require__(56);
 	
 	var _pagesFunnySquares2 = _interopRequireDefault(_pagesFunnySquares);
 	
-	var _pagesFormsBackbone = __webpack_require__(56);
+	var _pagesFormsBackbone = __webpack_require__(58);
 	
 	var _pagesFormsBackbone2 = _interopRequireDefault(_pagesFormsBackbone);
 	
-	var _componentsHeader = __webpack_require__(59);
+	var _componentsHeader = __webpack_require__(61);
 	
 	var _componentsHeader2 = _interopRequireDefault(_componentsHeader);
 	
-	var _componentsFooter = __webpack_require__(61);
+	var _componentsFooter = __webpack_require__(63);
 	
 	var _componentsFooter2 = _interopRequireDefault(_componentsFooter);
 	
-	var _componentsDybaHeader = __webpack_require__(63);
+	var _componentsDybaHeader = __webpack_require__(65);
 	
 	var _componentsDybaHeader2 = _interopRequireDefault(_componentsDybaHeader);
 	
-	var _pagesDyba = __webpack_require__(65);
+	var _pagesDyba = __webpack_require__(67);
 	
 	var _pagesDyba2 = _interopRequireDefault(_pagesDyba);
 	
-	var _pagesMusic = __webpack_require__(67);
+	var _pagesMusic = __webpack_require__(69);
 	
 	var _pagesMusic2 = _interopRequireDefault(_pagesMusic);
 	
-	__webpack_require__(68);
+	__webpack_require__(70);
 	
 	(0, _jquery2['default'])(function () {
 	
@@ -99,7 +99,7 @@
 	    // This is called a router
 	    switch (url) {
 	        case '/pages/todo.html':
-	            _pagesTodoBackbone2['default'].render();
+	            var todoControllerView = new _pagesTodoTodoController2['default']();
 	            break;
 	        case '/pages/dyba.html':
 	            _componentsDybaHeader2['default'].init();
@@ -10005,17 +10005,13 @@
 	
 	var _handlebars2 = _interopRequireDefault(_handlebars);
 	
-	var _lscache = __webpack_require__(39);
+	var _pagesTodoTodoModel = __webpack_require__(39);
 	
-	var _lscache2 = _interopRequireDefault(_lscache);
+	var _pagesTodoTodoModel2 = _interopRequireDefault(_pagesTodoTodoModel);
 	
-	var _templatesTodoItemHtml = __webpack_require__(40);
+	var _pagesTodoTodoView = __webpack_require__(54);
 	
-	var _templatesTodoItemHtml2 = _interopRequireDefault(_templatesTodoItemHtml);
-	
-	// Backbone Todo App
-	
-	// Model
+	var _pagesTodoTodoView2 = _interopRequireDefault(_pagesTodoTodoView);
 	
 	var $ = __webpack_require__(1);
 	
@@ -10023,86 +10019,23 @@
 	window.jQuery = window.$ = $;
 	__webpack_require__(41);
 	
-	var TodoModel = _backbone2['default'].Model.extend({
-	  defaults: {
-	    todos: []
-	  },
-	  todoSchema: {
-	    id: 0,
-	    title: '',
-	    completed: false
-	  },
-	  fetch: function fetch() {
-	    var data = _lscache2['default'].get('todos');
-	    data = this.applySchema(data);
-	    this.set('todos', data);
-	  },
-	  save: function save() {
-	    var data = this.get('todos');
-	    data = this.applySchema(data);
-	    _lscache2['default'].set('todos', data);
-	  },
-	  applySchema: function applySchema(todos) {
-	    var data = todos;
-	    var schema = this.todoSchema;
-	    data = _underscore2['default'].isArray(todos) ? data : []; // shorthand if statement. ? if true, : if false.
-	    data = data.map(function (todo, index) {
-	      todo.id = index;
-	      return _underscore2['default'].defaults(todo, schema);
-	    });
-	    return data;
-	  },
-	  addItem: function addItem(newTitle) {
-	    var newTodo = { title: newTitle };
-	    var todos = this.get('todos');
-	    todos.push(newTodo);
-	    this.set('todos', todos);
-	    this.save();
-	  },
-	  removeItem: function removeItem(id) {
-	    var todos = this.get('todos');
-	    todos.splice(id, 1);
-	    this.save();
-	  },
-	  itemCompleted: function itemCompleted(id, isCompleted) {
-	    var todos = this.get('todos');
-	    var item = _underscore2['default'].findWhere(todos, { id: id });
-	    item.completed = isCompleted;
-	    this.set('todos', todos);
-	    this.save();
-	  },
-	  editTitle: function editTitle(newTitle, id) {
-	    var todos = this.get('todos');
-	    var item = _underscore2['default'].findWhere(todos, { id: id });
-	    item.title = newTitle;
-	    this.set('todos', todos);
-	    this.save();
-	  }
-	});
-	
-	// fetch and save have a default behavior which may make them work in an unwanted way
-	// if not overwritten.  They expect to retrieve and save data from/to a database.  We
-	// will typically use local storage via lscache instead.
-	
-	var todoModel = new TodoModel();
-	
-	// View
-	
 	var TodoControllerView = _backbone2['default'].View.extend({
 	  el: '.todo-container',
-	  model: todoModel,
+	  model: _pagesTodoTodoModel2['default'],
 	  events: {
 	    'click .btn-add': 'addTodoItem'
 	  },
 	  initialize: function initialize() {
 	    this.model.fetch();
+	    this.render();
 	  },
 	  render: function render() {
 	    var todos = this.model.get('todos');
 	    var $listGroup = this.$el.find('.list-group');
 	    $listGroup.empty();
+	    var controller = this;
 	    todos.map(function (todo) {
-	      var view = new TodoItemView(todo);
+	      var view = new _pagesTodoTodoView2['default'](todo, controller);
 	      $listGroup.append(view.$el);
 	    });
 	  },
@@ -10117,7 +10050,6 @@
 	    this.render();
 	  },
 	  removeItem: function removeItem(id) {
-	
 	    this.model.removeItem(id);
 	    this.render();
 	  },
@@ -10131,58 +10063,7 @@
 	  }
 	});
 	
-	var TodoItemView = _backbone2['default'].View.extend({
-	  tagName: 'li', // el = <li class="list-group-item"></li>
-	  className: 'list-group-item',
-	  events: {
-	    'click .close': 'removeItem',
-	    'change .completed-checkbox': 'completedClicked',
-	    'click .title': 'titleClicked',
-	    'keypress .title-edit-input': 'titleEditConfirm'
-	  },
-	  template: _handlebars2['default'].compile(_templatesTodoItemHtml2['default']),
-	  initialize: function initialize(todo) {
-	    this.data = todo;
-	    this.render();
-	  },
-	  render: function render() {
-	    this.$el.empty().append(this.template(this.data));
-	    this.$title = this.$el.find('.title');
-	    this.$titleEdit = this.$el.find('.title-edit');
-	    this.$titleInput = this.$titleEdit.find('.title-edit-input');
-	    this.$el.toggleClass('disabled', this.data.completed);
-	  },
-	  removeItem: function removeItem() {
-	    if (this.data.title === 'beer' || this.data.title === 'chips' || this.data.title === 'salsa') {
-	      $('<audio>').attr({
-	        'src': 'http://wavcentral.com/sounds/televis/lost_space/dangw.mp3',
-	        'volume': 1.0,
-	        'autoplay': 'autoplay'
-	      }).appendTo('body');
-	      return;
-	    }
-	    todoControllerView.removeItem(this.data.id);
-	  },
-	  completedClicked: function completedClicked(event) {
-	    var isChecked = $(event.currentTarget).is(':checked');
-	    todoControllerView.itemCompleted(this.data.id, isChecked);
-	  },
-	  titleClicked: function titleClicked() {
-	    this.$title.addClass('hidden');
-	    this.$titleEdit.removeClass('hidden');
-	    this.$titleInput.focus();
-	  },
-	  titleEditConfirm: function titleEditConfirm(event) {
-	    if (event.which === 13) {
-	      var newTitle = this.$titleInput.val();
-	      todoControllerView.titleEdit(newTitle, this.data.id);
-	    }
-	  }
-	});
-	
-	var todoControllerView = new TodoControllerView(); // this calls TodoControllerView.initialize
-	
-	module.exports = todoControllerView;
+	module.exports = TodoControllerView;
 
 /***/ },
 /* 7 */
@@ -18455,6 +18336,97 @@
 /* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _underscore = __webpack_require__(7);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
+	var _backbone = __webpack_require__(8);
+	
+	var _backbone2 = _interopRequireDefault(_backbone);
+	
+	var _lscache = __webpack_require__(40);
+	
+	var _lscache2 = _interopRequireDefault(_lscache);
+	
+	var $ = __webpack_require__(1);
+	
+	// Legacy loading for Bootstrap
+	window.jQuery = window.$ = $;
+	__webpack_require__(41);
+	
+	var TodoModel = _backbone2['default'].Model.extend({
+	  defaults: {
+	    todos: []
+	  },
+	  todoSchema: {
+	    id: 0,
+	    title: '',
+	    completed: false
+	  },
+	  fetch: function fetch() {
+	    var data = _lscache2['default'].get('todos');
+	    data = this.applySchema(data);
+	    this.set('todos', data);
+	  },
+	  save: function save() {
+	    var data = this.get('todos');
+	    data = this.applySchema(data);
+	    _lscache2['default'].set('todos', data);
+	  },
+	  applySchema: function applySchema(todos) {
+	    var data = todos;
+	    var schema = this.todoSchema;
+	    data = _underscore2['default'].isArray(todos) ? data : []; // shorthand if statement. ? if true, : if false.
+	    data = data.map(function (todo, index) {
+	      todo.id = index;
+	      return _underscore2['default'].defaults(todo, schema);
+	    });
+	    return data;
+	  },
+	  addItem: function addItem(newTitle) {
+	    var newTodo = { title: newTitle };
+	    var todos = this.get('todos');
+	    todos.push(newTodo);
+	    this.set('todos', todos);
+	    this.save();
+	  },
+	  removeItem: function removeItem(id) {
+	    var todos = this.get('todos');
+	    todos.splice(id, 1);
+	    this.save();
+	  },
+	  itemCompleted: function itemCompleted(id, isCompleted) {
+	    var todos = this.get('todos');
+	    var item = _underscore2['default'].findWhere(todos, { id: id });
+	    item.completed = isCompleted;
+	    this.set('todos', todos);
+	    this.save();
+	  },
+	  editTitle: function editTitle(newTitle, id) {
+	    var todos = this.get('todos');
+	    var item = _underscore2['default'].findWhere(todos, { id: id });
+	    item.title = newTitle;
+	    this.set('todos', todos);
+	    this.save();
+	  }
+	});
+	
+	// fetch and save have a default behavior which may make them work in an unwanted way
+	// if not overwritten.  They expect to retrieve and save data from/to a database.  We
+	// will typically use local storage via lscache instead.
+	
+	var todoModel = new TodoModel();
+	
+	module.exports = todoModel;
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 	 * lscache library
 	 * Copyright (c) 2011, Pamela Fox
@@ -18806,12 +18778,6 @@
 	  return lscache;
 	}));
 
-
-/***/ },
-/* 40 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"col-xs-1\">\n  {{#if completed}}\n    <input class=\"completed-checkbox\" type=\"checkbox\" checked>\n  {{else}}\n    <input class=\"completed-checkbox\" type=\"checkbox\">\n  {{/if}}\n</div>\n<div class=\"col-xs-10 title\">\n  <p class=\"item-title\">{{title}}</p>\n</div>\n<div class=\"col-xs-10 title-edit hidden\">\n  <p class=\"item-title\">\n    <input type=\"text\" class=\"form-control title-edit-input\" value=\"{{title}}\">\n  </p>\n</div>\n<div class=\"col-xs-1\">\n  <button type=\"button\" class=\"close\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>";
 
 /***/ },
 /* 41 */
@@ -21245,7 +21211,95 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesFunnySquareHtml = __webpack_require__(55);
+	var _underscore = __webpack_require__(7);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
+	var _backbone = __webpack_require__(8);
+	
+	var _backbone2 = _interopRequireDefault(_backbone);
+	
+	var _handlebars = __webpack_require__(9);
+	
+	var _handlebars2 = _interopRequireDefault(_handlebars);
+	
+	var _templatesTodoItemHtml = __webpack_require__(55);
+	
+	var _templatesTodoItemHtml2 = _interopRequireDefault(_templatesTodoItemHtml);
+	
+	var $ = __webpack_require__(1);
+	
+	// Legacy loading for Bootstrap
+	window.jQuery = window.$ = $;
+	__webpack_require__(41);
+	
+	var TodoItemView = _backbone2['default'].View.extend({
+	  tagName: 'li', // el = <li class="list-group-item"></li>
+	  className: 'list-group-item',
+	  events: {
+	    'click .close': 'removeItem',
+	    'change .completed-checkbox': 'completedClicked',
+	    'click .title': 'titleClicked',
+	    'keypress .title-edit-input': 'titleEditConfirm'
+	  },
+	  template: _handlebars2['default'].compile(_templatesTodoItemHtml2['default']),
+	  initialize: function initialize(todo, controller) {
+	    this.data = todo;
+	    this.controller = controller;
+	    this.render();
+	  },
+	  render: function render() {
+	    this.$el.empty().append(this.template(this.data));
+	    this.$title = this.$el.find('.title');
+	    this.$titleEdit = this.$el.find('.title-edit');
+	    this.$titleInput = this.$titleEdit.find('.title-edit-input');
+	    this.$el.toggleClass('disabled', this.data.completed);
+	  },
+	  removeItem: function removeItem() {
+	    if (this.data.title === 'beer' || this.data.title === 'chips' || this.data.title === 'salsa') {
+	      $('<audio>').attr({
+	        'src': 'http://wavcentral.com/sounds/televis/lost_space/dangw.mp3',
+	        'volume': 1.0,
+	        'autoplay': 'autoplay'
+	      }).appendTo('body');
+	      return;
+	    }
+	    this.controller.removeItem(this.data.id);
+	  },
+	  completedClicked: function completedClicked(event) {
+	    var isChecked = $(event.currentTarget).is(':checked');
+	    this.controller.itemCompleted(this.data.id, isChecked);
+	  },
+	  titleClicked: function titleClicked() {
+	    this.$title.addClass('hidden');
+	    this.$titleEdit.removeClass('hidden');
+	    this.$titleInput.focus();
+	  },
+	  titleEditConfirm: function titleEditConfirm(event) {
+	    if (event.which === 13) {
+	      var newTitle = this.$titleInput.val();
+	      this.controller.titleEdit(newTitle, this.data.id);
+	    }
+	  }
+	});
+	
+	module.exports = TodoItemView;
+
+/***/ },
+/* 55 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"col-xs-1\">\n  {{#if completed}}\n    <input class=\"completed-checkbox\" type=\"checkbox\" checked>\n  {{else}}\n    <input class=\"completed-checkbox\" type=\"checkbox\">\n  {{/if}}\n</div>\n<div class=\"col-xs-10 title\">\n  <p class=\"item-title\">{{title}}</p>\n</div>\n<div class=\"col-xs-10 title-edit hidden\">\n  <p class=\"item-title\">\n    <input type=\"text\" class=\"form-control title-edit-input\" value=\"{{title}}\">\n  </p>\n</div>\n<div class=\"col-xs-1\">\n  <button type=\"button\" class=\"close\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>";
+
+/***/ },
+/* 56 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _templatesFunnySquareHtml = __webpack_require__(57);
 	
 	var _templatesFunnySquareHtml2 = _interopRequireDefault(_templatesFunnySquareHtml);
 	
@@ -21281,13 +21335,13 @@
 	module.exports = app;
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"square-container\">\n  <div class=\"square square{{id}}\">\n    <div class=\"inner\">{{id}}</div>\n  </div>\n</div>";
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21306,15 +21360,15 @@
 	
 	var _handlebars2 = _interopRequireDefault(_handlebars);
 	
-	var _lscache = __webpack_require__(39);
+	var _lscache = __webpack_require__(40);
 	
 	var _lscache2 = _interopRequireDefault(_lscache);
 	
-	var _templatesAccountListHtml = __webpack_require__(57);
+	var _templatesAccountListHtml = __webpack_require__(59);
 	
 	var _templatesAccountListHtml2 = _interopRequireDefault(_templatesAccountListHtml);
 	
-	var _templatesCreateAccountHtml = __webpack_require__(58);
+	var _templatesCreateAccountHtml = __webpack_require__(60);
 	
 	var _templatesCreateAccountHtml2 = _interopRequireDefault(_templatesCreateAccountHtml);
 	
@@ -21401,19 +21455,19 @@
 	module.exports = accountControllerView;
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports) {
 
 	module.exports = "<table class=\"table table-striped table-bordered\">\n  <tr>\n    <th>Number</th>\n    <th>Name</th>\n    <th>Phone</th>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>Tory</td>\n    <td>303-555-1111</td>\n  </tr>\n  <tr>\n    <td>2</td>\n    <td>Tim</td>\n    <td>303-555-2222</td>\n  </tr>\n</table>";
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports) {
 
 	module.exports = "<form>\n  <label for=\"name-field\">Name</label>\n  <input class=\"form-control\" type=\"text\" id=\"name-field\">\n</form>\n<button class=\"btn btn-primary btn-done\">Done</button>";
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21424,7 +21478,7 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _templatesNavbarHtml = __webpack_require__(60);
+	var _templatesNavbarHtml = __webpack_require__(62);
 	
 	var _templatesNavbarHtml2 = _interopRequireDefault(_templatesNavbarHtml);
 	
@@ -21440,13 +21494,13 @@
 	module.exports = app;
 
 /***/ },
-/* 60 */
+/* 62 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav>\n  <button><a role=\"menuitem\" href=\"/pages/todo.html\">ToDo Application</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/dyba.html\">DYBA</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/funnySquares.html\">Funny Squares</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/forms-backbone.html\">Backbone Forms</a></button>\n</nav>";
 
 /***/ },
-/* 61 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21457,7 +21511,7 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _templatesFooterHtml = __webpack_require__(62);
+	var _templatesFooterHtml = __webpack_require__(64);
 	
 	var _templatesFooterHtml2 = _interopRequireDefault(_templatesFooterHtml);
 	
@@ -21473,20 +21527,20 @@
 	module.exports = app;
 
 /***/ },
-/* 62 */
+/* 64 */
 /***/ function(module, exports) {
 
 	module.exports = "<div>Footer</div>";
 
 /***/ },
-/* 63 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesDybaNavbarHtml = __webpack_require__(64);
+	var _templatesDybaNavbarHtml = __webpack_require__(66);
 	
 	var _templatesDybaNavbarHtml2 = _interopRequireDefault(_templatesDybaNavbarHtml);
 	
@@ -21585,20 +21639,20 @@
 	module.exports = app;
 
 /***/ },
-/* 64 */
+/* 66 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav class=\"dyba-nav row\">\n  <a href=\"#\" class=\"dyba-logo-container col-xs-12 col-md-3\">\n    <p class=\"home-hidden\">Home</p>\n    <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-large\">\n  </a>\n  <ul class=\"dyba-links-container col-xs-12 col-md-9\">\n    <li class=\"row buffer-row hidden-xs hidden-sm\"></li>\n    <li class=\"row hidden-xs\">\n      <ul class=\"dyba-nav-menu\">\n        <li class=\"dyba-nav-link-container\">\n          <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">Registration</a>\n        </li>\n        <li class=\"dyba-nav-item roar\">\n          <a href=\"#\">\n            <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n          </a>\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Teams</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Programs</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">About</div>\n          <ul class=\"dyba-nav-submenu\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n        <li class=\"dyba-nav-item\">\n          <img src=\"/images/Jags shield logo-white.png\" class=\"dyba-nav-logo-small\">\n        </li>\n        <li class=\"dyba-nav-header-container\">\n          <div class=\"dyba-nav-header\">Coaches</div>\n          <ul class=\"dyba-nav-submenu dyba-nav-submenu-last\">\n            <li><a href=\"#\">Link 1</a></li>\n            <li><a href=\"#\">Link 2</a></li>\n            <li><a href=\"#\">Link 3</a></li>\n          </ul>\n        </li>\n      </ul>\n    </li>\n    <li class=\"row xs-row hidden-sm hidden-md hidden-lg\">\n      <div class=\"dropdown dyba-xs-nav-dropdown\">\n        <button class=\"btn btn-default dropdown-toggle dyba-xs-nav-button\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n          Menu\n          <span class=\"caret\"></span>\n        </button>\n        <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n          <li><a href=\"#\">Action</a></li>\n          <li><a href=\"#\">Another action</a></li>\n          <li><a href=\"#\">Something else here</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">Separated link</a></li>\n        </ul>\n      </div>\n    </li>\n  </ul>\n</nav>\n\n\n\n\n\n\n\n\n\n";
 
 /***/ },
-/* 65 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesDybaMainHtml = __webpack_require__(66);
+	var _templatesDybaMainHtml = __webpack_require__(68);
 	
 	var _templatesDybaMainHtml2 = _interopRequireDefault(_templatesDybaMainHtml);
 	
@@ -21640,13 +21694,13 @@
 	module.exports = app;
 
 /***/ },
-/* 66 */
+/* 68 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"dyba-main-container row\">\n  <div class=\"dyba-links-sidebar col-md-3 col-xs-3\">\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"http://www.cnn.com\">\n      <div class=\"dyba-sidebar-logo-3\">Register</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">J</div>\n    </a>\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"#\">\n      <div class=\"dyba-sidebar-logo-3\">Growth</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">A</div>\n    </a>\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"#\">\n      <div class=\"dyba-sidebar-logo-3\">Teams</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">G</div>\n    </a>\n    <a class=\"dyba-sidelink\" role=\"link\" href=\"#\">\n      <div class=\"dyba-sidebar-logo-3\">Programs</div>\n      <img src=\"/images/Jags Logo Green.png\" class=\"dyba-sidebar-logo-2\">\n      <div class=\"dyba-sidebar-logo-1\">S</div>\n    </a>\n  </div>\n  <div class=\"dyba-main-content col-md-9 col-xs-9\"></div>\n</div>\n\n\n\n\n\n\n\n";
 
 /***/ },
-/* 67 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22011,7 +22065,7 @@
 	module.exports = app;
 
 /***/ },
-/* 68 */
+/* 70 */
 /***/ function(module, exports) {
 
 	/*

@@ -1,7 +1,7 @@
 
 import $ from 'jquery';
 import 'styles/main.scss';
-import todos from 'pages/todo-backbone';
+import TodoControllerView from 'pages/todo/todo-controller';
 import funnySquares from 'pages/funnySquares';
 import formsBackbone from 'pages/forms-backbone';
 import header from 'components/header';
@@ -22,7 +22,7 @@ $(function() {
   // This is called a router
   switch (url) {
     case '/pages/todo.html':
-        todos.render();
+        var todoControllerView = new TodoControllerView();
     break;
     case '/pages/dyba.html':
         dybaHeader.init();
