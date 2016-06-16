@@ -90,7 +90,7 @@
 	
 	var _pagesPhotoSearch2 = _interopRequireDefault(_pagesPhotoSearch);
 	
-	__webpack_require__(71);
+	__webpack_require__(72);
 	
 	(0, _jquery2['default'])(function () {
 	
@@ -10034,7 +10034,7 @@
 	  },
 	  initialize: function initialize() {
 	    this.model.fetch();
-	    this.render();
+	    this.model.on('change', this.render, this);
 	  },
 	  render: function render() {
 	    var todos = this.model.get('todos');
@@ -18375,14 +18375,22 @@
 	    completed: false
 	  },
 	  fetch: function fetch() {
-	    var data = _lscache2['default'].get('todos');
-	    data = this.applySchema(data);
-	    this.set('todos', data);
+	    var that = this;
+	    $.ajax({
+	      url: '/api',
+	      method: 'GET',
+	      complete: function complete(response) {
+	        var dataString = response.responseText;
+	        var data = JSON.parse(dataString);
+	        data = that.applySchema(data);
+	        that.set('todos', data);
+	      }
+	    });
 	  },
 	  save: function save() {
-	    var data = this.get('todos');
-	    data = this.applySchema(data);
-	    _lscache2['default'].set('todos', data);
+	    // var data = this.get('todos');
+	    // data = this.applySchema(data);
+	    // lscache.set('todos', data);
 	  },
 	  applySchema: function applySchema(todos) {
 	    var data = todos;
@@ -22073,16 +22081,32 @@
 
 /***/ },
 /* 70 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _jquery = __webpack_require__(1);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _templatesFlickrImageHtml = __webpack_require__(71);
+	
+	var _templatesFlickrImageHtml2 = _interopRequireDefault(_templatesFlickrImageHtml);
+	
+	var _handlebars = __webpack_require__(9);
+	
+	var _handlebars2 = _interopRequireDefault(_handlebars);
+	
+	var compiledTemplate = _handlebars2['default'].compile(_templatesFlickrImageHtml2['default']);
 	
 	var app = {
 	  init: function init() {
 	    app.render();
 	  },
 	  render: function render() {
-	    app.$input = $('.search-container input');
+	    app.$input = (0, _jquery2['default'])('.search-container input');
 	    app.bindEvents();
 	  },
 	  bindEvents: function bindEvents() {
@@ -22095,7 +22119,7 @@
 	  },
 	  doSearch: function doSearch() {
 	    var phrase = app.$input.val();
-	    $.ajax({
+	    _jquery2['default'].ajax({
 	      url: 'https://api.flickr.com/services/rest',
 	      method: 'GET',
 	      data: {
@@ -22115,7 +22139,13 @@
 	  },
 	  renderResults: function renderResults(data) {
 	    // pass data to the template
+	    var html = '';
+	    var myPhotos = data.photos.photo;
+	    myPhotos.forEach(function (item) {
+	      html += compiledTemplate(item);
+	    });
 	    // append result to the .search-result div
+	    (0, _jquery2['default'])('.search-results').empty().append(html);
 	  }
 	};
 	
@@ -22123,6 +22153,12 @@
 
 /***/ },
 /* 71 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"photo\">\n  <img src=\"http://farm{{farm}}.static.flickr.com/{{server}}/{{id}}_{{secret}}_b.jpg\">\n</div>";
+
+/***/ },
+/* 72 */
 /***/ function(module, exports) {
 
 	/*

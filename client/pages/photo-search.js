@@ -1,3 +1,9 @@
+import $ from 'jquery';
+import photoTemplate from 'templates/flickr-image.html';
+import Handlebars from 'handlebars';
+
+var compiledTemplate = Handlebars.compile(photoTemplate);
+
 var app = {
   init: function() {
     app.render();
@@ -36,7 +42,13 @@ var app = {
   },
   renderResults: function(data) {
     // pass data to the template
+    var html = '';
+    var myPhotos = data.photos.photo;
+    myPhotos.forEach(function(item) {
+      html += compiledTemplate(item);
+    });
     // append result to the .search-result div
+    $('.search-results').empty().append(html);
   }
 };
 
