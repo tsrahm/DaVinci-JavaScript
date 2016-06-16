@@ -61,8 +61,8 @@
   margin: 0;
   display: block;
   position: relative;
-  background-image: url("/images/Jags Logo Green.png");
-  background-size: 200px;
+  width: 100%;
+  background: #005214;
 }
 
 /*.dyba-body::after {
@@ -77,6 +77,15 @@
   position: absolute;
   z-index: -1;
 }*/
+.dyba-background {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  background-image: url("/images/Jags Logo Green.png");
+  background-size: 200px;
+  max-width: 1100px;
+}
+
 .dyba-container {
   position: relative;
   width: 100%;
@@ -261,6 +270,7 @@ ul {
   border-radius: 50%;
   border: 3px solid #005214;
   width: 50%;
+  max-width: 120px;
   background: #888;
   overflow: hidden;
   margin: 10px auto;
