@@ -31,8 +31,8 @@ var app = {
     }, function(e) {
       var $logo1 = $(this).find('.dyba-sidebar-logo-1');
       var $logo2 = $(this).find('.dyba-sidebar-logo-2');
-      $logo2.hoverFlow(e.type, {opacity: 1}, 800);
-      $logo1.hoverFlow(e.type, {opacity: 1}, 300);
+      $logo2.hoverFlow(e.type, {opacity: 1}, 400);
+      $logo1.hoverFlow(e.type, {opacity: 1}, 200);
     });
   }
 };

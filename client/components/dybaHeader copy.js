@@ -41,11 +41,13 @@ var app = {
     $linkContainer.hover(function() {
       var $el = $(this);
       var $link = $el.find('.dyba-nav-link');
+      $el.css({background: '#005214'});
       $link.css({color: '#999', textDecoration: 'none'});
     }, function() {
       var $el = $(this);
       var $link = $el.find('.dyba-nav-link');
-      $link.css({color: 'white'});
+      $el.css({background: '#999'});
+      $link.css({color: '#005214'});
     });
 
     var $headerContainer = $('.dyba-nav-header-container');
@@ -53,6 +55,7 @@ var app = {
       var $el = $(this);
       var $header = $el.find('.dyba-nav-header');
       var $submenu = $el.find('.dyba-nav-submenu');
+      $el.css({background: '#005214'});
       $header.css({color: '#999'});
       $submenu.hoverFlow(e.type, {
         height: 'show',
@@ -67,7 +70,8 @@ var app = {
       var $submenu = $el.find('.dyba-nav-submenu');
       $el.delay(400)
         .queue(function(next) {
-          $header.css({color: 'white'});
+          $el.css({background: '#999'});
+          $header.css({color: '#005214'});
           next();
         });
       $submenu.hoverFlow(e.type, {
