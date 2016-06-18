@@ -21,23 +21,13 @@ router.get('/api', function(req, res) {
 });
 
 router.post('/api', function(req, res) {
-  var newTodo = req.body;
-  fs.readFile(databasePath, function(err, data) {
+  var todos = req.body.todos;
+  fs.writeFile(databasePath, todos, function(err) {
     if (err) { console.log(err); }
-    // parse data from a string
-    var parsedData = JSON.parse(data);
-    if (parsedData) { console.log('Corrupt database!') }
-      // add new item to the database
-    parsedData.push(newTodo);
-    // convert database back to a string
-    var newDBString = JSON.stringify(parsedData);
-    fs.writeFile(databasePath, newDBString, function(err) {
-      if (err) { console.log(err); }
-      // respond to the client
-      res.writeHead(200, {'Content-Type': 'text/json'});
-      res.write(newDBString);
-      res.end();
-    });
+    // respond to the client
+    res.writeHead(200, {'Content-Type': 'text/json'});
+    res.write(todos);
+    res.end();
   });
 });
 

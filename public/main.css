@@ -88,15 +88,16 @@
 
 .dyba-container {
   position: relative;
-  width: 80%;
-  max-width: 1000px;
-  height: 100%;
+  width: 100%;
+  height: auto;
   margin: 0 auto;
 }
 
 .dyba-header {
   position: relative;
   display: block;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .dyba-nav {
@@ -108,7 +109,8 @@
 .dyba-logo-container {
   position: relative;
   display: inline-block;
-  height: 135px;
+  padding-top: 5px;
+  height: 100%;
   text-align: center;
 }
 
@@ -125,10 +127,10 @@
   opacity: 0;
 }
 
-.dyba-nav-logo-large {
+.dyba-nav-logo {
   position: relative;
   display: inline-block;
-  height: 150px;
+  height: 135px;
 }
 
 .dyba-links-container {
@@ -157,13 +159,21 @@
   display: block;
   color: white;
   text-align: left;
-  font-size: 50px;
+  font-size: 35px;
   line-height: 85px;
   font-weight: bold;
   font-family: garamond;
 }
 
 .dyba-jaguars-sm {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  color: white;
+  font-size: 25px;
+  line-height: 85px;
+  font-weight: bold;
+  font-family: garamond;
   text-align: center;
 }
 
@@ -229,10 +239,8 @@
   display: none;
 }
 
-@media (min-width: 1050px) and (max-width: 1280px) {
-  .dyba-nav-submenu-last {
-    margin-left: -135px;
-  }
+.dyba-nav-submenu-last {
+  margin-left: -135px;
 }
 
 .dyba-nav-submenu li {
@@ -261,9 +269,11 @@
 }
 
 .dyba-main {
-  height: 700px;
   position: relative;
   display: block;
+  width: 80%;
+  height: 700px;
+  margin: 0 auto;
   border-top: 1px dotted #005214;
   background-color: #d0d1d0;
 }
@@ -335,6 +345,18 @@ ul {
   font-family: garamond;
   font-weight: bold;
   padding-top: 35%;
+}
+
+@media (max-width: 1050px) {
+  .dyba-nav-logo {
+    height: 100px;
+  }
+}
+
+@media (max-width: 799px) {
+  .dyba-main {
+    width: 100%;
+  }
 }
 
 h1 {
