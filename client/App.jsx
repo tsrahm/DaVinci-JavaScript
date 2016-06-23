@@ -1,7 +1,7 @@
 
 import $ from 'jquery';
 import 'styles/main.scss';
-import TodoControllerView from 'pages/todo/todo-controller';
+import TodoControllerView from 'pages/todo-react/todo-controller';
 import funnySquares from 'pages/funnySquares';
 import formsBackbone from 'pages/forms-backbone';
 import header from 'components/header';
@@ -10,7 +10,7 @@ import dybaHeader from 'components/dybaHeader';
 import dybaMain from 'pages/dyba';
 import music from 'pages/music';
 import photoSearch from 'pages/photo-search';
-import 'components/jquery.hoverflow.min.js'
+import 'components/jquery.hoverflow.min.js';
 
 $(function() {
 
@@ -43,13 +43,13 @@ $(function() {
     break;
   }
 
-// Fancy console message for developers
-console.log("=================================");
-console.log("=================================");
-console.log("=====I am looking for a job.=====");
-console.log("=================================");
-console.log("===========Contact me.===========");
-console.log("========toryrahm at gmail========");
-console.log("=================================");
-console.log("=================================");
+  // Fancy console message for developers
+  console.log('=================================');
+  console.log('=================================');
+  console.log('=====I am looking for a job.=====');
+  console.log('=================================');
+  console.log('===========Contact me.===========');
+  console.log('========toryrahm at gmail========');
+  console.log('=================================');
+  console.log('=================================');
 });

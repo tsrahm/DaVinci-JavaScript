@@ -1,11 +1,10 @@
 
 import $ from 'jquery';
 
-var $musicBody = $('.music-body');
 var $audioContainer = $('.audio-container');
 var $startAnimation = $('.start-animation');
 var $clickToStart = $('.click-to-start');
-var $note = $(".note");
+var $note = $('.note');
 var $bass = $('.bass');
 var $offBass = $('.off-bass');
 var $boop = $('.boop');
@@ -38,8 +37,6 @@ var chorusSpacing = 10;
 var charWidth = 20;
 var startLyrics = 24000;
 var noteShift = 30;
-var noteFade = 187.5;
-var noteTimer = 72180;
 var noteLeft;
 var noteTop;
 var boopHit;
@@ -58,14 +55,14 @@ var app = {
     app.render();
   },
   render: function() {
-    xlocation = Math.random()*1000;
-    ylocation = Math.random()*400;
+    xlocation = Math.random() * 1000;
+    ylocation = Math.random() * 400;
     $startAnimation.fadeIn(1500).css({left: xlocation, top: ylocation});
     $startAnimation.fadeOut(1500);
 
     var startDisplay = setInterval(function() {
-      xlocation = Math.random()*1000;
-      ylocation = Math.random()*400;
+      xlocation = Math.random() * 1000;
+      ylocation = Math.random() * 400;
       $startAnimation.fadeIn(1500).css({left: xlocation, top: ylocation});
       $startAnimation.fadeOut(1500);
       counter += 1;
@@ -140,7 +137,7 @@ var app = {
         bassHit = setInterval(function() {
           $bass.animate({fontSize: '150px'}, 200);
           $bass.animate({fontSize: '0px'}, 200);
-          $bass.delay(3000*(2.5/4)-400);
+          $bass.delay(3000 * (2.5 / 4) - 400);
           $bass.animate({fontSize: '150px'}, 200);
           $bass.animate({fontSize: '0px'}, 200);
         }, 3000);
@@ -149,22 +146,22 @@ var app = {
       setTimeout(function(){
         $offBass.animate({fontSize: '150px'}, 200);
         $offBass.animate({fontSize: '0px'}, 200);
-        $offBass.delay(3000*2-400);
+        $offBass.delay(3000 * 2 - 400);
         $offBass.animate({fontSize: '150px'}, 200);
         $offBass.animate({fontSize: '0px'}, 200);
-        $offBass.delay(3000*4-400);
+        $offBass.delay(3000 * 4 - 400);
         $offBass.animate({fontSize: '150px'}, 200);
         $offBass.animate({fontSize: '0px'}, 200);
-        $offBass.delay(3000*3-400);
+        $offBass.delay(3000 * 3 - 400);
         $offBass.animate({fontSize: '150px'}, 200);
         $offBass.animate({fontSize: '0px'}, 200);
-        $offBass.delay(3000*2.75-400);
+        $offBass.delay(3000 * 2.75 - 400);
         $offBass.animate({fontSize: '150px'}, 200);
         $offBass.animate({fontSize: '0px'}, 200);
-        $offBass.delay(3000*0.25-400);
+        $offBass.delay(3000 * 0.25 - 400);
         $offBass.animate({fontSize: '150px'}, 200);
         $offBass.animate({fontSize: '0px'}, 200);
-        $offBass.delay(3000*6-400);
+        $offBass.delay(3000 * 6 - 400);
         $offBass.animate({fontSize: '150px'}, 200);
         $offBass.animate({fontSize: '0px'}, 200);
       }, 11500);
@@ -174,53 +171,53 @@ var app = {
         $lyricA
           .html("What'll")
           .css({
-            "left": leftBridge,
-            "top": topBridge
+            'left': leftBridge,
+            'top': topBridge
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricB
           .delay(lyricDelay)
-          .html("it")
+          .html('it')
           .css({
-            "left": leftBridge + charWidth * 9,
-            "top": topBridge
+            'left': leftBridge + charWidth * 9,
+            'top': topBridge
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricC
-          .delay(lyricDelay*2)
-          .html("be")
+          .delay(lyricDelay * 2)
+          .html('be')
           .css({
-            "left": leftBridge + charWidth * 12,
-            "top": topBridge
+            'left': leftBridge + charWidth * 12,
+            'top': topBridge
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricD
-          .delay(lyricDelay*8.4)
-          .html("now")
+          .delay(lyricDelay * 8.4)
+          .html('now')
           .css({
-            "left": leftBridge + charWidth * 15,
-            "top": topBridge
+            'left': leftBridge + charWidth * 15,
+            'top': topBridge
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricE
-          .delay(lyricDelay*9.5)
-          .html("mister")
+          .delay(lyricDelay * 9.5)
+          .html('mister')
           .css({
-            "left": leftBridge + charWidth * 20.5,
-            "top": topBridge
+            'left': leftBridge + charWidth * 20.5,
+            'top': topBridge
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricF
-          .delay(lyricDelay*10.9)
-          .html("mole")
+          .delay(lyricDelay * 10.9)
+          .html('mole')
           .css({
-            "left": leftBridge + charWidth * 28.2,
-            "top": topBridge
+            'left': leftBridge + charWidth * 28.2,
+            'top': topBridge
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
@@ -228,55 +225,55 @@ var app = {
       
       setTimeout(function(){
         $lyricA
-          .html("Whispers")
+          .html('Whispers')
           .css({
-            "left": leftBridge + lineShift,
-            "top": topBridge + topBridgeShift
+            'left': leftBridge + lineShift,
+            'top': topBridge + topBridgeShift
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricB
-          .delay(lyricDelay*1.5)
-          .html("sloth")
+          .delay(lyricDelay * 1.5)
+          .html('sloth')
           .css({
-            "left": leftBridge + lineShift + charWidth * 10.6,
-            "top": topBridge + topBridgeShift,
+            'left': leftBridge + lineShift + charWidth * 10.6,
+            'top': topBridge + topBridgeShift
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricC
-          .delay(lyricDelay*7.5)
-          .html("in")
+          .delay(lyricDelay * 7.5)
+          .html('in')
           .css({
-            "left": leftBridge + lineShift + charWidth * 17,
-            "top": topBridge + topBridgeShift
+            'left': leftBridge + lineShift + charWidth * 17,
+            'top': topBridge + topBridgeShift
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricD
-          .delay(lyricDelay*9.5)
-          .html("curls")
+          .delay(lyricDelay * 9.5)
+          .html('curls')
           .css({
-            "left": leftBridge + lineShift + charWidth * 20,
-            "top": topBridge + topBridgeShift
+            'left': leftBridge + lineShift + charWidth * 20,
+            'top': topBridge + topBridgeShift
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricE
-          .delay(lyricDelay*10.5)
-          .html("of")
+          .delay(lyricDelay * 10.5)
+          .html('of')
           .css({
-            "left": leftBridge + lineShift + charWidth * 26.1,
-            "top": topBridge + topBridgeShift
+            'left': leftBridge + lineShift + charWidth * 26.1,
+            'top': topBridge + topBridgeShift
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricF
-          .delay(lyricDelay*11.5)
-          .html("smoke")
+          .delay(lyricDelay * 11.5)
+          .html('smoke')
           .css({
-            "left": leftBridge + lineShift + charWidth * 29.5,
-            "top": topBridge + topBridgeShift
+            'left': leftBridge + lineShift + charWidth * 29.5,
+            'top': topBridge + topBridgeShift
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
@@ -284,64 +281,64 @@ var app = {
 
       setTimeout(function(){
         $lyricA
-          .html("Take")
+          .html('Take')
           .css({
-            "left": leftBridge + lineShift * 2,
-            "top": topBridge + topBridgeShift * 2
+            'left': leftBridge + lineShift * 2,
+            'top': topBridge + topBridgeShift * 2
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricB
-          .delay(lyricDelay*0.6)
-          .html("a")
+          .delay(lyricDelay * 0.6)
+          .html('a')
           .css({
-            "left": leftBridge + lineShift * 2 + charWidth * 6,
-            "top": topBridge + topBridgeShift * 2,
+            'left': leftBridge + lineShift * 2 + charWidth * 6,
+            'top': topBridge + topBridgeShift * 2
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricC
-          .delay(lyricDelay*1.2)
-          .html("back")
+          .delay(lyricDelay * 1.2)
+          .html('back')
           .css({
-            "left": leftBridge + lineShift * 2 + charWidth * 8.2,
-            "top": topBridge + topBridgeShift * 2
+            'left': leftBridge + lineShift * 2 + charWidth * 8.2,
+            'top': topBridge + topBridgeShift * 2
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricD
-          .delay(lyricDelay*2)
-          .html("seat")
+          .delay(lyricDelay * 2)
+          .html('seat')
           .css({
-            "left": leftBridge + lineShift * 2 + charWidth * 14.4,
-            "top": topBridge + topBridgeShift * 2
+            'left': leftBridge + lineShift * 2 + charWidth * 14.4,
+            'top': topBridge + topBridgeShift * 2
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricE
-          .delay(lyricDelay*8)
-          .html("or")
+          .delay(lyricDelay * 8)
+          .html('or')
           .css({
-            "left": leftBridge + lineShift * 2 + charWidth * 20.2,
-            "top": topBridge + topBridgeShift * 2
+            'left': leftBridge + lineShift * 2 + charWidth * 20.2,
+            'top': topBridge + topBridgeShift * 2
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricF
-          .delay(lyricDelay*9.4)
-          .html("play")
+          .delay(lyricDelay * 9.4)
+          .html('play')
           .css({
-            "left": leftBridge + lineShift * 2 + charWidth * 23.5,
-            "top": topBridge + topBridgeShift * 2
+            'left': leftBridge + lineShift * 2 + charWidth * 23.5,
+            'top': topBridge + topBridgeShift * 2
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricG
-          .delay(lyricDelay*10.5)
-          .html("pharaoh")
+          .delay(lyricDelay * 10.5)
+          .html('pharaoh')
           .css({
-            "left": leftBridge + lineShift * 2 + charWidth * 29.2,
-            "top": topBridge + topBridgeShift * 2
+            'left': leftBridge + lineShift * 2 + charWidth * 29.2,
+            'top': topBridge + topBridgeShift * 2
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
@@ -349,64 +346,64 @@ var app = {
 
       setTimeout(function(){
         $lyricA
-          .html("Dance")
+          .html('Dance')
           .css({
-            "left": leftBridge + lineShift * 3,
-            "top": topBridge + topBridgeShift * 3
+            'left': leftBridge + lineShift * 3,
+            'top': topBridge + topBridgeShift * 3
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricB
           .delay(lyricDelay)
-          .html("with")
+          .html('with')
           .css({
-            "left": leftBridge + lineShift * 3 + charWidth * 8,
-            "top": topBridge + topBridgeShift * 3,
+            'left': leftBridge + lineShift * 3 + charWidth * 8,
+            'top': topBridge + topBridgeShift * 3
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricC
-          .delay(lyricDelay*2)
-          .html("me")
+          .delay(lyricDelay * 2)
+          .html('me')
           .css({
-            "left": leftBridge + lineShift * 3 + charWidth * 13.6,
-            "top": topBridge + topBridgeShift * 3
+            'left': leftBridge + lineShift * 3 + charWidth * 13.6,
+            'top': topBridge + topBridgeShift * 3
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricD
-          .delay(lyricDelay*7.5)
-          .html("and")
+          .delay(lyricDelay * 7.5)
+          .html('and')
           .css({
-            "left": leftBridge + lineShift * 3 + charWidth * 17.6,
-            "top": topBridge + topBridgeShift * 3
+            'left': leftBridge + lineShift * 3 + charWidth * 17.6,
+            'top': topBridge + topBridgeShift * 3
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricE
-          .delay(lyricDelay*9)
-          .html("shake")
+          .delay(lyricDelay * 9)
+          .html('shake')
           .css({
-            "left": leftBridge + lineShift * 3 + charWidth * 22.6,
-            "top": topBridge + topBridgeShift * 3
+            'left': leftBridge + lineShift * 3 + charWidth * 22.6,
+            'top': topBridge + topBridgeShift * 3
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricF
-          .delay(lyricDelay*10)
-          .html("your")
+          .delay(lyricDelay * 10)
+          .html('your')
           .css({
-            "left": leftBridge + lineShift * 3 + charWidth * 29.8,
-            "top": topBridge + topBridgeShift * 3
+            'left': leftBridge + lineShift * 3 + charWidth * 29.8,
+            'top': topBridge + topBridgeShift * 3
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
         $lyricG
-          .delay(lyricDelay*11)
-          .html("bones")
+          .delay(lyricDelay * 11)
+          .html('bones')
           .css({
-            "left": leftBridge + lineShift * 3 + charWidth * 36,
-            "top": topBridge + topBridgeShift * 3
+            'left': leftBridge + lineShift * 3 + charWidth * 36,
+            'top': topBridge + topBridgeShift * 3
           })
           .fadeIn(lyricIn)
           .fadeOut(lyricOut);
@@ -415,67 +412,67 @@ var app = {
     // Chorus
       setTimeout(function(){
         $lyricA
-          .html("Slow down")
+          .html('Slow down')
           .css({
-            "left": leftChorus,
-            "top": topChorus,
-            "word-spacing": chorusSpacing
+            'left': leftChorus,
+            'top': topChorus,
+            'word-spacing': chorusSpacing
           })
           .fadeIn(lyricIn)
           .fadeOut(chorusOut);
         $lyricB
-          .delay(chorusDelay*2.3)
+          .delay(chorusDelay * 2.3)
           .html("It's a science")
           .css({
-            "left": leftChorus,
-            "top": topChorus + topChorusShift,
-            "word-spacing": chorusSpacing
+            'left': leftChorus,
+            'top': topChorus + topChorusShift,
+            'word-spacing': chorusSpacing
           })
           .fadeIn(lyricIn)
           .fadeOut(chorusOut);
         $lyricC
-          .delay(chorusDelay*5)
+          .delay(chorusDelay * 5)
           .html("He's been waiting to").css({
-            "left": leftChorus,
-            "top": topChorus + topChorusShift * 2,
-            "word-spacing": chorusSpacing
-          }).fadeIn(lyricIn*2)
+            'left': leftChorus,
+            'top': topChorus + topChorusShift * 2,
+            'word-spacing': chorusSpacing
+          }).fadeIn(lyricIn * 2)
           .fadeOut(chorusOut * 1.5);
-        $lyricD.delay(chorusDelay*9)
-          .html("Bring you down").css({
-            "left": leftChorus,
-            "top": topChorus + topChorusShift * 3,
-            "word-spacing": chorusSpacing
+        $lyricD.delay(chorusDelay * 9)
+          .html('Bring you down').css({
+            'left': leftChorus,
+            'top': topChorus + topChorusShift * 3,
+            'word-spacing': chorusSpacing
           }).fadeIn(lyricIn)
           .fadeOut(chorusOut);
-        $lyricE.delay(chorusDelay*12)
-          .html("Snake eyed").css({
-            "left": leftChorus,
-            "top": topChorus + topChorusShift * 4,
-            "word-spacing": chorusSpacing
+        $lyricE.delay(chorusDelay * 12)
+          .html('Snake eyed').css({
+            'left': leftChorus,
+            'top': topChorus + topChorusShift * 4,
+            'word-spacing': chorusSpacing
           }).fadeIn(lyricIn)
           .fadeOut(chorusOut);
-        $lyricF.delay(chorusDelay*14)
-          .html("With a sly smile").css({
-            "left": leftChorus,
-            "top": topChorus + topChorusShift * 5,
-            "word-spacing": chorusSpacing
-          }).fadeIn(lyricIn*1.5)
+        $lyricF.delay(chorusDelay * 14)
+          .html('With a sly smile').css({
+            'left': leftChorus,
+            'top': topChorus + topChorusShift * 5,
+            'word-spacing': chorusSpacing
+          }).fadeIn(lyricIn * 1.5)
           .fadeOut(chorusOut);
-        $lyricG.delay(chorusDelay*17.5)
-          .html("He can hold you").css({
-            "left": leftChorus,
-            "top": topChorus + topChorusShift * 6,
-            "word-spacing": chorusSpacing
+        $lyricG.delay(chorusDelay * 17.5)
+          .html('He can hold you').css({
+            'left': leftChorus,
+            'top': topChorus + topChorusShift * 6,
+            'word-spacing': chorusSpacing
           }).fadeIn(lyricIn)
           .fadeOut(chorusOut);
-        $lyricH.delay(chorusDelay*20.5)
-          .html("And shake your child").css({
-            "left": leftChorus,
-            "top": topChorus + topChorusShift * 7,
-            "word-spacing": chorusSpacing
+        $lyricH.delay(chorusDelay * 20.5)
+          .html('And shake your child').css({
+            'left': leftChorus,
+            'top': topChorus + topChorusShift * 7,
+            'word-spacing': chorusSpacing
           }).fadeIn(lyricIn)
-          .fadeOut(chorusOut*1.5);
+          .fadeOut(chorusOut * 1.5);
       }, startLyrics + 24000);
 
       setTimeout(function(){
@@ -504,10 +501,10 @@ var app = {
             .animate({opacity: 0}, 175)
             .animate({left: noteLeft += noteShift, top: noteTop += noteShift}, 200)
             .animate({opacity: 1}, 0)
-            .animate({opacity: 0}, 175/2)
+            .animate({opacity: 0}, 175 / 2)
             .animate({left: noteLeft += noteShift, top: noteTop -= noteShift}, 100)
             .animate({opacity: 1}, 0)
-            .animate({opacity: 0}, 175/2)
+            .animate({opacity: 0}, 175 / 2)
             .animate({left: noteLeft += noteShift, top: noteTop += noteShift}, 100)
             .animate({opacity: 1}, 0)
             .animate({opacity: 0}, 175)
@@ -517,7 +514,7 @@ var app = {
             .animate({left: noteLeft += noteShift, top: noteTop += noteShift}, 200)
             .animate({opacity: 1}, 0)
             .animate({opacity: 0}, 175);
-        };
+        }
       }, startLyrics + 47800);
 
       setTimeout(function(){

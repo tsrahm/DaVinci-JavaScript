@@ -45,7 +45,7 @@ var app = {
     }, function() {
       var $el = $(this);
       var $link = $el.find('.dyba-nav-link');
-      $link.css({color: 'black'});
+      $link.css({color: 'white'});
     });
 
     var $headerContainer = $('.dyba-nav-header-container');
@@ -67,7 +67,7 @@ var app = {
       var $submenu = $el.find('.dyba-nav-submenu');
       $el.delay(400)
         .queue(function(next) {
-          $header.css({color: 'black'});
+          $header.css({color: 'white'});
           next();
         });
       $submenu.hoverFlow(e.type, {
