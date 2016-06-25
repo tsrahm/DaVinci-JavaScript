@@ -1,3 +1,4 @@
+
 var $ = require('jquery');
 
 // Legacy loading for Bootstrap
@@ -9,9 +10,10 @@ import ReactDOM from 'react-dom';
 import Backbone from 'backbone';
 import todoModel from 'pages/todo-react/todo-model';
 import TodoItemView from 'pages/todo-react/todo-view';
+import dispatcher from 'pages/todo-react/todo-dispatcher';
 
 
-var TodoControllerView = Backbone.View.extend({
+var TodoListView = Backbone.View.extend({
   el: '.todo-container',
   model: todoModel,
   events: {
@@ -25,12 +27,11 @@ var TodoControllerView = Backbone.View.extend({
     var todos = this.model.get('todos');
     var $listGroup = this.$el.find('.list-group');
     $listGroup.empty();
-    var controller = this;
     todos.forEach(function(todo) {
       var $li = $('<li class="list-group-item"></li>');
       $listGroup.append($li);
       ReactDOM.render(
-        <TodoItemView data={todo} controller={controller} />,
+        <TodoItemView data={todo}/>,
         $li[0]             // Get original DOM node from jQuery object
       );
     });
@@ -38,11 +39,9 @@ var TodoControllerView = Backbone.View.extend({
   addTodoItem: function() {
     var $input = this.$el.find('.input-name');
     var newTitle = $input.val();
-    if (newTitle === '') { return; }
-    this.model.addItem(newTitle);
+    dispatcher.addTodo(newTitle);
     $input.val('');
-    this.render();
   }
 });
 
-module.exports = TodoControllerView;
+module.exports = TodoListView;

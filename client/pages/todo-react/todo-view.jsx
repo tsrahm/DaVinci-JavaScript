@@ -1,5 +1,7 @@
 
+import $ from 'jquery';
 import React, { PropTypes } from 'react';
+import dispatcher from 'pages/todo-react/todo-dispatcher';
 
 var TodoItem = React.createClass({
   propTypes: {
@@ -42,23 +44,20 @@ var TodoItem = React.createClass({
   },
   handleComplete: function() {
     var id = this.props.data.id;
-    var newValue = !this.props.data.completed;
-    this.props.controller.model.itemCompleted(id, newValue);
+    dispatcher.clickComplete(id);
   },
   titleClick: function() {
     var id = this.props.data.id;
-    this.props.controller.model.startEditing(id);
+    dispatcher.startEditMode(id);
   },
   editKeypress: function(event) {
-    if (event.which === 13) {
-      var id = this.props.data.id;
-      var newTitle = $('li').eq(id).find('input[type="text"]').val();
-      this.props.controller.model.editTitle(newTitle, id);
-    } 
+    var id = this.props.data.id;
+    var newTitle = $('li').eq(id).find('input[type="text"]').val();
+    dispatcher.editTodoTitle(newTitle, id, event); 
   },
   handleClose: function() {
     var id = this.props.data.id;
-    this.props.controller.model.removeItem(id);
+    dispatcher.removeTodo(id);
   }
 });
 

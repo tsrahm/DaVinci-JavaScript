@@ -22,12 +22,12 @@ var app = {
     app.bindHoverEvents();
   },
   bindHoverEvents: function() {
-    var $sideLink = $('.dyba-sidelink');
+    var $sideLink = $('.dyba-sidebar-link');
     $sideLink.hover(function(e) {
       var $logo1 = $(this).find('.dyba-sidebar-logo-1');
       var $logo2 = $(this).find('.dyba-sidebar-logo-2');
       $logo1.hoverFlow(e.type, {opacity: 0}, 200);
-      $logo2.hoverFlow(e.type, {opacity: 0}, 600);
+      $logo2.hoverFlow(e.type, {opacity: 0}, 1000);
     }, function(e) {
       var $logo1 = $(this).find('.dyba-sidebar-logo-1');
       var $logo2 = $(this).find('.dyba-sidebar-logo-2');

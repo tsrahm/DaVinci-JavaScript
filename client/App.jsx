@@ -1,13 +1,13 @@
 
 import $ from 'jquery';
 import 'styles/main.scss';
-import TodoControllerView from 'pages/todo-react/todo-controller';
+import TodoListView from 'pages/todo-react/todo-list-view';
 import funnySquares from 'pages/funnySquares';
 import formsBackbone from 'pages/forms-backbone';
 import header from 'components/header';
 import footer from 'components/footer';
-import dybaHeader from 'components/dybaHeader';
-import dybaMain from 'pages/dyba';
+import dybaHeader from 'components/dyba-header';
+import dybaMain from 'pages/dyba-main';
 import music from 'pages/music';
 import photoSearch from 'pages/photo-search';
 import 'components/jquery.hoverflow.min.js';
@@ -23,7 +23,7 @@ $(function() {
   // This is called a router
   switch (url) {
     case '/pages/todo.html':
-        var todoControllerView = new TodoControllerView();
+        var todoListView = new TodoListView();
     break;
     case '/pages/dyba.html':
         dybaHeader.init();
