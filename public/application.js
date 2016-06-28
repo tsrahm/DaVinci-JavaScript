@@ -10061,8 +10061,8 @@
 	  checkAddTodoItem: function checkAddTodoItem() {
 	    var $input = this.$el.find('.input-name');
 	    var newTitle = $input.val();
-	    _pagesTodoReactTodoDispatcher2['default'].checkAddTodo(event, newTitle);
 	    if (event.which === 13) {
+	      _pagesTodoReactTodoDispatcher2['default'].addTodo(newTitle);
 	      $input.val('');
 	    }
 	  }
@@ -35821,11 +35821,6 @@
 	      _pagesTodoReactTodoModel2['default'].addItem(newTitle);
 	    }
 	  },
-	  checkAddTodo: function checkAddTodo(event, newTitle) {
-	    if (event.which === 13 && newTitle !== '' && typeof newTitle === 'string') {
-	      _pagesTodoReactTodoModel2['default'].addItem(newTitle);
-	    }
-	  },
 	  removeTodo: function removeTodo(id) {
 	    _pagesTodoReactTodoModel2['default'].removeItem(id);
 	  },
@@ -35833,7 +35828,6 @@
 	    if (event.which === 13 && typeof newTitle === 'string' && newTitle.length > 0) {
 	      _pagesTodoReactTodoModel2['default'].editTitle(newTitle, id);
 	    } else if (event.which === 27) {
-	      debugger;
 	      _pagesTodoReactTodoModel2['default'].cancelEditTitle(id);
 	    }
 	  },
