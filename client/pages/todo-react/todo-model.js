@@ -84,6 +84,13 @@ var TodoModel = Backbone.Model.extend({
     this.set('todos', todos);
     this.save();
   },
+  cancelEditTitle: function(id) {
+    var todos = this.get('todos');
+    var item = _.findWhere(todos, {id: id});
+    item.isEditing = false;
+    this.set('todos', todos);
+    this.save();
+  },
   startEditing: function(id) {
     var todos = this.get('todos');
     var item = _.findWhere(todos, {id: id});

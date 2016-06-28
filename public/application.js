@@ -33254,6 +33254,13 @@
 	    this.set('todos', todos);
 	    this.save();
 	  },
+	  cancelEditTitle: function cancelEditTitle(id) {
+	    var todos = this.get('todos');
+	    var item = _underscore2['default'].findWhere(todos, { id: id });
+	    item.isEditing = false;
+	    this.set('todos', todos);
+	    this.save();
+	  },
 	  startEditing: function startEditing(id) {
 	    var todos = this.get('todos');
 	    var item = _underscore2['default'].findWhere(todos, { id: id });
@@ -35744,7 +35751,7 @@
 	        _react2['default'].createElement(
 	          'p',
 	          { className: 'item-title' },
-	          _react2['default'].createElement('input', { type: 'text', className: 'form-control', defaultValue: todo.title, onKeyPress: this.editKeypress, onChange: function () {} })
+	          _react2['default'].createElement('input', { type: 'text', className: 'form-control', defaultValue: todo.title, onKeyUp: this.editKeypress, onChange: function () {} })
 	        )
 	      );
 	    }
@@ -35825,6 +35832,9 @@
 	  editTodoTitle: function editTodoTitle(newTitle, id, event) {
 	    if (event.which === 13 && typeof newTitle === 'string' && newTitle.length > 0) {
 	      _pagesTodoReactTodoModel2['default'].editTitle(newTitle, id);
+	    } else if (event.which === 27) {
+	      debugger;
+	      _pagesTodoReactTodoModel2['default'].cancelEditTitle(id);
 	    }
 	  },
 	  startEditMode: function startEditMode(id) {

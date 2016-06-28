@@ -32,6 +32,11 @@ var dispatcher = {
       && newTitle.length > 0
     ) {
       todoModel.editTitle(newTitle, id);
+    } else if (
+      event.which === 27
+    ) {
+      debugger;
+      todoModel.cancelEditTitle(id);
     }
   },
   startEditMode: function(id) {
