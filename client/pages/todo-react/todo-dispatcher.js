@@ -13,6 +13,15 @@ var dispatcher = {
       todoModel.addItem(newTitle);
     }
   },
+  checkAddTodo: function(event, newTitle) {
+    if (
+      event.which === 13
+      && newTitle !== ''
+      && typeof newTitle === 'string'
+    ) {
+      todoModel.addItem(newTitle);
+    }
+  },
   removeTodo: function(id) {
     todoModel.removeItem(id);
   },

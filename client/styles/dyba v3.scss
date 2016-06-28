@@ -1,6 +1,14 @@
 @font-face {
+    font-family: collegiate;
+    src: url(/css/SF_Collegiate.ttf);
+}
+@font-face {
     font-family: collegiate_solid;
     src: url(/css/SF_Collegiate_Solid.ttf);
+}
+@font-face {
+    font-family: nexa;
+    src: url(/css/NexaRustSlab-Shadow1.ttf);
 }
 @font-face {
     font-family: nexa_hand;
@@ -9,6 +17,10 @@
 @font-face {
     font-family: nexa_0;
     src: url(/css/nexarustslab-0.otf) format('opentype');
+}
+@font-face {
+    font-family: nexa_shadow0;
+    src: url(/css/nexarustslab-shadow0.otf) format('opentype');
 }
 @font-face {
     font-family: jags;
@@ -37,6 +49,12 @@
       rgba(0, 82, 20, 1) 80%,
       rgba(0, 82, 20, 0.90)
     );
+}
+.dyba-container {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
 }
 .dyba-header {
   position: relative;
@@ -84,9 +102,9 @@
   display: block;
   color: white;
   text-align: left;
-  font-size: 5vw;
+  font-size: 3.5vw;
   line-height: 100px;
-  font-family: 'collegiate_solid', cursive;
+  font-family: 'jags', cursive;
 }
 .dyba-nav-bar {
   position: relative;
@@ -100,6 +118,7 @@
   margin-bottom: 0;
   background-color: white;
   text-align: center;
+  border-radius: 5px 5px 0 0;
 }
 .dyba-nav-link-container {
   position: relative;
@@ -197,38 +216,66 @@
   width: 100%;
   height: 900px;
   margin: 0;
-  padding-top: 20px;
   background-color: #dddedd;
 }
-.dyba-main-header {
-  position: relative;
-  display: block;
-  width: 600px;
-  height: auto;
-  margin: 0 auto;
-}
-.dyba-main-header-row1 {
-  width: 100%;
-  height: 50px;
-}
-.dyba-main-header-row1-outside {
-  width: 15%;
-  height: 100%;
-  background: red;
-}
-.dyba-main-header-row1-border {
-  width: 25%;
-  background: white;
-}
-.dyba-main-header-row1-image {
-  width: 20%;
-  background: blue;
-}
-
 ul {
   list-style-type: none;
 }
+.dyba-main-sidebar {
+}
+.dyba-main-sidebar-container {
+  position: relative;
+  display: block;
+  width: 80%;
+  max-width: 200px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+.dyba-sidebar-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  text-align: center;
+}
+.dyba-sidebar-logo-1 {
+  position: absolute;
+  z-index: 2;
+  background: #dddedd;
+  width: 100%;
+  color: #005214;
+  line-height: 120px;
+  text-align: center;
+  font-size: 7vw;
+  font-family: 'nexa_shadow0', cursive;
+}
+.dyba-sidebar-logo-2 {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.dyba-sidebar-logo-3 {
+  position: absolute;
+  z-index: 0;
+  background: #dddedd;
+  width: 100%;
+  color: #005214;
+  line-height: 120px;
+  text-align: center;
+  font-size: 2vw;
+  font-family: garamond;
+  font-weight: bold;
+}
 @media (max-width: 768px) {
+  .dyba-container {
+    width: 100%;
+  }
   .dyba-jaguars {
   text-align: center;
   line-height: 70px;
