@@ -90,11 +90,11 @@
 	
 	var _pagesPhotoSearch2 = _interopRequireDefault(_pagesPhotoSearch);
 	
-	var _pagesHomePage = __webpack_require__(231);
+	var _pagesHomePage = __webpack_require__(230);
 	
 	var _pagesHomePage2 = _interopRequireDefault(_pagesHomePage);
 	
-	__webpack_require__(230);
+	__webpack_require__(231);
 	
 	(0, _jquery2['default'])(function () {
 	
@@ -9994,7 +9994,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-background":"dyba-background","dyba-header":"dyba-header","dyba-title-bar":"dyba-title-bar","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo":"dyba-nav-logo","dyba-title-container":"dyba-title-container","dyba-title":"dyba-title","dyba-nav-bar":"dyba-nav-bar","dyba-nav-container":"dyba-nav-container","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-link":"dyba-nav-link","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-nav-dropdown-container":"dyba-nav-dropdown-container","dyba-nav-dropdown-header":"dyba-nav-dropdown-header","dyba-nav-dropdown-menu":"dyba-nav-dropdown-menu","dyba-nav-container-sm":"dyba-nav-container-sm","dyba-xs-nav-dropdown":"dyba-xs-nav-dropdown","dyba-xs-nav-button":"dyba-xs-nav-button","dyba-main":"dyba-main","dyba-main-heading":"dyba-main-heading","dyba-main-heading-row1":"dyba-main-heading-row1","dyba-main-heading-row1-border":"dyba-main-heading-row1-border","dyba-main-heading-row1-image":"dyba-main-heading-row1-image","dyba-main-heading-row1-image-file":"dyba-main-heading-row1-image-file","dyba-main-heading-row2":"dyba-main-heading-row2","dyba-main-heading-row3":"dyba-main-heading-row3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","col-md-4":"col-md-4","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","main-container":"main-container","tr-circle":"tr-circle","tsr-change":"tsr-change","tr-text":"tr-text","tr-phone1":"tr-phone1","tr-phone2":"tr-phone2","fr-ed":"fr-ed","profile-heading":"profile-heading","music-body":"music-body","music-container":"music-container","start-animation":"start-animation","beat-text":"beat-text","boop":"boop","flik1":"flik1","flik2":"flik2","flik3":"flik3","ting":"ting","snare":"snare","off-bass":"off-bass","bass":"bass","note":"note","lyric-a":"lyric-a","lyric-b":"lyric-b","lyric-c":"lyric-c","lyric-d":"lyric-d","lyric-e":"lyric-e","lyric-f":"lyric-f","lyric-g":"lyric-g","lyric-h":"lyric-h","search-container":"search-container","photo":"photo"};
+	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-background":"dyba-background","dyba-header":"dyba-header","dyba-title-bar":"dyba-title-bar","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo":"dyba-nav-logo","dyba-title-container":"dyba-title-container","dyba-title":"dyba-title","dyba-nav-bar":"dyba-nav-bar","dyba-nav-container":"dyba-nav-container","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-link":"dyba-nav-link","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-nav-dropdown-container":"dyba-nav-dropdown-container","dyba-nav-dropdown-header":"dyba-nav-dropdown-header","dyba-nav-dropdown-menu":"dyba-nav-dropdown-menu","dyba-nav-container-sm":"dyba-nav-container-sm","dyba-xs-nav-dropdown":"dyba-xs-nav-dropdown","dyba-xs-nav-button":"dyba-xs-nav-button","dyba-main":"dyba-main","dyba-main-heading":"dyba-main-heading","dyba-main-heading-row1":"dyba-main-heading-row1","dyba-main-heading-row1-border":"dyba-main-heading-row1-border","dyba-main-heading-row1-image":"dyba-main-heading-row1-image","dyba-main-heading-row1-image-file":"dyba-main-heading-row1-image-file","dyba-main-heading-row2":"dyba-main-heading-row2","dyba-main-heading-row3":"dyba-main-heading-row3","dyba-main-content":"dyba-main-content","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","col-md-4":"col-md-4","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","main-container":"main-container","tr-circle":"tr-circle","tsr-change":"tsr-change","tr-text":"tr-text","tr-phone1":"tr-phone1","tr-phone2":"tr-phone2","fr-ed":"fr-ed","profile-heading":"profile-heading","music-body":"music-body","music-container":"music-container","start-animation":"start-animation","beat-text":"beat-text","boop":"boop","flik1":"flik1","flik2":"flik2","flik3":"flik3","ting":"ting","snare":"snare","off-bass":"off-bass","bass":"bass","note":"note","lyric-a":"lyric-a","lyric-b":"lyric-b","lyric-c":"lyric-c","lyric-d":"lyric-d","lyric-e":"lyric-e","lyric-f":"lyric-f","lyric-g":"lyric-g","lyric-h":"lyric-h","search-container":"search-container","photo":"photo"};
 
 /***/ },
 /* 3 */,
@@ -41420,7 +41420,7 @@
 /* 226 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"dyba-main-heading\">\n  <div class=\"dyba-main-heading-row1\">\n    <div class=\"dyba-main-heading-row1-border\"></div>\n    <div class=\"dyba-main-heading-row1-image\">\n      <img class=\"dyba-main-heading-row1-image-file\" src=\"/images/Jags head white-green.png\">\n    </div>\n    <div class=\"dyba-main-heading-row1-border\"></div>\n  </div>\n  <div class=\"dyba-main-heading-row2\">WELCOME</div>\n  <div class=\"dyba-main-heading-row3\"></div>\n</div>\n<div class=\"dyba-main-content\"></div>\n\n\n\n\n\n\n\n";
+	module.exports = "<div class=\"dyba-main-heading\">\n  <div class=\"dyba-main-heading-row1\">\n    <div class=\"dyba-main-heading-row1-border\"></div>\n    <div class=\"dyba-main-heading-row1-image\">\n      <img class=\"dyba-main-heading-row1-image-file\" src=\"/images/Jags head white-green.png\">\n    </div>\n    <div class=\"dyba-main-heading-row1-border\"></div>\n  </div>\n  <div class=\"dyba-main-heading-row2\">WELCOME</div>\n  <div class=\"dyba-main-heading-row3\"></div>\n</div>\n<div class=\"dyba-main-content\">\n  <p>D'Evelyn Youth Basketball Association is a basketball club that was organized to provide an opportunity for Dennison and current/future D’Evelyn boys to play together on teams. We have teams from Kindergarten through 8th grade. Our teams play in the Jefferson County Basketball Conference and our older kids also play in the Gold Crown league. Our annual membership dues are $30 which allows us to cover the costs of running the club (and a t-shirt for each player and coach) as well as provide scholarships to players and appreciation gifts to our coaches. You must register each year to be a member of the club. Dues are payable in August. You must be a member to play on our teams.\n</p>\n</div>\n\n\n\n\n\n\n\n";
 
 /***/ },
 /* 227 */
@@ -41864,45 +41864,6 @@
 
 /***/ },
 /* 230 */
-/***/ function(module, exports) {
-
-	/*
-	* hoverFlow - A Solution to Animation Queue Buildup in jQuery
-	* Version 1.00
-	*
-	* Copyright (c) 2009 Ralf Stoltze, http://www.2meter3.de/code/hoverFlow/
-	* Dual-licensed under the MIT and GPL licenses.
-	* http://www.opensource.org/licenses/mit-license.php
-	* http://www.gnu.org/licenses/gpl.html
-	*/
-	'use strict';
-	
-	(function ($) {
-	  $.fn.hoverFlow = function (c, d, e, f, g) {
-	    if ($.inArray(c, ['mouseover', 'mouseenter', 'mouseout', 'mouseleave']) == -1) {
-	      return this;
-	    }var h = typeof e === 'object' ? e : { complete: g || !g && f || $.isFunction(e) && e, duration: e, easing: g && f || f && !$.isFunction(f) && f };h.queue = false;var i = h.complete;h.complete = function () {
-	      $(this).dequeue();if ($.isFunction(i)) {
-	        i.call(this);
-	      }
-	    };return this.each(function () {
-	      var b = $(this);if (c == 'mouseover' || c == 'mouseenter') {
-	        b.data('jQuery.hoverFlow', true);
-	      } else {
-	        b.removeData('jQuery.hoverFlow');
-	      }b.queue(function () {
-	        var a = c == 'mouseover' || c == 'mouseenter' ? b.data('jQuery.hoverFlow') !== undefined : b.data('jQuery.hoverFlow') === undefined;if (a) {
-	          b.animate(d, h);
-	        } else {
-	          b.queue([]);
-	        }
-	      });
-	    });
-	  };
-	})(jQuery);
-
-/***/ },
-/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41948,6 +41909,45 @@
 	};
 	
 	module.exports = app;
+
+/***/ },
+/* 231 */
+/***/ function(module, exports) {
+
+	/*
+	* hoverFlow - A Solution to Animation Queue Buildup in jQuery
+	* Version 1.00
+	*
+	* Copyright (c) 2009 Ralf Stoltze, http://www.2meter3.de/code/hoverFlow/
+	* Dual-licensed under the MIT and GPL licenses.
+	* http://www.opensource.org/licenses/mit-license.php
+	* http://www.gnu.org/licenses/gpl.html
+	*/
+	'use strict';
+	
+	(function ($) {
+	  $.fn.hoverFlow = function (c, d, e, f, g) {
+	    if ($.inArray(c, ['mouseover', 'mouseenter', 'mouseout', 'mouseleave']) == -1) {
+	      return this;
+	    }var h = typeof e === 'object' ? e : { complete: g || !g && f || $.isFunction(e) && e, duration: e, easing: g && f || f && !$.isFunction(f) && f };h.queue = false;var i = h.complete;h.complete = function () {
+	      $(this).dequeue();if ($.isFunction(i)) {
+	        i.call(this);
+	      }
+	    };return this.each(function () {
+	      var b = $(this);if (c == 'mouseover' || c == 'mouseenter') {
+	        b.data('jQuery.hoverFlow', true);
+	      } else {
+	        b.removeData('jQuery.hoverFlow');
+	      }b.queue(function () {
+	        var a = c == 'mouseover' || c == 'mouseenter' ? b.data('jQuery.hoverFlow') !== undefined : b.data('jQuery.hoverFlow') === undefined;if (a) {
+	          b.animate(d, h);
+	        } else {
+	          b.queue([]);
+	        }
+	      });
+	    });
+	  };
+	})(jQuery);
 
 /***/ }
 /******/ ]);
