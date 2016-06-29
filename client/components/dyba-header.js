@@ -48,13 +48,13 @@ var app = {
       $link.css({color: 'black'});
     });
 
-    var $headerContainermd = $('.dyba-nav-container-md .dyba-nav-header-container');
-    $headerContainermd.hover(function(e) {
+    var $dropdownContainermd = $('.dyba-nav-container-md .dyba-nav-dropdown-container');
+    $dropdownContainermd.hover(function(e) {
       var $el = $(this);
-      var $header = $el.find('.dyba-nav-header');
-      var $submenu = $el.find('.dyba-nav-submenu');
-      //$header.css({color: '#999', textDecoration: 'none'});
-      $submenu.hoverFlow(e.type, {
+      var $header = $el.find('.dyba-nav-dropdown-header');
+      var $dropdown = $el.find('.dyba-nav-dropdown-menu');
+      $header.css({color: '#999', textDecoration: 'none'});
+      $dropdown.hoverFlow(e.type, {
         height: 'show',
         marginTop: 'show',
         marginBottom: 'show',
@@ -63,14 +63,14 @@ var app = {
       });
     }, function(e) {
       var $el = $(this);
-      var $header = $el.find('.dyba-nav-header');
-      var $submenu = $el.find('.dyba-nav-submenu');
+      var $header = $el.find('.dyba-nav-dropdown-header');
+      var $dropdown = $el.find('.dyba-nav-dropdown-menu');
       $el.delay(400)
         .queue(function(next) {
           $header.css({color: 'black'});
           next();
         });
-      $submenu.hoverFlow(e.type, {
+      $dropdown.hoverFlow(e.type, {
         height: 'hide',
         marginTop: 'hide',
         marginBottom: 'hide',
@@ -83,9 +83,9 @@ var app = {
     // $headerContainersm.click(function(e) {
     //   var $el = $(this);
     //   var $header = $el.find('.dyba-nav-header');
-    //   var $submenu = $el.find('.dyba-nav-submenu');
+    //   var $dropdown = $el.find('.dyba-nav-dropdown');
     //   $header.css({color: '#999', textDecoration: 'none'});
-    //   $submenu.hoverFlow(e.type, {
+    //   $dropdown.hoverFlow(e.type, {
     //     height: 'show',
     //     marginTop: 'show',
     //     marginBottom: 'show',
@@ -95,13 +95,13 @@ var app = {
     // }, function(e) {
     //   var $el = $(this);
     //   var $header = $el.find('.dyba-nav-header');
-    //   var $submenu = $el.find('.dyba-nav-submenu');
+    //   var $dropdown = $el.find('.dyba-nav-dropdown');
     //   $el.delay(400)
     //     .queue(function(next) {
     //       $header.css({color: 'black'});
     //       next();
     //     });
-    //   $submenu.hoverFlow(e.type, {
+    //   $dropdown.hoverFlow(e.type, {
     //     height: 'hide',
     //     marginTop: 'hide',
     //     marginBottom: 'hide',

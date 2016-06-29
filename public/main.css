@@ -57,6 +57,10 @@
   height: 1px;
 }
 
+:root {
+  --heading: #97a88e;
+}
+
 @font-face {
   font-family: collegiate_solid;
   src: url(/css/SF_Collegiate_Solid.ttf);
@@ -68,13 +72,13 @@
 }
 
 @font-face {
-  font-family: nexa_0;
-  src: url(/css/nexarustslab-0.otf) format("opentype");
+  font-family: jags;
+  src: url(/css/jagb.ttf);
 }
 
 @font-face {
-  font-family: jags;
-  src: url(/css/jagb.ttf);
+  font-family: nexa_shadow;
+  src: url(/css/NexaRustSlab-Shadow1.ttf);
 }
 
 .dyba-body {
@@ -106,13 +110,13 @@
 .dyba-title-bar {
   position: relative;
   display: block;
-  height: auto;
+  height: 100px;
 }
 
 .dyba-logo-container {
   position: relative;
   display: inline-block;
-  height: auto;
+  height: 100px;
   text-align: center;
 }
 
@@ -125,7 +129,7 @@
   left: 0;
   line-height: 100px;
   font-size: 20px;
-  font-family: 'Happy Monkey', cursive;
+  font-family: 'nexa_hand', cursive;
   color: white;
   text-align: center;
   opacity: 0;
@@ -134,16 +138,16 @@
 .dyba-nav-logo {
   position: relative;
   display: inline-block;
-  height: 100px;
+  height: 110px;
 }
 
 .dyba-title-container {
   position: relative;
   display: inline-block;
-  height: auto;
+  height: 100px;
 }
 
-.dyba-jaguars {
+.dyba-title {
   position: relative;
   display: block;
   color: white;
@@ -195,18 +199,18 @@
 
 .dyba-nav-logo-small {
   position: relative;
-  height: 5px;
+  height: 10px;
   margin-top: -3px;
 }
 
-.dyba-nav-header-container {
+.dyba-nav-dropdown-container {
   position: relative;
   display: inline-block;
   width: auto;
   height: 30px;
 }
 
-.dyba-nav-header {
+.dyba-nav-dropdown-header {
   position: relative;
   text-decoration: none;
   display: block;
@@ -217,7 +221,7 @@
   font-family: 'nexa_hand', cursive;
 }
 
-.dyba-nav-submenu {
+.dyba-nav-dropdown-menu {
   position: absolute;
   width: 200px;
   height: auto;
@@ -230,42 +234,35 @@
   display: none;
 }
 
-.dyba-nav-submenu li {
+.dyba-nav-dropdown-menu li a {
+  display: block;
+  height: 30px;
   line-height: 30px;
-  text-align: left;
-}
-
-.dyba-nav-submenu li a {
+  padding: 3px 10px;
+  clear: both;
   color: black;
   font-size: 15px;
-  font-family: 'Happy Monkey', cursive;
-}
-
-.dyba-nav-submenu li a:hover {
-  color: #999;
-  text-decoration: none;
-}
-
-.dyba-dropdown-menu li a {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
+  font-family: 'nexa_hand', cursive;
+  text-align: left;
   font-weight: normal;
-  line-height: 1.42857143;
   white-space: nowrap;
 }
 
-.dyba-dropdown-menu li a:hover {
+.dyba-nav-dropdown-menu li a:hover {
   text-decoration: none;
-  color: #262626;
   background-color: #f5f5f5;
+}
+
+.dyba-nav-container-sm .dyba-nav-dropdown-header:hover {
+  text-decoration: none;
+  color: #999;
 }
 
 .dyba-xs-nav-dropdown {
   width: 90%;
   max-width: 350px;
   margin: auto;
-  font-family: 'Happy Monkey', cursive;
+  font-family: 'nexa_hand', cursive;
 }
 
 .dyba-xs-nav-button {
@@ -278,11 +275,11 @@
   width: 100%;
   height: 900px;
   margin: 0;
-  padding-top: 20px;
+  padding-top: 40px;
   background-color: #dddedd;
 }
 
-.dyba-main-header {
+.dyba-main-heading {
   position: relative;
   display: block;
   width: 600px;
@@ -290,25 +287,55 @@
   margin: 0 auto;
 }
 
-.dyba-main-header-row1 {
-  width: 100%;
-  height: 50px;
+.dyba-main-heading-row1 {
+  position: relative;
+  display: flex;
+  width: 60%;
+  height: 30px;
+  margin: 0 auto;
 }
 
-.dyba-main-header-row1-outside {
-  width: 15%;
+.dyba-main-heading-row1-border {
+  position: relative;
+  display: inline-block;
+  width: 35%;
+  height: 50%;
+  border-bottom: 3px ridge var(--heading);
+}
+
+.dyba-main-heading-row1-image {
+  position: relative;
+  display: inline-block;
+  width: 108px;
   height: 100%;
-  background: red;
+  text-align: center;
 }
 
-.dyba-main-header-row1-border {
-  width: 25%;
-  background: white;
+.dyba-main-heading-row1-image-file {
+  position: relative;
+  width: 54px;
+  top: -20px;
 }
 
-.dyba-main-header-row1-image {
-  width: 20%;
-  background: blue;
+.dyba-main-heading-row2 {
+  position: relative;
+  display: block;
+  width: auto;
+  height: 80px;
+  color: #005214;
+  text-align: center;
+  font-size: 65px;
+  line-height: 80px;
+  letter-spacing: 5px;
+  font-family: 'nexa_shadow', cursive;
+}
+
+.dyba-main-heading-row3 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 15px;
+  border-bottom: 3px ridge var(--heading);
 }
 
 ul {
@@ -316,10 +343,34 @@ ul {
 }
 
 @media (max-width: 768px) {
-  .dyba-jaguars {
+  .dyba-title-bar {
+    height: auto;
+  }
+  .dyba-title-container {
+    padding-top: 10px;
+    height: auto;
+  }
+  .dyba-title {
     text-align: center;
-    line-height: 70px;
-    font-size: 4vw;
+    line-height: 40px;
+    font-size: 40px;
+  }
+  .dyba-main-heading {
+    width: 80%;
+    max-width: 400px;
+  }
+  .dyba-main-heading-row1-image {
+    width: 108px;
+  }
+  .dyba-main-heading-row1-image-file {
+    width: 44px;
+    top: -10px;
+  }
+  .dyba-main-heading-row2 {
+    height: 50px;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 3px;
   }
 }
 
