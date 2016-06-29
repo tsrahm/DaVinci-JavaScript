@@ -4,7 +4,7 @@
 }
 .tory-container {
   background: #ff6500;
-  min-height: 650px;
+  min-height: 100vh;
 }
 .sidebar-container {
   height: auto;
@@ -16,6 +16,9 @@
       #b24700 90%,
       #ff6500
     );
+}
+.sidebar-container.col-md-4 {
+  min-height: 100vh;
 }
 .profile-container {
   height: auto;
@@ -35,7 +38,7 @@
   height: auto;
   width: 90%;
   text-align: center;
-  padding-top:10px;
+  padding-top: 10px;
 }
 .social-icon {
   height: 20px;
@@ -69,18 +72,73 @@
   line-height: 70px;
   color: white;
 }
+.tr-circle {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  color: #ff6500;
+  border-radius: 50%;
+  background: #b24700;
+  margin: 0 auto 30px;
+  animation: tsr-change 3s ease-out 20 alternate;
+}
+.tr-text {
+  position: absolute;
+  display: block;
+  width: 100%;
+  line-height: 150px;
+  text-align: center;
+}
+.tr-phone1 {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  line-height: 150px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  top: -15px;
+}
+.tr-phone2 {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  line-height: 150px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  top: 15px;
+}
 .fr-ed {
   font-size: 45px;
 }
-@media (max-width: 767px) {
+@keyframes tsr-change {
+  0% {
+    background: #b24700;
+  }
+  100% {
+    background: #ff6500;
+  }
+}
+@media (max-width: 991px) {
   .sidebar-container {
     height: auto;
     padding-bottom: 20px;
     background: #b24700;
     margin-top: 0;
   }
+  .sidebar-container.col-md-4 {
+    min-height: 1px;
+  }
   .profile-container {
     width: 100%;
+  }
+  .profile-container p {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
   }
   .profile-heading {
     margin-top: 0;
@@ -88,13 +146,14 @@
   }
   .social-container {
     width: 100%;
-    padding-top:10px;
+    padding-top: 20px;
   }
   .my-work-container {
     width: 100%;
   }
   .button-container {
     width: 60%;
+    max-width: 400px;
 }
   .main-container {
     height: auto;
@@ -107,16 +166,4 @@
     font-size: 35px;
   }
 }
-@media (min-width: 767px) and (max-width: 865px) {
-  .my-work-button-text {
-    font-size: 18px;
-  }
-  .music-animation {
-    font-size: 14px;
-  }
-}
-@media (min-height: 651px) {
-  .tory-container {
-    height: 100vh;
-  }
-}
+

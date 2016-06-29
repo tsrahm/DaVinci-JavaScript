@@ -197,6 +197,7 @@
   margin: 0;
   padding-top: 40px;
   background-color: #dddedd;
+  border-top: 2px solid black;
 }
 .dyba-main-heading {
   position: relative;
@@ -216,7 +217,7 @@
   position: relative;
   display: inline-block;
   width: 35%;
-  height: 50%;
+  height: 30%;
   border-bottom: 3px ridge var(--heading);
 }
 .dyba-main-heading-row1-image {
@@ -228,8 +229,8 @@
 }
 .dyba-main-heading-row1-image-file {
   position: relative;
-  width: 54px;
-  top: -20px;
+  width: 60px;
+  top: -25px;
 }
 .dyba-main-heading-row2 {
   position: relative;

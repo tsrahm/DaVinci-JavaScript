@@ -90,6 +90,10 @@
 	
 	var _pagesPhotoSearch2 = _interopRequireDefault(_pagesPhotoSearch);
 	
+	var _pagesHomePage = __webpack_require__(231);
+	
+	var _pagesHomePage2 = _interopRequireDefault(_pagesHomePage);
+	
 	__webpack_require__(230);
 	
 	(0, _jquery2['default'])(function () {
@@ -102,6 +106,9 @@
 	
 	    // This is called a router
 	    switch (url) {
+	        case '/pages/':
+	            _pagesHomePage2['default'].init();
+	            break;
 	        case '/pages/todo.html':
 	            var todoListView = new _pagesTodoReactTodoListView2['default']();
 	            break;
@@ -9987,7 +9994,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-background":"dyba-background","dyba-header":"dyba-header","dyba-title-bar":"dyba-title-bar","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo":"dyba-nav-logo","dyba-title-container":"dyba-title-container","dyba-title":"dyba-title","dyba-nav-bar":"dyba-nav-bar","dyba-nav-container":"dyba-nav-container","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-link":"dyba-nav-link","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-nav-dropdown-container":"dyba-nav-dropdown-container","dyba-nav-dropdown-header":"dyba-nav-dropdown-header","dyba-nav-dropdown-menu":"dyba-nav-dropdown-menu","dyba-nav-container-sm":"dyba-nav-container-sm","dyba-xs-nav-dropdown":"dyba-xs-nav-dropdown","dyba-xs-nav-button":"dyba-xs-nav-button","dyba-main":"dyba-main","dyba-main-heading":"dyba-main-heading","dyba-main-heading-row1":"dyba-main-heading-row1","dyba-main-heading-row1-border":"dyba-main-heading-row1-border","dyba-main-heading-row1-image":"dyba-main-heading-row1-image","dyba-main-heading-row1-image-file":"dyba-main-heading-row1-image-file","dyba-main-heading-row2":"dyba-main-heading-row2","dyba-main-heading-row3":"dyba-main-heading-row3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","main-container":"main-container","fr-ed":"fr-ed","profile-heading":"profile-heading","music-animation":"music-animation","music-body":"music-body","music-container":"music-container","start-animation":"start-animation","beat-text":"beat-text","boop":"boop","flik1":"flik1","flik2":"flik2","flik3":"flik3","ting":"ting","snare":"snare","off-bass":"off-bass","bass":"bass","note":"note","lyric-a":"lyric-a","lyric-b":"lyric-b","lyric-c":"lyric-c","lyric-d":"lyric-d","lyric-e":"lyric-e","lyric-f":"lyric-f","lyric-g":"lyric-g","lyric-h":"lyric-h","search-container":"search-container","photo":"photo"};
+	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-background":"dyba-background","dyba-header":"dyba-header","dyba-title-bar":"dyba-title-bar","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo":"dyba-nav-logo","dyba-title-container":"dyba-title-container","dyba-title":"dyba-title","dyba-nav-bar":"dyba-nav-bar","dyba-nav-container":"dyba-nav-container","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-link":"dyba-nav-link","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-nav-dropdown-container":"dyba-nav-dropdown-container","dyba-nav-dropdown-header":"dyba-nav-dropdown-header","dyba-nav-dropdown-menu":"dyba-nav-dropdown-menu","dyba-nav-container-sm":"dyba-nav-container-sm","dyba-xs-nav-dropdown":"dyba-xs-nav-dropdown","dyba-xs-nav-button":"dyba-xs-nav-button","dyba-main":"dyba-main","dyba-main-heading":"dyba-main-heading","dyba-main-heading-row1":"dyba-main-heading-row1","dyba-main-heading-row1-border":"dyba-main-heading-row1-border","dyba-main-heading-row1-image":"dyba-main-heading-row1-image","dyba-main-heading-row1-image-file":"dyba-main-heading-row1-image-file","dyba-main-heading-row2":"dyba-main-heading-row2","dyba-main-heading-row3":"dyba-main-heading-row3","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","col-md-4":"col-md-4","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","main-container":"main-container","tr-circle":"tr-circle","tsr-change":"tsr-change","tr-text":"tr-text","tr-phone1":"tr-phone1","tr-phone2":"tr-phone2","fr-ed":"fr-ed","profile-heading":"profile-heading","music-body":"music-body","music-container":"music-container","start-animation":"start-animation","beat-text":"beat-text","boop":"boop","flik1":"flik1","flik2":"flik2","flik3":"flik3","ting":"ting","snare":"snare","off-bass":"off-bass","bass":"bass","note":"note","lyric-a":"lyric-a","lyric-b":"lyric-b","lyric-c":"lyric-c","lyric-d":"lyric-d","lyric-e":"lyric-e","lyric-f":"lyric-f","lyric-g":"lyric-g","lyric-h":"lyric-h","search-container":"search-container","photo":"photo"};
 
 /***/ },
 /* 3 */,
@@ -41413,7 +41420,7 @@
 /* 226 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"dyba-main-heading\">\n  <div class=\"dyba-main-heading-row1\">\n    <div class=\"dyba-main-heading-row1-border\"></div>\n    <div class=\"dyba-main-heading-row1-image\">\n      <img class=\"dyba-main-heading-row1-image-file\" src=\"/images/jaguar.svg\">\n    </div>\n    <div class=\"dyba-main-heading-row1-border\"></div>\n  </div>\n  <div class=\"dyba-main-heading-row2\">WELCOME</div>\n  <div class=\"dyba-main-heading-row3\"></div>\n</div>\n<div class=\"dyba-main-content\"></div>\n\n\n\n\n\n\n\n";
+	module.exports = "<div class=\"dyba-main-heading\">\n  <div class=\"dyba-main-heading-row1\">\n    <div class=\"dyba-main-heading-row1-border\"></div>\n    <div class=\"dyba-main-heading-row1-image\">\n      <img class=\"dyba-main-heading-row1-image-file\" src=\"/images/Jags head white-green.png\">\n    </div>\n    <div class=\"dyba-main-heading-row1-border\"></div>\n  </div>\n  <div class=\"dyba-main-heading-row2\">WELCOME</div>\n  <div class=\"dyba-main-heading-row3\"></div>\n</div>\n<div class=\"dyba-main-content\"></div>\n\n\n\n\n\n\n\n";
 
 /***/ },
 /* 227 */
@@ -41893,6 +41900,54 @@
 	    });
 	  };
 	})(jQuery);
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var $ = __webpack_require__(1);
+	
+	// Legacy loading for Bootstrap
+	window.jQuery = window.$ = $;
+	__webpack_require__(168);
+	
+	var app = {
+	  init: function init() {
+	    app.render();
+	  },
+	  render: function render() {
+	    app.unbindEvents();
+	    app.bindEvents();
+	  },
+	  unbindEvents: function unbindEvents() {
+	    $('.tr-circle').off();
+	  },
+	  bindEvents: function bindEvents() {
+	    app.bindHoverEvents();
+	  },
+	  bindHoverEvents: function bindHoverEvents() {
+	    var $trCircle = $('.tr-circle');
+	    $trCircle.hover(function (e) {
+	      var $trText = $('.tr-text');
+	      var $trPhone1 = $('.tr-phone1');
+	      var $trPhone2 = $('.tr-phone2');
+	      $trText.hoverFlow(e.type, { opacity: 0 }, 500);
+	      $trPhone1.hoverFlow(e.type, { opacity: 1 }, 500);
+	      $trPhone2.hoverFlow(e.type, { opacity: 1 }, 500);
+	    }, function (e) {
+	      var $trText = $('.tr-text');
+	      var $trPhone1 = $('.tr-phone1');
+	      var $trPhone2 = $('.tr-phone2');
+	      $trText.hoverFlow(e.type, { opacity: 1 }, 500);
+	      $trPhone1.hoverFlow(e.type, { opacity: 0 }, 500);
+	      $trPhone2.hoverFlow(e.type, { opacity: 0 }, 500);
+	    });
+	  }
+	};
+	
+	module.exports = app;
 
 /***/ }
 /******/ ]);

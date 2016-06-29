@@ -277,6 +277,7 @@
   margin: 0;
   padding-top: 40px;
   background-color: #dddedd;
+  border-top: 2px solid black;
 }
 
 .dyba-main-heading {
@@ -299,7 +300,7 @@
   position: relative;
   display: inline-block;
   width: 35%;
-  height: 50%;
+  height: 30%;
   border-bottom: 3px ridge var(--heading);
 }
 
@@ -313,8 +314,8 @@
 
 .dyba-main-heading-row1-image-file {
   position: relative;
-  width: 54px;
-  top: -20px;
+  width: 60px;
+  top: -25px;
 }
 
 .dyba-main-heading-row2 {
@@ -434,13 +435,17 @@ h1 {
 
 .tory-container {
   background: #ff6500;
-  min-height: 650px;
+  min-height: 100vh;
 }
 
 .sidebar-container {
   height: auto;
   padding-bottom: 30px;
   background-image: linear-gradient(to right, #b24700, #b24700 90%, #ff6500);
+}
+
+.sidebar-container.col-md-4 {
+  min-height: 100vh;
 }
 
 .profile-container {
@@ -503,19 +508,79 @@ h1 {
   color: white;
 }
 
+.tr-circle {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  color: #ff6500;
+  border-radius: 50%;
+  background: #b24700;
+  margin: 0 auto 30px;
+  animation: tsr-change 3s ease-out 20 alternate;
+}
+
+.tr-text {
+  position: absolute;
+  display: block;
+  width: 100%;
+  line-height: 150px;
+  text-align: center;
+}
+
+.tr-phone1 {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  line-height: 150px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  top: -15px;
+}
+
+.tr-phone2 {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  line-height: 150px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  top: 15px;
+}
+
 .fr-ed {
   font-size: 45px;
 }
 
-@media (max-width: 767px) {
+@keyframes tsr-change {
+  0% {
+    background: #b24700;
+  }
+  100% {
+    background: #ff6500;
+  }
+}
+
+@media (max-width: 991px) {
   .sidebar-container {
     height: auto;
     padding-bottom: 20px;
     background: #b24700;
     margin-top: 0;
   }
+  .sidebar-container.col-md-4 {
+    min-height: 1px;
+  }
   .profile-container {
     width: 100%;
+  }
+  .profile-container p {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
   }
   .profile-heading {
     margin-top: 0;
@@ -523,13 +588,14 @@ h1 {
   }
   .social-container {
     width: 100%;
-    padding-top: 10px;
+    padding-top: 20px;
   }
   .my-work-container {
     width: 100%;
   }
   .button-container {
     width: 60%;
+    max-width: 400px;
   }
   .main-container {
     height: auto;
@@ -541,21 +607,6 @@ h1 {
 @media (max-width: 500px) {
   .fr-ed {
     font-size: 35px;
-  }
-}
-
-@media (min-width: 767px) and (max-width: 865px) {
-  .my-work-button-text {
-    font-size: 18px;
-  }
-  .music-animation {
-    font-size: 14px;
-  }
-}
-
-@media (min-height: 651px) {
-  .tory-container {
-    height: 100vh;
   }
 }
 

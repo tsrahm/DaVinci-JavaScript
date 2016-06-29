@@ -10,6 +10,7 @@ import dybaHeader from 'components/dyba-header';
 import dybaMain from 'pages/dyba-main';
 import music from 'pages/music';
 import photoSearch from 'pages/photo-search';
+import homePage from 'pages/home-page';
 import 'components/jquery.hoverflow.min.js';
 
 $(function() {
@@ -22,6 +23,9 @@ $(function() {
 
   // This is called a router
   switch (url) {
+    case '/pages/':
+        homePage.init();
+    break;
     case '/pages/todo.html':
         var todoListView = new TodoListView();
     break;
