@@ -56,6 +56,14 @@ var TodoItem = React.createClass({
     dispatcher.editTodoTitle(newTitle, id, event); 
   },
   handleClose: function() {
+    if (this.props.data.title === 'beer' || this.props.data.title === 'chips' || this.props.data.title === 'salsa') {
+      $('<audio>').attr({
+        'src': 'http://wavcentral.com/sounds/televis/lost_space/dangw.mp3',
+        'volume': 1.0,
+        'autoplay': 'autoplay'
+      }).appendTo('body');
+      return;
+    }
     var id = this.props.data.id;
     dispatcher.removeTodo(id);
   }

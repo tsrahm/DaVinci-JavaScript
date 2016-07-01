@@ -1,6 +1,6 @@
 .todo-container {
-  width: 90%;
-  max-width: 455px;
+  width: 456px;
+
   height: auto;
   margin: 10px auto 0;
   position: relative;
@@ -9,7 +9,7 @@
   font-family: georgia;
 }
 .todo-header {
-  width: 100%;
+  width: 456px;
   height: 26px;
   background: #999999;
   color: black;
@@ -21,13 +21,13 @@
 }
 .add-todo-container {
   position: relative;
-  width: 100%;
+  width: auto;
   height: 40px;
   padding: 5px 5px 0 5px;
 }
 .add-todo-container .enter-todo {
   position: relative;
-  width: calc(100% - 75px);
+  width: 370px;
   float: left;
 }
 .add-todo-container button {
@@ -40,13 +40,12 @@
   float: right;
 }
 .todo-container .list-group {
-
-  margin: 4px 5px;
+  margin: 4px 0;
 }
 .list-group-item {
   position: relative;
   height: 46px;
-  margin: 0;
+  margin: 0 5px;
 }
 .todo-footer {
   height: 1px;

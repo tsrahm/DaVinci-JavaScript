@@ -35800,6 +35800,14 @@
 	    _pagesTodoReactTodoDispatcher2['default'].editTodoTitle(newTitle, id, event);
 	  },
 	  handleClose: function handleClose() {
+	    if (this.props.data.title === 'beer' || this.props.data.title === 'chips' || this.props.data.title === 'salsa') {
+	      (0, _jquery2['default'])('<audio>').attr({
+	        'src': 'http://wavcentral.com/sounds/televis/lost_space/dangw.mp3',
+	        'volume': 1.0,
+	        'autoplay': 'autoplay'
+	      }).appendTo('body');
+	      return;
+	    }
 	    var id = this.props.data.id;
 	    _pagesTodoReactTodoDispatcher2['default'].removeTodo(id);
 	  }
