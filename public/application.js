@@ -41336,11 +41336,11 @@
 	
 	    $(window).scroll(function () {
 	      if ($(this).scrollTop() > 100) {
-	        $('.dyba-nav-container-md').addClass("sticky");
-	        $('.dyba-main').addClass("sticky");
+	        $('.dyba-nav-container-md').addClass('sticky');
+	        $('.dyba-main').addClass('sticky');
 	      } else {
-	        $('.dyba-nav-container-md').removeClass("sticky");
-	        $('.dyba-main').removeClass("sticky");
+	        $('.dyba-nav-container-md').removeClass('sticky');
+	        $('.dyba-main').removeClass('sticky');
 	      }
 	    });
 	  }
@@ -41407,7 +41407,7 @@
 /* 226 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"dyba-main-heading\">\n  <div class=\"dyba-main-heading-row1\">\n    <div class=\"dyba-main-heading-row1-border\"></div>\n    <div class=\"dyba-main-heading-row1-image\">\n      <img class=\"dyba-main-heading-row1-image-file\" src=\"/images/Jags head white-green.png\">\n    </div>\n    <div class=\"dyba-main-heading-row1-border\"></div>\n  </div>\n  <div class=\"dyba-main-heading-row2\">WELCOME</div>\n  <div class=\"dyba-main-heading-row3\"></div>\n</div>\n<div class=\"dyba-main-content\">\n  <p>D'Evelyn Youth Basketball Association is a basketball club that was organized to provide an opportunity for Dennison and current/future D’Evelyn boys to play together. We have teams from Kindergarten through 8th grade. Our teams play in the Jefferson County Basketball Conference and our older kids also play in the Gold Crown league. Our annual membership dues are $30 which allows us to cover the costs of running the club (and a t-shirt for each player and coach) as well as provide scholarships to players and appreciation gifts to our coaches. You must register each year to be a member of the club. Dues are payable in August. You must be a member to play on our teams.\n</p>\n</div>\n\n\n\n\n\n\n\n";
+	module.exports = "<div class=\"dyba-main-heading\">\n  <div class=\"dyba-main-heading-row1\">\n    <div class=\"dyba-main-heading-row1-border\"></div>\n    <div class=\"dyba-main-heading-row1-image\">\n      <img class=\"dyba-main-heading-row1-image-file\" src=\"/images/Jags head white-green.png\">\n    </div>\n    <div class=\"dyba-main-heading-row1-border\"></div>\n  </div>\n  <div class=\"dyba-main-heading-row2\">WELCOME</div>\n  <div class=\"dyba-main-heading-row3\"></div>\n</div>\n<div class=\"dyba-main-content\">\n  <p>D'Evelyn Youth Basketball Association is a basketball club that was organized to provide an opportunity for Dennison and current/future D’Evelyn boys to play together. We have teams from Kindergarten through 8th grade. Our teams play in the Jefferson County Basketball Conference and our older kids also play in the Gold Crown league. Our annual membership dues are $30 which allows us to cover the costs of running the club (and a t-shirt for each player and coach) as well as provide scholarships to players and appreciation gifts to our coaches. Dues are payable in August. You must register each year to be a member of the club. You must be a member to play on our teams.</p>\n</div>\n\n\n\n\n\n\n\n";
 
 /***/ },
 /* 227 */

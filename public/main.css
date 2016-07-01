@@ -279,7 +279,7 @@
   display: block;
   width: 100%;
   height: auto;
-  min-height: 700px;
+  min-height: calc(100vh - 130px);
   margin: 0;
   padding-top: 40px;
   background-color: #dddedd;
@@ -351,15 +351,16 @@
 }
 
 .dyba-main-content {
-  padding: 40px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 10px;
 }
 
 .dyba-main-content p {
   position: relative;
   display: block;
-  width: 90%;
-  margin: 0 auto;
-  max-width: 700px;
+  width: 100%;
   line-height: 27px;
   color: black;
   font-size: 18px;

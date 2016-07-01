@@ -90,11 +90,11 @@ var app = {
 
     $(window).scroll(function() {
       if ($(this).scrollTop() > 100) {  
-        $('.dyba-nav-container-md').addClass("sticky");
-        $('.dyba-main').addClass("sticky");
+        $('.dyba-nav-container-md').addClass('sticky');
+        $('.dyba-main').addClass('sticky');
       } else {
-        $('.dyba-nav-container-md').removeClass("sticky");
-        $('.dyba-main').removeClass("sticky");
+        $('.dyba-nav-container-md').removeClass('sticky');
+        $('.dyba-main').removeClass('sticky');
       }
     });
   }
