@@ -15,13 +15,13 @@ var TodoItem = React.createClass({
   render: function() {
     var todo = this.props.data;
     var title = (
-      <div className="col-xs-10">
+      <div className="col-xs-9 col-sm-10">
         <p className="item-title" onClick={this.titleClick}>{todo.title}</p>
       </div>
     );
     if (todo.isEditing) {
       title = (
-        <div className="col-xs-10">
+        <div className="col-xs-9 col-sm-10">
           <p className="item-title">
             <input type="text" className="form-control" defaultValue={todo.title} onKeyUp={this.editKeypress} onChange={function(){}}></input>
           </p>
@@ -34,7 +34,7 @@ var TodoItem = React.createClass({
           <input type="checkbox" checked={todo.completed} onChange={this.handleComplete}></input>
         </div>
         {title}
-        <div className="col-xs-1">
+        <div className="col-xs-2 col-sm-1">
           <button type="button" aria-label="Close" onClick={this.handleClose}>
             <span aria-hidden="true">&times;</span>
           </button>

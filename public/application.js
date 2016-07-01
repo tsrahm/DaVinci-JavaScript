@@ -35744,7 +35744,7 @@
 	    var todo = this.props.data;
 	    var title = _react2['default'].createElement(
 	      'div',
-	      { className: 'col-xs-10' },
+	      { className: 'col-xs-9 col-sm-10' },
 	      _react2['default'].createElement(
 	        'p',
 	        { className: 'item-title', onClick: this.titleClick },
@@ -35754,7 +35754,7 @@
 	    if (todo.isEditing) {
 	      title = _react2['default'].createElement(
 	        'div',
-	        { className: 'col-xs-10' },
+	        { className: 'col-xs-9 col-sm-10' },
 	        _react2['default'].createElement(
 	          'p',
 	          { className: 'item-title' },
@@ -35773,7 +35773,7 @@
 	      title,
 	      _react2['default'].createElement(
 	        'div',
-	        { className: 'col-xs-1' },
+	        { className: 'col-xs-2 col-sm-1' },
 	        _react2['default'].createElement(
 	          'button',
 	          { type: 'button', 'aria-label': 'Close', onClick: this.handleClose },
