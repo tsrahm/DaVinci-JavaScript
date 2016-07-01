@@ -29,6 +29,9 @@ $(function() {
     case '/pages/todo.html':
         var todoListView = new TodoListView();
     break;
+    case '/pages/todo-broken.html':
+        var todoListView = new TodoListView();
+    break;
     case '/pages/dyba.html':
         dybaHeader.init();
         dybaMain.init();

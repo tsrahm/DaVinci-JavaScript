@@ -6,8 +6,8 @@
     src: url(/css/NexaRustHand.ttf);
 }
 @font-face {
-    font-family: jags;
-    src: url(/css/jagb.ttf);
+    font-family: nexa;
+    src: url(/css/NexaRustSlab-1.ttf);
 }
 @font-face {
     font-family: nexa_shadow;
@@ -84,9 +84,9 @@
   display: block;
   color: white;
   text-align: left;
-  font-size: 3.8vw;
+  font-size: 3.2vw;
   line-height: 100px;
-  font-family: 'jags', serif;
+  font-family: 'nexa', serif;
 }
 .dyba-nav-bar {
   position: relative;
@@ -299,8 +299,8 @@ ul {
   }
   .dyba-title {
     text-align: center;
-    line-height: 40px;
-    font-size: 40px;
+    line-height: 34px;
+    font-size: 34px;
   }
   .dyba-main-heading {
     width: 80%;

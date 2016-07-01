@@ -34,7 +34,7 @@ var TodoItem = React.createClass({
           <input type="checkbox" checked={todo.completed} onChange={this.handleComplete}></input>
         </div>
         {title}
-        <div className="col-xs-2 col-sm-1">
+        <div className="todo-close col-xs-2 col-sm-1">
           <button type="button" aria-label="Close" onClick={this.handleClose}>
             <span aria-hidden="true">&times;</span>
           </button>

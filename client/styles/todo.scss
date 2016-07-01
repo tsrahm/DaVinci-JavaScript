@@ -40,13 +40,15 @@
   float: right;
 }
 .todo-container .list-group {
-
   margin: 4px 5px;
 }
 .list-group-item {
   position: relative;
   height: 46px;
   margin: 0;
+}
+.todo-close {
+  text-align: right;
 }
 .todo-footer {
   height: 1px;
