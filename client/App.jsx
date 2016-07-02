@@ -4,9 +4,7 @@ import 'styles/main.scss';
 import TodoListView from 'pages/todo-react/todo-list-view';
 import funnySquares from 'pages/funnySquares';
 import formsBackbone from 'pages/forms-backbone';
-import header from 'components/header';
-import footer from 'components/footer';
-import dybaHeader from 'components/dyba-header';
+import dybaHeaderFooter from 'components/dyba-header-footer';
 import dybaMain from 'pages/dyba-main';
 import music from 'pages/music';
 import photoSearch from 'pages/photo-search';
@@ -14,9 +12,6 @@ import homePage from 'pages/home-page';
 import 'components/jquery.hoverflow.min.js';
 
 $(function() {
-
-  header.init();
-  footer.init();
 
   // What page is being loaded?
   var url = window.location.pathname;
@@ -33,7 +28,7 @@ $(function() {
         var todoListView = new TodoListView();
     break;
     case '/pages/dyba.html':
-        dybaHeader.init();
+        dybaHeaderFooter.init();
         dybaMain.init();
     break;
     case '/pages/photo-search.html':
@@ -53,10 +48,12 @@ $(function() {
   // Fancy console message for developers
   console.log('=================================');
   console.log('=================================');
-  console.log('=====I am looking for a job.=====');
+  console.log('==== I am looking for a job =====');
+  console.log('=== as a Front-end Developer ====');
   console.log('=================================');
-  console.log('===========Contact me.===========');
-  console.log('========toryrahm at gmail========');
+  console.log('======= Please contact me =======');
+  console.log('======= toryrahm at gmail =======');
+  console.log('============ Thanks! ============');
   console.log('=================================');
   console.log('=================================');
 });

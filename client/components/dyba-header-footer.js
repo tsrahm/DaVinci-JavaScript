@@ -6,6 +6,7 @@ window.jQuery = window.$ = $;
 require('bootstrap');
 
 import dybaHeader from 'templates/dyba-header.html';
+import dybaFooter from 'templates/dyba-footer.html';
 
 var app = {
   init: function() {
@@ -14,11 +15,13 @@ var app = {
   render: function() {
     app.unbindEvents();
     $('.dyba-header').append(dybaHeader);
+    $('.dyba-footer').append(dybaFooter);
     app.bindEvents();   
   },
   unbindEvents: function() {
-    $('.dyba-nav-menuitem').off();
+    $('.dyba-nav-link-container').off();
     $('.dyba-nav-logo').off();
+    $('.dyba-nav-container-md .dyba-nav-dropdown-container').off();
   },
   bindEvents: function() {
     app.bindHoverEvents();
@@ -90,12 +93,23 @@ var app = {
 
     $(window).scroll(function() {
       if ($(this).scrollTop() > 100) {  
-        $('.dyba-nav-container-md').addClass('sticky');
+        $('.dyba-nav-container').addClass('sticky');
         $('.dyba-main').addClass('sticky');
       } else {
-        $('.dyba-nav-container-md').removeClass('sticky');
+        $('.dyba-nav-container').removeClass('sticky');
         $('.dyba-main').removeClass('sticky');
       }
+    });
+
+    var $footerCredits = $('.dyba-footer-credits');
+    $footerCredits.hover(function(e) {
+      var $el = $(this);
+      var $popup = $el.find('.dyba-footer-credits-popup');
+      $popup.hoverFlow(e.type, {opacity: 1}, 500);
+    }, function(e) {
+      var $el = $(this);
+      var $popup = $el.find('.dyba-footer-credits-popup');
+      $popup.hoverFlow(e.type, {opacity: 0}, 500);
     });
   }
 };

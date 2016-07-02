@@ -66,40 +66,29 @@
 	
 	var _pagesFormsBackbone2 = _interopRequireDefault(_pagesFormsBackbone);
 	
-	var _componentsHeader = __webpack_require__(219);
+	var _componentsDybaHeaderFooter = __webpack_require__(219);
 	
-	var _componentsHeader2 = _interopRequireDefault(_componentsHeader);
+	var _componentsDybaHeaderFooter2 = _interopRequireDefault(_componentsDybaHeaderFooter);
 	
-	var _componentsFooter = __webpack_require__(221);
-	
-	var _componentsFooter2 = _interopRequireDefault(_componentsFooter);
-	
-	var _componentsDybaHeader = __webpack_require__(223);
-	
-	var _componentsDybaHeader2 = _interopRequireDefault(_componentsDybaHeader);
-	
-	var _pagesDybaMain = __webpack_require__(225);
+	var _pagesDybaMain = __webpack_require__(222);
 	
 	var _pagesDybaMain2 = _interopRequireDefault(_pagesDybaMain);
 	
-	var _pagesMusic = __webpack_require__(227);
+	var _pagesMusic = __webpack_require__(224);
 	
 	var _pagesMusic2 = _interopRequireDefault(_pagesMusic);
 	
-	var _pagesPhotoSearch = __webpack_require__(228);
+	var _pagesPhotoSearch = __webpack_require__(225);
 	
 	var _pagesPhotoSearch2 = _interopRequireDefault(_pagesPhotoSearch);
 	
-	var _pagesHomePage = __webpack_require__(230);
+	var _pagesHomePage = __webpack_require__(227);
 	
 	var _pagesHomePage2 = _interopRequireDefault(_pagesHomePage);
 	
-	__webpack_require__(231);
+	__webpack_require__(228);
 	
 	(0, _jquery2['default'])(function () {
-	
-	    _componentsHeader2['default'].init();
-	    _componentsFooter2['default'].init();
 	
 	    // What page is being loaded?
 	    var url = window.location.pathname;
@@ -116,7 +105,7 @@
 	            var todoListView = new _pagesTodoReactTodoListView2['default']();
 	            break;
 	        case '/pages/dyba.html':
-	            _componentsDybaHeader2['default'].init();
+	            _componentsDybaHeaderFooter2['default'].init();
 	            _pagesDybaMain2['default'].init();
 	            break;
 	        case '/pages/photo-search.html':
@@ -136,10 +125,12 @@
 	    // Fancy console message for developers
 	    console.log('=================================');
 	    console.log('=================================');
-	    console.log('=====I am looking for a job.=====');
+	    console.log('==== I am looking for a job =====');
+	    console.log('=== as a Front-end Developer ====');
 	    console.log('=================================');
-	    console.log('===========Contact me.===========');
-	    console.log('========toryrahm at gmail========');
+	    console.log('======= Please contact me =======');
+	    console.log('======= toryrahm at gmail =======');
+	    console.log('============ Thanks! ============');
 	    console.log('=================================');
 	    console.log('=================================');
 	});
@@ -9997,7 +9988,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-close":"todo-close","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-background":"dyba-background","dyba-header":"dyba-header","dyba-title-bar":"dyba-title-bar","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo":"dyba-nav-logo","dyba-title-container":"dyba-title-container","dyba-title":"dyba-title","dyba-nav-bar":"dyba-nav-bar","dyba-nav-container":"dyba-nav-container","dyba-nav-container-md":"dyba-nav-container-md","sticky":"sticky","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-link":"dyba-nav-link","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-nav-dropdown-container":"dyba-nav-dropdown-container","dyba-nav-dropdown-header":"dyba-nav-dropdown-header","dyba-nav-dropdown-menu":"dyba-nav-dropdown-menu","dyba-nav-container-sm":"dyba-nav-container-sm","dyba-xs-nav-dropdown":"dyba-xs-nav-dropdown","dyba-xs-nav-button":"dyba-xs-nav-button","dyba-main":"dyba-main","dyba-main-heading":"dyba-main-heading","dyba-main-heading-row1":"dyba-main-heading-row1","dyba-main-heading-row1-border":"dyba-main-heading-row1-border","dyba-main-heading-row1-image":"dyba-main-heading-row1-image","dyba-main-heading-row1-image-file":"dyba-main-heading-row1-image-file","show-jag":"show-jag","dyba-main-heading-row2":"dyba-main-heading-row2","dyba-main-heading-row3":"dyba-main-heading-row3","dyba-main-content":"dyba-main-content","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","col-md-4":"col-md-4","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","main-container":"main-container","tr-circle":"tr-circle","tsr-change":"tsr-change","tr-text":"tr-text","tr-phone1":"tr-phone1","tr-phone2":"tr-phone2","fr-ed":"fr-ed","profile-heading":"profile-heading","music-body":"music-body","music-container":"music-container","start-animation":"start-animation","beat-text":"beat-text","boop":"boop","flik1":"flik1","flik2":"flik2","flik3":"flik3","ting":"ting","snare":"snare","off-bass":"off-bass","bass":"bass","note":"note","lyric-a":"lyric-a","lyric-b":"lyric-b","lyric-c":"lyric-c","lyric-d":"lyric-d","lyric-e":"lyric-e","lyric-f":"lyric-f","lyric-g":"lyric-g","lyric-h":"lyric-h","search-container":"search-container","photo":"photo"};
+	module.exports = {"todo-container":"todo-container","todo-header":"todo-header","add-todo-container":"add-todo-container","enter-todo":"enter-todo","list-group":"list-group","list-group-item":"list-group-item","todo-close":"todo-close","todo-footer":"todo-footer","dyba-body":"dyba-body","dyba-header":"dyba-header","dyba-background":"dyba-background","dyba-title-bar":"dyba-title-bar","dyba-logo-container":"dyba-logo-container","home-hidden":"home-hidden","dyba-nav-logo":"dyba-nav-logo","dyba-title-container":"dyba-title-container","dyba-title":"dyba-title","dyba-nav-bar":"dyba-nav-bar","dyba-nav-container":"dyba-nav-container","sticky":"sticky","dyba-nav-link-container":"dyba-nav-link-container","dyba-nav-link":"dyba-nav-link","dyba-nav-item":"dyba-nav-item","dyba-nav-logo-small":"dyba-nav-logo-small","dyba-nav-dropdown-container":"dyba-nav-dropdown-container","dyba-nav-dropdown-header":"dyba-nav-dropdown-header","dyba-nav-dropdown-menu":"dyba-nav-dropdown-menu","dyba-nav-container-sm":"dyba-nav-container-sm","dyba-xs-nav-dropdown":"dyba-xs-nav-dropdown","dyba-xs-nav-button":"dyba-xs-nav-button","dyba-main":"dyba-main","dyba-main-heading":"dyba-main-heading","dyba-main-heading-row1":"dyba-main-heading-row1","dyba-main-heading-row1-border":"dyba-main-heading-row1-border","dyba-main-heading-row1-image":"dyba-main-heading-row1-image","dyba-main-heading-row1-image-file":"dyba-main-heading-row1-image-file","show-jag":"show-jag","dyba-main-heading-row2":"dyba-main-heading-row2","dyba-main-heading-row3":"dyba-main-heading-row3","dyba-main-content":"dyba-main-content","dyba-footer":"dyba-footer","dyba-footer-credits":"dyba-footer-credits","dyba-footer-credits-popup":"dyba-footer-credits-popup","dyba-footer-middle":"dyba-footer-middle","dyba-footer-created":"dyba-footer-created","dyba-footer-copyright":"dyba-footer-copyright","dyba-footer-contact":"dyba-footer-contact","square":"square","square-container":"square-container","square1":"square1","square2":"square2","square3":"square3","square4":"square4","square5":"square5","page-container":"page-container","tory-container":"tory-container","sidebar-container":"sidebar-container","col-md-4":"col-md-4","profile-container":"profile-container","social-container":"social-container","social-icon":"social-icon","my-work-container":"my-work-container","button-container":"button-container","my-work-button-text":"my-work-button-text","main-container":"main-container","tr-circle":"tr-circle","tsr-change":"tsr-change","tr-text":"tr-text","tr-phone1":"tr-phone1","tr-phone2":"tr-phone2","fr-ed":"fr-ed","profile-heading":"profile-heading","music-body":"music-body","music-container":"music-container","start-animation":"start-animation","beat-text":"beat-text","boop":"boop","flik1":"flik1","flik2":"flik2","flik3":"flik3","ting":"ting","snare":"snare","off-bass":"off-bass","bass":"bass","note":"note","lyric-a":"lyric-a","lyric-b":"lyric-b","lyric-c":"lyric-c","lyric-d":"lyric-d","lyric-e":"lyric-e","lyric-f":"lyric-f","lyric-g":"lyric-g","lyric-h":"lyric-h","search-container":"search-container","photo":"photo"};
 
 /***/ },
 /* 3 */,
@@ -41181,75 +41172,13 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _jquery = __webpack_require__(1);
-	
-	var _jquery2 = _interopRequireDefault(_jquery);
-	
-	var _templatesNavbarHtml = __webpack_require__(220);
-	
-	var _templatesNavbarHtml2 = _interopRequireDefault(_templatesNavbarHtml);
-	
-	var app = {
-	  init: function init() {
-	    app.render();
-	  },
-	  render: function render() {
-	    (0, _jquery2['default'])('.main-header').append(_templatesNavbarHtml2['default']);
-	  }
-	};
-	
-	module.exports = app;
-
-/***/ },
-/* 220 */
-/***/ function(module, exports) {
-
-	module.exports = "<nav>\n  <button><a role=\"menuitem\" href=\"/pages/todo.html\">ToDo Application</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/dyba.html\">DYBA</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/funnySquares.html\">Funny Squares</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/forms-backbone.html\">Backbone Forms</a></button>\n  <button><a role=\"menuitem\" href=\"/pages/photo-search.html\">Photo Search</a></button>\n</nav>";
-
-/***/ },
-/* 221 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _jquery = __webpack_require__(1);
-	
-	var _jquery2 = _interopRequireDefault(_jquery);
-	
-	var _templatesFooterHtml = __webpack_require__(222);
-	
-	var _templatesFooterHtml2 = _interopRequireDefault(_templatesFooterHtml);
-	
-	var app = {
-	  init: function init() {
-	    app.render();
-	  },
-	  render: function render() {
-	    (0, _jquery2['default'])('footer').append(_templatesFooterHtml2['default']);
-	  }
-	};
-	
-	module.exports = app;
-
-/***/ },
-/* 222 */
-/***/ function(module, exports) {
-
-	module.exports = "<div>Footer</div>";
-
-/***/ },
-/* 223 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _templatesDybaHeaderHtml = __webpack_require__(224);
+	var _templatesDybaHeaderHtml = __webpack_require__(220);
 	
 	var _templatesDybaHeaderHtml2 = _interopRequireDefault(_templatesDybaHeaderHtml);
+	
+	var _templatesDybaFooterHtml = __webpack_require__(221);
+	
+	var _templatesDybaFooterHtml2 = _interopRequireDefault(_templatesDybaFooterHtml);
 	
 	var $ = __webpack_require__(1);
 	
@@ -41264,11 +41193,13 @@
 	  render: function render() {
 	    app.unbindEvents();
 	    $('.dyba-header').append(_templatesDybaHeaderHtml2['default']);
+	    $('.dyba-footer').append(_templatesDybaFooterHtml2['default']);
 	    app.bindEvents();
 	  },
 	  unbindEvents: function unbindEvents() {
-	    $('.dyba-nav-menuitem').off();
+	    $('.dyba-nav-link-container').off();
 	    $('.dyba-nav-logo').off();
+	    $('.dyba-nav-container-md .dyba-nav-dropdown-container').off();
 	  },
 	  bindEvents: function bindEvents() {
 	    app.bindHoverEvents();
@@ -41339,12 +41270,23 @@
 	
 	    $(window).scroll(function () {
 	      if ($(this).scrollTop() > 100) {
-	        $('.dyba-nav-container-md').addClass('sticky');
+	        $('.dyba-nav-container').addClass('sticky');
 	        $('.dyba-main').addClass('sticky');
 	      } else {
-	        $('.dyba-nav-container-md').removeClass('sticky');
+	        $('.dyba-nav-container').removeClass('sticky');
 	        $('.dyba-main').removeClass('sticky');
 	      }
+	    });
+	
+	    var $footerCredits = $('.dyba-footer-credits');
+	    $footerCredits.hover(function (e) {
+	      var $el = $(this);
+	      var $popup = $el.find('.dyba-footer-credits-popup');
+	      $popup.hoverFlow(e.type, { opacity: 1 }, 500);
+	    }, function (e) {
+	      var $el = $(this);
+	      var $popup = $el.find('.dyba-footer-credits-popup');
+	      $popup.hoverFlow(e.type, { opacity: 0 }, 500);
 	    });
 	  }
 	};
@@ -41352,20 +41294,26 @@
 	module.exports = app;
 
 /***/ },
-/* 224 */
+/* 220 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"dyba-title-bar row\">\n  <div class=\"col-xs-1\"></div>\n  <a href=\"#\" class=\"dyba-logo-container hidden-xs col-sm-2\">\n    <span class=\"home-hidden\">Home</span>\n    <img src=\"/images/Jags-shield-logo-white-text.png\" class=\"dyba-nav-logo\">\n  </a>\n  <div class=\"dyba-title-container col-xs-10 col-sm-8\">\n    <span class=\"dyba-title\">D'EVELYN YOUTH BASKETBALL</span>\n  </div>\n  <div class=\"col-xs-1\"></div>\n</div>\n\n<nav class=\"dyba-nav-bar row\">\n  <ul class=\"dyba-nav-container dyba-nav-container-md hidden-xs hidden-sm col-md-12\">\n    <li class=\"dyba-nav-link-container\">\n      <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">REGISTRATION</a>\n    </li>\n    <li class=\"dyba-nav-item roar\">\n      <a href=\"#\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </a>\n    </li>\n    <li class=\"dyba-nav-dropdown-container\">\n      <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">TEAMS</a>\n      <ul class=\"dyba-nav-dropdown-menu\">\n        <li><a href=\"#\">Link 1</a></li>\n        <li><a href=\"#\">Link 2</a></li>\n        <li><a href=\"#\">Link 3</a></li>\n      </ul>\n    </li>\n    <li class=\"dyba-nav-item\">\n      <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n    </li>\n    <li class=\"dyba-nav-dropdown-container\">\n      <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">PROGRAMS</a>\n      <ul class=\"dyba-nav-dropdown-menu\">\n        <li><a href=\"#\">Link 1</a></li>\n        <li><a href=\"#\">Link 2</a></li>\n        <li><a href=\"#\">Link 3</a></li>\n      </ul>\n    </li>\n    <li class=\"dyba-nav-item\">\n      <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n    </li>\n    <li class=\"dyba-nav-dropdown-container\">\n      <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">ABOUT</a>\n      <ul class=\"dyba-nav-dropdown-menu\">\n        <li><a href=\"#\">Link 1</a></li>\n        <li><a href=\"#\">Link 2</a></li>\n        <li><a href=\"#\">Link 3</a></li>\n      </ul>\n    </li>\n    <li class=\"dyba-nav-item\">\n      <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n    </li>\n    <li class=\"dyba-nav-dropdown-container\">\n      <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">COACHES</a>\n      <ul class=\"dyba-nav-dropdown-menu\">\n        <li><a href=\"#\">Link 1</a></li>\n        <li><a href=\"#\">Link 2</a></li>\n        <li><a href=\"#\">Link 3</a></li>\n      </ul>\n    </li>\n  </ul>\n\n  <ul class=\"dyba-nav-container dyba-nav-container-sm hidden-xs col-sm-12 hidden-md hidden-lg\">\n    <li class=\"dyba-nav-link-container\">\n      <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">REGISTRATION</a>\n    </li>\n    <li class=\"dyba-nav-item roar\">\n      <a href=\"#\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </a>\n    </li>\n    <li class=\"dropdown dyba-nav-dropdown-container\">\n      <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">TEAMS</a>\n      <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM1\">\n        <li><a href=\"#\">Link 1</a></li>\n        <li><a href=\"#\">Link 2</a></li>\n        <li><a href=\"#\">Link 3</a></li>\n      </ul>\n    </li>\n    <li class=\"dyba-nav-item\">\n      <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n    </li>\n    <li class=\"dropdown dyba-nav-dropdown-container\">\n      <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM2\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">PROGRAMS</a>\n      <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM2\">\n        <li><a href=\"#\">Link 1</a></li>\n        <li><a href=\"#\">Link 2</a></li>\n        <li><a href=\"#\">Link 3</a></li>\n      </ul>\n    </li>\n    <li class=\"dyba-nav-item\">\n      <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n    </li>\n    <li class=\"dropdown dyba-nav-dropdown-container\">\n      <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM3\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">ABOUT</a>\n      <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM3\">\n        <li><a href=\"#\">Link 1</a></li>\n        <li><a href=\"#\">Link 2</a></li>\n        <li><a href=\"#\">Link 3</a></li>\n      </ul>\n    </li>\n    <li class=\"dyba-nav-item\">\n      <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n    </li>\n    <li class=\"dropdown dyba-nav-dropdown-container\">\n      <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM4\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">COACHES</a>\n      <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM4\">\n        <li><a href=\"#\">Link 1</a></li>\n        <li><a href=\"#\">Link 2</a></li>\n        <li><a href=\"#\">Link 3</a></li>\n      </ul>\n    </li>\n  </ul>\n\n  <div class=\"row xs-row hidden-sm hidden-md hidden-lg\">\n    <div class=\"dropdown dyba-xs-nav-dropdown\">\n      <button class=\"btn btn-default dropdown-toggle dyba-xs-nav-button\" type=\"button\" id=\"dropdownMenuXS\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n        Menu\n        <span class=\"caret\"></span>\n      </button>\n      <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuXS\">\n        <li><a href=\"#\">Action</a></li>\n        <li><a href=\"#\">Another action</a></li>\n        <li><a href=\"#\">Something else here</a></li>\n        <li role=\"separator\" class=\"divider\"></li>\n        <li><a href=\"#\">Separated link</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n";
+	module.exports = "<div class=\"dyba-background\">\n  <div class=\"dyba-title-bar row\">\n    <div class=\"col-xs-1\"></div>\n    <a href=\"#\" class=\"dyba-logo-container hidden-xs col-sm-2\">\n      <span class=\"home-hidden\">Home</span>\n      <img src=\"/images/Jags-shield-logo-white-text.png\" class=\"dyba-nav-logo\">\n    </a>\n    <div class=\"dyba-title-container col-xs-10 col-sm-8\">\n      <span class=\"dyba-title\">D'EVELYN YOUTH BASKETBALL</span>\n    </div>\n    <div class=\"col-xs-1\"></div>\n  </div>\n\n  <nav class=\"dyba-nav-bar row\">\n    <ul class=\"dyba-nav-container dyba-nav-container-md hidden-xs hidden-sm col-md-12\">\n      <li class=\"dyba-nav-link-container\">\n        <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">REGISTRATION</a>\n      </li>\n      <li class=\"dyba-nav-item roar\">\n        <a href=\"#\">\n          <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n        </a>\n      </li>\n      <li class=\"dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">TEAMS</a>\n        <ul class=\"dyba-nav-dropdown-menu\">\n          <li><a href=\"#\">Link 1</a></li>\n          <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">PROGRAMS</a>\n        <ul class=\"dyba-nav-dropdown-menu\">\n          <li><a href=\"#\">Link 1</a></li>\n          <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">ABOUT</a>\n        <ul class=\"dyba-nav-dropdown-menu\">\n          <li><a href=\"#\">Link 1</a></li>\n          <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" role=\"menuitem\" href=\"#\">COACHES</a>\n        <ul class=\"dyba-nav-dropdown-menu\">\n          <li><a href=\"#\">Link 1</a></li>\n          <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li>\n        </ul>\n      </li>\n    </ul>\n\n    <ul class=\"dyba-nav-container dyba-nav-container-sm hidden-xs col-sm-12 hidden-md hidden-lg\">\n      <li class=\"dyba-nav-link-container\">\n        <a class=\"dyba-nav-link\" role=\"menuitem\" href=\"/pages/project.html\">REGISTRATION</a>\n      </li>\n      <li class=\"dyba-nav-item roar\">\n        <a href=\"#\">\n          <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n        </a>\n      </li>\n      <li class=\"dropdown dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">TEAMS</a>\n        <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM1\">\n          <li><a href=\"#\">Link 1</a></li>\n          <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dropdown dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM2\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">PROGRAMS</a>\n        <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM2\">\n          <li><a href=\"#\">Link 1</a></li>\n          <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dropdown dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM3\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">ABOUT</a>\n        <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM3\">\n          <li><a href=\"#\">Link 1</a></li>\n          <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li>\n        </ul>\n      </li>\n      <li class=\"dyba-nav-item\">\n        <img src=\"/images/animal-paw-print_green.svg\" class=\"dyba-nav-logo-small\">\n      </li>\n      <li class=\"dropdown dyba-nav-dropdown-container\">\n        <a class=\"dyba-nav-dropdown-header\" id=\"dropdownMenuSM4\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">COACHES</a>\n        <ul class=\"dropdown-menu dyba-nav-dropdown-menu\" aria-labelledby=\"dropdownMenuSM4\">\n          <li><a href=\"#\">Link 1</a></li>\n          <li><a href=\"#\">Link 2</a></li>\n          <li><a href=\"#\">Link 3</a></li>\n        </ul>\n      </li>\n    </ul>\n\n    <div class=\"row xs-row hidden-sm hidden-md hidden-lg\">\n      <div class=\"dropdown dyba-xs-nav-dropdown\">\n        <button class=\"btn btn-default dropdown-toggle dyba-xs-nav-button\" type=\"button\" id=\"dropdownMenuXS\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n          Menu\n          <span class=\"caret\"></span>\n        </button>\n        <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuXS\">\n          <li><a href=\"#\">Action</a></li>\n          <li><a href=\"#\">Another action</a></li>\n          <li><a href=\"#\">Something else here</a></li>\n          <li role=\"separator\" class=\"divider\"></li>\n          <li><a href=\"#\">Separated link</a></li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</div>\n";
 
 /***/ },
-/* 225 */
+/* 221 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"dyba-footer-credits col-xs-12 col-md-4\">\n  <p>Credits</p>\n  <div class=\"dyba-footer-credits-popup\">Paw icon made by <a href=\"http://www.freepik.com\" title=\"Freepik\">Freepik</a>, from <a href=\"http://www.flaticon.com\" title=\"Flaticon\">www.flaticon.com</a>, is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>\n</div>\n<div class=\"dyba-footer-middle col-xs-12 col-md-4\">\n  <div class=\"dyba-footer-created\">\n    <a href=\"https://tory-rahm.herokuapp.com/\">Created by Tory Rahm</a>\n  </div>\n  <div class=\"dyba-footer-copyright\">\n    <p>Copyright c 2016. All rights reserved.</p>\n  </div>\n</div>\n<div class=\"dyba-footer-contact col-xs-12 col-md-4\">\n  <p>Contact DYBA: director@develynyouthbasketball.org</p>\n</div>\n";
+
+/***/ },
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesDybaMainHtml = __webpack_require__(226);
+	var _templatesDybaMainHtml = __webpack_require__(223);
 	
 	var _templatesDybaMainHtml2 = _interopRequireDefault(_templatesDybaMainHtml);
 	
@@ -41407,13 +41355,13 @@
 	module.exports = app;
 
 /***/ },
-/* 226 */
+/* 223 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"dyba-main-heading\">\n  <div class=\"dyba-main-heading-row1\">\n    <div class=\"dyba-main-heading-row1-border\"></div>\n    <div class=\"dyba-main-heading-row1-image\">\n      <img class=\"dyba-main-heading-row1-image-file\" src=\"/images/Jags head white-green.png\">\n    </div>\n    <div class=\"dyba-main-heading-row1-border\"></div>\n  </div>\n  <div class=\"dyba-main-heading-row2\">WELCOME</div>\n  <div class=\"dyba-main-heading-row3\"></div>\n</div>\n<div class=\"dyba-main-content\">\n  <p>D'Evelyn Youth Basketball Association is a basketball club that was organized to provide an opportunity for Dennison and current/future D’Evelyn boys to play together. We have teams from Kindergarten through 8th grade. Our teams play in the Jefferson County Basketball Conference and our older kids also play in the Gold Crown league. Our annual membership dues are $30. These funds are used to cover the costs of running the club (and a t-shirt for each player and coach) as well as provide scholarships to players and appreciation gifts to our coaches. Dues are payable in August. You must be a member of the club to play on our teams.</p>\n</div>\n\n\n\n\n\n\n\n";
 
 /***/ },
-/* 227 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41775,7 +41723,7 @@
 	module.exports = app;
 
 /***/ },
-/* 228 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41786,7 +41734,7 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _templatesFlickrImageHtml = __webpack_require__(229);
+	var _templatesFlickrImageHtml = __webpack_require__(226);
 	
 	var _templatesFlickrImageHtml2 = _interopRequireDefault(_templatesFlickrImageHtml);
 	
@@ -41847,13 +41795,13 @@
 	module.exports = app;
 
 /***/ },
-/* 229 */
+/* 226 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"photo\">\n  <img src=\"http://farm{{farm}}.static.flickr.com/{{server}}/{{id}}_{{secret}}_b.jpg\">\n</div>";
 
 /***/ },
-/* 230 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41901,7 +41849,7 @@
 	module.exports = app;
 
 /***/ },
-/* 231 */
+/* 228 */
 /***/ function(module, exports) {
 
 	/*

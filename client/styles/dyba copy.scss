@@ -19,14 +19,8 @@
   position: relative;
   width: 100%;
   height: auto;
-}
-.dyba-header {
-  position: relative;
-  display: block;
-  width: 100%;
-  margin: 0;
   background-image: url("/images/Jags Logo Green.png");
-  background-size: 190px;
+  background-size: 200px;
 }
 .dyba-background {
   margin: 0;
@@ -34,6 +28,7 @@
   position: relative;
   width: 100%;
   height: auto;
+  min-height: 100vh;
   background-image:
     linear-gradient(
       to right,
@@ -42,6 +37,12 @@
       rgba(0, 82, 20, 1) 80%,
       rgba(0, 82, 20, 0.90)
     );
+}
+.dyba-header {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
 }
 .dyba-title-bar {
   position: relative;
@@ -102,7 +103,7 @@
   text-align: center;
   border-bottom: 2px solid black;
 }
-.dyba-nav-container.sticky {
+.dyba-nav-container-md.sticky {
   position: fixed;
   top: 0;
   z-index: 99;
@@ -197,7 +198,7 @@
   display: block;
   width: 100%;
   height: auto;
-  min-height: 600px;
+  min-height: calc(100vh - 130px;
   margin: 0;
   padding-top: 40px;
   background-color: #dddedd;
@@ -278,80 +279,6 @@
 ul {
   list-style-type: none;
 }
-.dyba-footer {
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding: 0 10px;
-  background: #005214;
-  color: var(--heading);
-  font-family: 'Happy Monkey', serif;
-  font-size: 12px;
-}
-.dyba-footer-credits {
-  position: relative;
-  display: inline-block;
-  height: 50px;
-}
-.dyba-footer-credits p {
-  line-height: 50px;
-  text-align: left;
-  margin-bottom: 0;
-}
-.dyba-footer-credits-popup {
-  position: relative;
-  opacity: 0;
-  width: 200px;
-  height: 66px;
-  padding: 3px;
-  line-height: 20px;
-  border-radius: 5px;
-  background: #005214;
-  text-align: left;
-  bottom: 66px;
-}
-.dyba-footer-middle {
-  position: relative;
-  display: inline-block;
-  height: 50px;
-  padding: 5px 0;
-}
-.dyba-footer-created {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 50%;
-  text-align: center;
-}
-.dyba-footer-created a {
-  line-height: 20px;
-  color: var(--heading);
-}
-.dyba-footer-created a:hover {
-  color: white;
-  text-decoration: none;
-}
-.dyba-footer-copyright {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 50%;
-}
-.dyba-footer-copyright p {
-  line-height: 20px;
-  text-align: center;
-  margin-bottom: 0;
-}
-.dyba-footer-contact {
-  position: relative;
-  display: inline-block;
-  height: 50px;
-}
-.dyba-footer-contact p {
-  line-height: 50px;
-  text-align: right;
-  margin-bottom: 0;
-}
 @keyframes show-jag {
   0% {
     opacity: 0;
@@ -362,30 +289,7 @@ ul {
     transform: rotateZ(0);
   }
 }
-@media (max-width: 991px) {
-  .dyba-footer-credits {
-    height: 20px;
-  }
-  .dyba-footer-credits p {
-    line-height: 20px;
-    text-align: center;
-  }
-  .dyba-footer-credits-popup {
-    margin: 0 auto;
-  }
-  .dyba-footer-middle {
-    height: 40px;
-    padding: 0;
-  }
-  .dyba-footer-contact {
-    height: 20px;
-  }
-  .dyba-footer-contact p {
-    line-height: 20px;
-    text-align: center;
-  }
-}
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .dyba-title-bar {
     height: auto;
   }
@@ -414,11 +318,5 @@ ul {
     font-size: 40px;
     line-height: 50px;
     letter-spacing: 3px;
-  }
-}
-@media (max-width: 450px) {
-  .dyba-title {
-    text-align: center;
-    font-size: 7vw;
   }
 }
