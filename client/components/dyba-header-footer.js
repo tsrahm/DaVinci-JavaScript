@@ -101,16 +101,24 @@ var app = {
       }
     });
 
-    var $footerCredits = $('.dyba-footer-credits');
-    $footerCredits.hover(function(e) {
+    var $footerCreditsMD = $('.dyba-footer-credits.col-md-4');
+    $footerCreditsMD.hover(function() {
       var $el = $(this);
       var $popup = $el.find('.dyba-footer-credits-popup');
-      $popup.hoverFlow(e.type, {opacity: 1}, 500);
-    }, function(e) {
+      $popup.toggle();
+    }, function() {
       var $el = $(this);
       var $popup = $el.find('.dyba-footer-credits-popup');
-      $popup.hoverFlow(e.type, {opacity: 0}, 500);
+      $popup.toggle();
     });
+
+    var $footerCreditsXS = $('.dyba-footer-credits.col-xs-12');
+    $footerCreditsXS.click(function() {
+      var $el = $(this);
+      var $popup = $el.find('.dyba-footer-credits-popup');
+      $popup.toggle();
+    });
+
   }
 };
 

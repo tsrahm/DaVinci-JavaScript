@@ -400,7 +400,7 @@ ul {
 
 .dyba-footer-credits-popup {
   position: relative;
-  opacity: 0;
+  display: none;
   width: 200px;
   height: 66px;
   padding: 3px;
@@ -689,8 +689,7 @@ h1 {
 
 .tr-phone1 {
   position: absolute;
-  display: block;
-  opacity: 0;
+  display: none;
   width: 100%;
   line-height: 150px;
   text-align: center;
@@ -701,8 +700,7 @@ h1 {
 
 .tr-phone2 {
   position: absolute;
-  display: block;
-  opacity: 0;
+  display: none;
   width: 100%;
   line-height: 150px;
   text-align: center;

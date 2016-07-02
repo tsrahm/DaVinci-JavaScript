@@ -41278,15 +41278,22 @@
 	      }
 	    });
 	
-	    var $footerCredits = $('.dyba-footer-credits');
-	    $footerCredits.hover(function (e) {
+	    var $footerCreditsMD = $('.dyba-footer-credits.col-md-4');
+	    $footerCreditsMD.hover(function () {
 	      var $el = $(this);
 	      var $popup = $el.find('.dyba-footer-credits-popup');
-	      $popup.hoverFlow(e.type, { opacity: 1 }, 500);
-	    }, function (e) {
+	      $popup.toggle();
+	    }, function () {
 	      var $el = $(this);
 	      var $popup = $el.find('.dyba-footer-credits-popup');
-	      $popup.hoverFlow(e.type, { opacity: 0 }, 500);
+	      $popup.toggle();
+	    });
+	
+	    var $footerCreditsXS = $('.dyba-footer-credits.col-xs-12');
+	    $footerCreditsXS.click(function () {
+	      var $el = $(this);
+	      var $popup = $el.find('.dyba-footer-credits-popup');
+	      $popup.toggle();
 	    });
 	  }
 	};
@@ -41303,7 +41310,7 @@
 /* 221 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"dyba-footer-credits col-xs-12 col-md-4\">\n  <p>Credits</p>\n  <div class=\"dyba-footer-credits-popup\">Paw icon made by <a href=\"http://www.freepik.com\" title=\"Freepik\">Freepik</a>, from <a href=\"http://www.flaticon.com\" title=\"Flaticon\">www.flaticon.com</a>, is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>\n</div>\n<div class=\"dyba-footer-middle col-xs-12 col-md-4\">\n  <div class=\"dyba-footer-created\">\n    <a href=\"https://tory-rahm.herokuapp.com/\">Created by Tory Rahm</a>\n  </div>\n  <div class=\"dyba-footer-copyright\">\n    <p>Copyright c 2016. All rights reserved.</p>\n  </div>\n</div>\n<div class=\"dyba-footer-contact col-xs-12 col-md-4\">\n  <p>Contact DYBA: director@develynyouthbasketball.org</p>\n</div>\n";
+	module.exports = "\n<div class=\"dyba-footer-credits hidden-xs hidden-sm col-md-4\">\n  <p>Credits</p>\n  <div class=\"dyba-footer-credits-popup\">Paw icon made by <a href=\"http://www.freepik.com\" title=\"Freepik\">Freepik</a>, from <a href=\"http://www.flaticon.com\" title=\"Flaticon\">www.flaticon.com</a>, is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>\n</div>\n<div class=\"dyba-footer-credits col-xs-12 hidden-md hidden-lg\">\n  <p>Credits</p>\n  <div class=\"dyba-footer-credits-popup\">Paw icon made by <a href=\"http://www.freepik.com\" title=\"Freepik\">Freepik</a>, from <a href=\"http://www.flaticon.com\" title=\"Flaticon\">www.flaticon.com</a>, is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>\n</div>\n<div class=\"dyba-footer-middle col-xs-12 col-md-4\">\n  <div class=\"dyba-footer-created\">\n    <a href=\"https://tory-rahm.herokuapp.com/\">Created by Tory Rahm</a>\n  </div>\n  <div class=\"dyba-footer-copyright\">\n    <p>Copyright c 2016. All rights reserved.</p>\n  </div>\n</div>\n<div class=\"dyba-footer-contact col-xs-12 col-md-4\">\n  <p>Contact DYBA: director@develynyouthbasketball.org</p>\n</div>\n";
 
 /***/ },
 /* 222 */
@@ -41828,20 +41835,17 @@
 	  },
 	  bindHoverEvents: function bindHoverEvents() {
 	    var $trCircle = $('.tr-circle');
-	    $trCircle.hover(function (e) {
-	      var $trText = $('.tr-text');
-	      var $trPhone1 = $('.tr-phone1');
-	      var $trPhone2 = $('.tr-phone2');
-	      $trText.hoverFlow(e.type, { opacity: 0 }, 500);
-	      $trPhone1.hoverFlow(e.type, { opacity: 1 }, 500);
-	      $trPhone2.hoverFlow(e.type, { opacity: 1 }, 500);
-	    }, function (e) {
-	      var $trText = $('.tr-text');
-	      var $trPhone1 = $('.tr-phone1');
-	      var $trPhone2 = $('.tr-phone2');
-	      $trText.hoverFlow(e.type, { opacity: 1 }, 500);
-	      $trPhone1.hoverFlow(e.type, { opacity: 0 }, 500);
-	      $trPhone2.hoverFlow(e.type, { opacity: 0 }, 500);
+	    var $trText = $('.tr-text');
+	    var $trPhone1 = $('.tr-phone1');
+	    var $trPhone2 = $('.tr-phone2');
+	    $trCircle.hover(function () {
+	      $trText.toggle(500);
+	      $trPhone1.toggle(500);
+	      $trPhone2.toggle(500);
+	    }, function () {
+	      $trText.toggle(500);
+	      $trPhone1.toggle(500);
+	      $trPhone2.toggle(500);
 	    });
 	  }
 	};
