@@ -5,6 +5,7 @@ import TodoListView from 'pages/todo-react/todo-list-view';
 import funnySquares from 'pages/funnySquares';
 import formsBackbone from 'pages/forms-backbone';
 import dybaHeaderFooter from 'components/dyba-header-footer';
+import dybaHeaderFooterBroken from 'components/dyba-header-footer-broken';
 import dybaMain from 'pages/dyba-main';
 import music from 'pages/music';
 import photoSearch from 'pages/photo-search';
@@ -29,6 +30,10 @@ $(function() {
     break;
     case '/pages/dyba.html':
         dybaHeaderFooter.init();
+        dybaMain.init();
+    break;
+    case '/pages/dyba-broken.html':
+        dybaHeaderFooterBroken.init();
         dybaMain.init();
     break;
     case '/pages/photo-search.html':

@@ -70,23 +70,27 @@
 	
 	var _componentsDybaHeaderFooter2 = _interopRequireDefault(_componentsDybaHeaderFooter);
 	
-	var _pagesDybaMain = __webpack_require__(222);
+	var _componentsDybaHeaderFooterBroken = __webpack_require__(222);
+	
+	var _componentsDybaHeaderFooterBroken2 = _interopRequireDefault(_componentsDybaHeaderFooterBroken);
+	
+	var _pagesDybaMain = __webpack_require__(223);
 	
 	var _pagesDybaMain2 = _interopRequireDefault(_pagesDybaMain);
 	
-	var _pagesMusic = __webpack_require__(224);
+	var _pagesMusic = __webpack_require__(225);
 	
 	var _pagesMusic2 = _interopRequireDefault(_pagesMusic);
 	
-	var _pagesPhotoSearch = __webpack_require__(225);
+	var _pagesPhotoSearch = __webpack_require__(226);
 	
 	var _pagesPhotoSearch2 = _interopRequireDefault(_pagesPhotoSearch);
 	
-	var _pagesHomePage = __webpack_require__(227);
+	var _pagesHomePage = __webpack_require__(228);
 	
 	var _pagesHomePage2 = _interopRequireDefault(_pagesHomePage);
 	
-	__webpack_require__(228);
+	__webpack_require__(229);
 	
 	(0, _jquery2['default'])(function () {
 	
@@ -106,6 +110,10 @@
 	            break;
 	        case '/pages/dyba.html':
 	            _componentsDybaHeaderFooter2['default'].init();
+	            _pagesDybaMain2['default'].init();
+	            break;
+	        case '/pages/dyba-broken.html':
+	            _componentsDybaHeaderFooterBroken2['default'].init();
 	            _pagesDybaMain2['default'].init();
 	            break;
 	        case '/pages/photo-search.html':
@@ -41269,7 +41277,7 @@
 	    });
 	
 	    $(window).scroll(function () {
-	      if ($(this).scrollTop() > 100) {
+	      if ($(this).scrollTop() > 100 && $(window).width() > 767) {
 	        $('.dyba-nav-container').addClass('sticky');
 	        $('.dyba-main').addClass('sticky');
 	      } else {
@@ -41320,7 +41328,131 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _templatesDybaMainHtml = __webpack_require__(223);
+	var _templatesDybaHeaderHtml = __webpack_require__(220);
+	
+	var _templatesDybaHeaderHtml2 = _interopRequireDefault(_templatesDybaHeaderHtml);
+	
+	var _templatesDybaFooterHtml = __webpack_require__(221);
+	
+	var _templatesDybaFooterHtml2 = _interopRequireDefault(_templatesDybaFooterHtml);
+	
+	var $ = __webpack_require__(1);
+	
+	// Legacy loading for Bootstrap
+	window.jQuery = window.$ = $;
+	__webpack_require__(168);
+	
+	var app = {
+	  init: function init() {
+	    app.render();
+	  },
+	  render: function render() {
+	    app.unbindEvents();
+	    $('.dyba-header').append(_templatesDybaHeaderHtml2['default']);
+	    $('.dyba-footer').append(_templatesDybaFooterHtml2['default']);
+	    app.bindEvents();
+	  },
+	  unbindEvents: function unbindEvents() {
+	    $('.dyba-nav-link-container').off();
+	    $('.dyba-nav-logo').off();
+	    $('.dyba-nav-container-md .dyba-nav-dropdown-container').off();
+	  },
+	  bindEvents: function bindEvents() {
+	    app.bindHoverEvents();
+	  },
+	  bindHoverEvents: function bindHoverEvents() {
+	    var $homeLink = $('.dyba-nav-logo');
+	    $homeLink.hover(function (e) {
+	      var $el = $(this);
+	      var $hidden = $('.home-hidden');
+	      $el.hoverFlow(e.type, { opacity: 0.2 }, 500);
+	      $hidden.hoverFlow(e.type, { opacity: 1 }, 500);
+	    }, function (e) {
+	      var $el = $(this);
+	      var $hidden = $('.home-hidden');
+	      $el.hoverFlow(e.type, { opacity: 1 }, 500);
+	      $hidden.hoverFlow(e.type, { opacity: 0 }, 500);
+	    });
+	
+	    var $linkContainer = $('.dyba-nav-link-container');
+	    $linkContainer.hover(function () {
+	      var $el = $(this);
+	      var $link = $el.find('.dyba-nav-link');
+	      $link.css({ color: '#999', textDecoration: 'none' });
+	    }, function () {
+	      var $el = $(this);
+	      var $link = $el.find('.dyba-nav-link');
+	      $link.css({ color: 'black' });
+	    });
+	
+	    var $dropdownContainermd = $('.dyba-nav-container-md .dyba-nav-dropdown-container');
+	    $dropdownContainermd.hover(function () {
+	      var $el = $(this);
+	      var $header = $el.find('.dyba-nav-dropdown-header');
+	      var $dropdown = $el.find('.dyba-nav-dropdown-menu');
+	      $header.css({ color: '#999', textDecoration: 'none' });
+	      $dropdown.slideDown();
+	    }, function () {
+	      var $el = $(this);
+	      var $header = $el.find('.dyba-nav-dropdown-header');
+	      var $dropdown = $el.find('.dyba-nav-dropdown-menu');
+	      $el.delay(400).queue(function (next) {
+	        $header.css({ color: 'black' });
+	        next();
+	      });
+	      $dropdown.slideUp();
+	    });
+	
+	    var $roar = $('.roar');
+	    $roar.click(function () {
+	      $('<audio>').attr({
+	        'src': '/images/jaguar.mp3',
+	        'volume': 1.0,
+	        'autoplay': 'autoplay'
+	      }).appendTo('body');
+	    });
+	
+	    $(window).scroll(function () {
+	      if ($(this).scrollTop() > 100) {
+	        $('.dyba-nav-container').addClass('sticky');
+	        $('.dyba-main').addClass('sticky');
+	      } else {
+	        $('.dyba-nav-container').removeClass('sticky');
+	        $('.dyba-main').removeClass('sticky');
+	      }
+	    });
+	
+	    var $footerCreditsMD = $('.dyba-footer-credits.col-md-4');
+	    $footerCreditsMD.hover(function () {
+	      var $el = $(this);
+	      var $popup = $el.find('.dyba-footer-credits-popup');
+	      $popup.toggle();
+	    }, function () {
+	      var $el = $(this);
+	      var $popup = $el.find('.dyba-footer-credits-popup');
+	      $popup.toggle();
+	    });
+	
+	    var $footerCreditsXS = $('.dyba-footer-credits.col-xs-12');
+	    $footerCreditsXS.click(function () {
+	      var $el = $(this);
+	      var $popup = $el.find('.dyba-footer-credits-popup');
+	      $popup.toggle();
+	    });
+	  }
+	};
+	
+	module.exports = app;
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _templatesDybaMainHtml = __webpack_require__(224);
 	
 	var _templatesDybaMainHtml2 = _interopRequireDefault(_templatesDybaMainHtml);
 	
@@ -41362,13 +41494,13 @@
 	module.exports = app;
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"dyba-main-heading\">\n  <div class=\"dyba-main-heading-row1\">\n    <div class=\"dyba-main-heading-row1-border\"></div>\n    <div class=\"dyba-main-heading-row1-image\">\n      <img class=\"dyba-main-heading-row1-image-file\" src=\"/images/Jags head white-green.png\">\n    </div>\n    <div class=\"dyba-main-heading-row1-border\"></div>\n  </div>\n  <div class=\"dyba-main-heading-row2\">WELCOME</div>\n  <div class=\"dyba-main-heading-row3\"></div>\n</div>\n<div class=\"dyba-main-content\">\n  <p>D'Evelyn Youth Basketball Association is a basketball club that was organized to provide an opportunity for Dennison and current/future D’Evelyn boys to play together. We have teams from Kindergarten through 8th grade. Our teams play in the Jefferson County Basketball Conference and our older kids also play in the Gold Crown league. Our annual membership dues are $30. These funds are used to cover the costs of running the club (and a t-shirt for each player and coach) as well as provide scholarships to players and appreciation gifts to our coaches. Dues are payable in August. You must be a member of the club to play on our teams.</p>\n</div>\n\n\n\n\n\n\n\n";
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41730,7 +41862,7 @@
 	module.exports = app;
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41741,7 +41873,7 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _templatesFlickrImageHtml = __webpack_require__(226);
+	var _templatesFlickrImageHtml = __webpack_require__(227);
 	
 	var _templatesFlickrImageHtml2 = _interopRequireDefault(_templatesFlickrImageHtml);
 	
@@ -41802,13 +41934,13 @@
 	module.exports = app;
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"photo\">\n  <img src=\"http://farm{{farm}}.static.flickr.com/{{server}}/{{id}}_{{secret}}_b.jpg\">\n</div>";
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41853,7 +41985,7 @@
 	module.exports = app;
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports) {
 
 	/*
