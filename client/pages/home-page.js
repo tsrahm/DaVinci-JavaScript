@@ -35,12 +35,9 @@ var app = {
     });
     if ($(window).width < 992) {
       $trCircle.click(function() {
-        $trText.animate({opacity: 0}, 1500);
-        $trPhone1.animate({opacity: 1}, 1500);
-        $trPhone2.animate({opacity: 1}, 1500);
-        $trText.animate({opacity: 1}, 1500);
-        $trPhone1.animate({opacity: 0}, 1500);
-        $trPhone2.animate({opacity: 0}, 1500);
+        $trText.animate({opacity: 'toggle'}, 1500);
+        $trPhone1.animate({opacity: 'toggle'}, 1500);
+        $trPhone2.animate({opacity: 'toggle'}, 1500);
       });
     }
   }
