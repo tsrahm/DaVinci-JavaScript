@@ -41966,30 +41966,28 @@
 	    app.bindHoverEvents();
 	  },
 	  bindHoverEvents: function bindHoverEvents() {
-	    var $trCircle = $('.tr-circle');
+	    var $trCircleMD = $('.tr-circle.hidden-sm');
 	    var $trCircleSM = $('.tr-circle.hidden-md');
-	    var $trText = $('.tr-text');
-	    var $trPhone1 = $('.tr-phone1');
-	    var $trPhone2 = $('.tr-phone2');
-	    $trCircle.hover(function () {
-	      $trText.animate({ opacity: 0 }, 500);
-	      $trPhone1.animate({ opacity: 1 }, 500);
-	      $trPhone2.animate({ opacity: 1 }, 500);
+	    var $trTextMD = $trCircleMD.find('.tr-text');
+	    var $trPhone1MD = $trCircleMD.find('.tr-phone1');
+	    var $trPhone2MD = $trCircleMD.find('.tr-phone2');
+	    var $trTextSM = $trCircleSM.find('.tr-text');
+	    var $trPhone1SM = $trCircleSM.find('.tr-phone1');
+	    var $trPhone2SM = $trCircleSM.find('.tr-phone2');
+	    $trCircleMD.hover(function () {
+	      $trTextMD.animate({ opacity: 0 }, 500);
+	      $trPhone1MD.animate({ opacity: 1 }, 500);
+	      $trPhone2MD.animate({ opacity: 1 }, 500);
 	    }, function () {
-	      $trText.animate({ opacity: 1 }, 500);
-	      $trPhone1.animate({ opacity: 0 }, 500);
-	      $trPhone2.animate({ opacity: 0 }, 500);
+	      $trTextMD.animate({ opacity: 1 }, 500);
+	      $trPhone1MD.animate({ opacity: 0 }, 500);
+	      $trPhone2MD.animate({ opacity: 0 }, 500);
 	    });
-	    if ($(window).width < 992) {
-	      $trCircleSM.click(function () {
-	        var $trText = $trCircleSM.find('.tr-text');
-	        var $trPhone1 = $trCircleSM.find('.tr-phone1');
-	        var $trPhone2 = $trCircleSM.find('.tr-phone2');
-	        $trText.toggle();
-	        $trPhone1.toggle();
-	        $trPhone2.toggle();
-	      });
-	    }
+	    $trCircleSM.click(function () {
+	      $trTextSM.toggle();
+	      $trPhone1SM.toggle();
+	      $trPhone2SM.toggle();
+	    });
 	  }
 	};
 	
