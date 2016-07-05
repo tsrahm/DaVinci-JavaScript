@@ -674,9 +674,9 @@ h1 {
   width: 150px;
   color: #ff6500;
   border-radius: 50%;
-  background: #b24700;
+  background: #ff6500;
   margin: 0 auto 30px;
-  animation: tsr-change 3s ease-out 20 alternate;
+  animation: tsr-change 2s 1s steps(8) 15 forwards alternate;
 }
 
 .tr-text {
@@ -689,7 +689,8 @@ h1 {
 
 .tr-phone1 {
   position: absolute;
-  display: none;
+  display: block;
+  opacity: 0;
   width: 100%;
   line-height: 150px;
   text-align: center;
@@ -700,7 +701,8 @@ h1 {
 
 .tr-phone2 {
   position: absolute;
-  display: none;
+  display: block;
+  opacity: 0;
   width: 100%;
   line-height: 150px;
   text-align: center;
@@ -715,10 +717,10 @@ h1 {
 
 @keyframes tsr-change {
   0% {
-    background: #b24700;
+    background: #ff6500;
   }
   100% {
-    background: #ff6500;
+    background: #b24700;
   }
 }
 
