@@ -21,6 +21,7 @@ var app = {
   },
   bindHoverEvents: function() {
     var $trCircle = $('.tr-circle');
+    var $trCircleSM = $('.tr-circle.hidden-md');
     var $trText = $('.tr-text');
     var $trPhone1 = $('.tr-phone1');
     var $trPhone2 = $('.tr-phone2');
@@ -34,10 +35,13 @@ var app = {
       $trPhone2.animate({opacity: 0}, 500);
     });
     if ($(window).width < 992) {
-      $trCircle.click(function() {
-        $trText.animate({opacity: 'toggle'}, 1500);
-        $trPhone1.animate({opacity: 'toggle'}, 1500);
-        $trPhone2.animate({opacity: 'toggle'}, 1500);
+      $trCircleSM.click(function() {
+        var $trText = $trCircleSM.find('.tr-text');
+        var $trPhone1 = $trCircleSM.find('.tr-phone1');
+        var $trPhone2 = $trCircleSM.find('.tr-phone2');
+        $trText.toggle();
+        $trPhone1.toggle();
+        $trPhone2.toggle();
       });
     }
   }
