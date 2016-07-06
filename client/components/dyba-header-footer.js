@@ -92,7 +92,7 @@ var app = {
     });
 
     $(window).scroll(function() {
-      if ($(this).scrollTop() > 108 && $(window).width() > 767) {
+      if ($(this).scrollTop() > 99 && $(window).width() > 767) {
         $('.dyba-nav-container').addClass('sticky');
         $('.dyba-main').addClass('sticky');
       } else {

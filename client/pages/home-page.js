@@ -38,9 +38,9 @@ var app = {
       $trPhone2MD.animate({opacity: 0}, 500);
     });
     $trCircleSM.click(function() {
-      $trTextSM.toggle();
-      $trPhone1SM.toggle();
-      $trPhone2SM.toggle();
+      $trTextSM.animate({opacity: 'toggle'}, 500);
+      $trPhone1SM.animate({opacity: 'toggle'}, 500);
+      $trPhone2SM.animate({opacity: 'toggle'}, 500);
     });
   }
 };
