@@ -19,7 +19,7 @@ $(function() {
 
   // This is called a router
   switch (url) {
-    case '/profile':
+    case '/pages/':
         homePage.init();
     break;
     case '/pages/todo.html':
@@ -28,7 +28,7 @@ $(function() {
     case '/pages/todo-broken.html':
         var todoListView = new TodoListView();
     break;
-    case '/profile/dyba':
+    case '/pages/dyba.html':
         dybaHeaderFooter.init();
         dybaMain.init();
     break;
