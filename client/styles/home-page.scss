@@ -38,7 +38,8 @@
   height: auto;
   width: 90%;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 .social-icon {
   height: 30px;
@@ -80,7 +81,7 @@
   border-radius: 50%;
   background: #ff6500;
   margin: 0 auto 30px;
-  animation: tsr-change 2s 1s steps(8) 15 forwards alternate;
+  animation: tsr-change 2s 1s steps(8) 35 forwards alternate;
 }
 .tr-text {
   position: absolute;

@@ -20,7 +20,6 @@ var app = {
     app.bindHoverEvents();
   },
   bindHoverEvents: function() {
-    debugger;
     var $trCircleMD = $('.tr-circle.hidden-sm');
     var $trCircleSM = $('.tr-circle.hidden-md');
     var $trTextMD = $trCircleMD.find('.tr-text');
