@@ -600,6 +600,7 @@ h1 {
 
 .sidebar-container {
   height: auto;
+  padding-top: 20px;
   padding-bottom: 30px;
   background-image: linear-gradient(to right, #b24700, #b24700 90%, #ff6500);
 }
